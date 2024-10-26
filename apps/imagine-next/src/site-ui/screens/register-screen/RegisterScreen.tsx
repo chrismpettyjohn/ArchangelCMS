@@ -68,9 +68,9 @@ export function RegisterScreen() {
           <Input type="email" placeholder="Email" required value={userCreateInput.email} onChange={e => onChanges({ email: e.currentTarget.value })} />
           <Input type="text" placeholder="Username" required value={userCreateInput.username} onChange={e => onChanges({ username: e.currentTarget.value })} />
           <Input type="password" placeholder="Password" required value={userCreateInput.password} onChange={e => onChanges({ password: e.currentTarget.value })} />
-          <Button type="submit">Create Account</Button>
+          <Button disabled={!canCreateUser} type="submit">Create Account</Button>
           <Link href="/login">
-            <Button disabled={!canCreateUser} type="button">Sign In</Button>
+            <Button type="button">Sign In</Button>
           </Link>
         </Form>
       </FormContainer>

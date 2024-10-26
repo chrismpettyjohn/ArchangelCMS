@@ -12,7 +12,7 @@ export const ButtonBrand = styled(Button)`
 export const ButtonDanger = styled(Button)`
   border-color: #7C0F0F;
   color: #7C0F0F;
-  border-color: ${({ theme }) => darken('#7C0F0F', '20%')};
+  border-color: ${({ theme }) => darken(20, '#7C0F0F')};
 `
 
 export const ButtonSuccess = styled(Button)`

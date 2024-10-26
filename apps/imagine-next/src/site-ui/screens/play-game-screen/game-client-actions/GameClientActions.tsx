@@ -26,7 +26,7 @@ export function GameClientActions() {
 
     function onViewProfile(): void {
         setTheme({ showClient: false });
-        router.push(`/profile/${session!.username}`);
+        router.push('/me');
     }
 
     function onReloadClient(): void {
