@@ -2,7 +2,7 @@
 import { Form } from '../../components/form/Form';
 import { Input } from '../../components/input/Input';
 import React, { SyntheticEvent, useContext, useState } from 'react';
-import { BETA_ENABLED, localStorageService, sessionContext, SITE_NAME } from '@imagine-cms/web';
+import { BETA_ENABLED, localStorageService, SESSION_LOCAL_STORAGE_IDX, sessionContext, SITE_NAME } from '@imagine-cms/web';
 import { UserCreateInput, UserGender, useUserCreate, useUserFetchOne } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
@@ -44,7 +44,7 @@ export function RegisterScreen() {
         return;
       }
       const newSession = await createUser.execute(userCreateInput)
-      localStorageService.set('SESSION', newSession.accessToken);
+      localStorageService.set(SESSION_LOCAL_STORAGE_IDX, newSession.accessToken);
       const matchingUser = await fetchUser.fetch({ id: newSession.userID });
       setSession(matchingUser as any);
       toast.success(`Welcome back, ${matchingUser.username}`)

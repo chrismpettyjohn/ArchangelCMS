@@ -19,6 +19,10 @@ export class JwtAuthenticationGuard implements CanActivate {
         : (request?.headers?.Authorization as any);
     const bearerToken: string | undefined = authHeader?.split('Bearer ')?.[1];
 
+    console.log(request.headers)
+
+    console.log({ request })
+
     console.log({ bearerToken })
 
     if (!bearerToken) {

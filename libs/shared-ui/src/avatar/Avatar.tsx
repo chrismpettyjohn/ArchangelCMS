@@ -5,7 +5,7 @@ import React, { useContext, useMemo, useState } from 'react';
 export function Avatar({ look, action, headOnly = false, size, direction, headDirection, gesture, overrideImgSrc, ...props }: AvatarProps) {
   const [isHidden, setIsHidden] = useState(false);
   const imageSrc = useMemo(() => {
-    let baseImageSrc = `${overrideImgSrc ?? config?.figureURL}?figure=${look}`;
+    let baseImageSrc = `${overrideImgSrc ?? FIGURE_URL}?figure=${look}`;
 
     if (headOnly) {
       baseImageSrc += `&headonly=1`

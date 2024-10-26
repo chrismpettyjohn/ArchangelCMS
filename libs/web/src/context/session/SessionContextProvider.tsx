@@ -1,13 +1,13 @@
-import { UserWire } from '@imagine-cms/types';
 import { sessionContext } from './SessionContext';
 import React, { useEffect, useState } from 'react';
-import { useUserFetchOne } from '@imagine-cms/client';
+import { UserFragment, useUserFetchOne } from '@imagine-cms/client';
 import { SessionContextProviderProps } from './SessionContext.types';
 import { localStorageService } from '../../service/local-storage.service';
 import { useFetchSessionByJwt } from '../../hooks/fetch-session-by-jwt.hook';
+import { SESSION_LOCAL_STORAGE_IDX } from '../../app';
 
 export function SessionContextProvider({ children, loadingScreen }: SessionContextProviderProps) {
-  const existingJwt = localStorageService.get('SESSION', true);
+  const existingJwt = localStorageService.get(SESSION_LOCAL_STORAGE_IDX, true);
   const [loading, setIsLoading] = useState(true);
   const [session, _setSessionState] = useState<any>();
   const fetchSessionByJwt = useFetchSessionByJwt(existingJwt ?? '');
@@ -49,7 +49,7 @@ export function SessionContextProvider({ children, loadingScreen }: SessionConte
     _setSessionState(newSession);
   };
 
-  const setSession = (updates: Partial<UserWire>) => {
+  const setSession = (updates: Partial<UserFragment>) => {
     _setSessionState((_: any) => ({
       ..._,
       ...updates,
