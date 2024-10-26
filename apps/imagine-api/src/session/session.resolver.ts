@@ -38,9 +38,9 @@ export class SessionResolver {
     private readonly sessionService: SessionService
   ) { }
 
-  @Query(() => SessionSSOModel)
+  @Mutation(() => SessionSSOModel)
   @HasSession()
-  async sessionSSOCreate(
+  async sessionCreateSSO(
     @GetUser() user: UserEntity
   ): Promise<SessionSSOModel> {
     const newSSO = await this.userRepo.generateSSO(user.id!);

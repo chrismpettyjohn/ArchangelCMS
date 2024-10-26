@@ -517,7 +517,6 @@ type CorporationMemberModel {
 }
 
 type Query {
-  sessionSSOCreate: SessionSSOModel!
   sessionByJWT(jwt: String!): SessionModel!
   session(id: Float!): SessionModel!
   sessions(other: ExtraArgs): [SessionModel!]!
@@ -934,6 +933,7 @@ input RPStatsFilterManyInput {
 }
 
 type Mutation {
+  sessionCreateSSO: SessionSSOModel!
   sessionCreateWithCredentials(input: SessionCreateWithCredentialsInput!): SessionCreatedModel!
   sessionUpdateEmail(input: SessionUpdateEmailInput!): SessionUpdateEmailModel!
   sessionUpdatePassword(input: SessionUpdatePasswordInput!): SessionUpdatePasswordModel!

@@ -1,41 +1,28 @@
 'use client'
-import { MOCK_USER } from '../../site-ui.const';
 import React, { useContext } from 'react';
-import { sessionContext } from '@imagine-cms/web';
-import { GridLarge } from '../../components/grid/Grid.remix';
-import { UserStatsGrid } from '../../components/user-stats-grid/UserStatsGrid';
-import { LatestArticlesGrid } from '../../components/latest-articles-grid/LatestArticlesGrid';
-import { UserProfileContainer } from '../../components/user-profile-container/UserProfileContainer';
-import { RPStatsGridContainer } from '../../components/rp-stats-grid-container/RPStatsGridContainer';
-import { UserRoomsGrid } from '../../components/user-rooms-grid/UserRoomsGrid';
-import { UserFriendsGrid } from '../../components/user-friends-grid/UserFriendsGrid';
+import { sessionContext, SITE_NAME } from '@imagine-cms/web';
+import { Footer, FormContainer, Header, Logo, PageContainer, Title, UserStatus } from '../login-screen/LoginScreen.styled';
+import { usersOnlineContext } from '@imagine-cms/websocket';
+import { ButtonSuccess } from '../../components/button/Button.remix';
+import Link from 'next/link';
 
 export function MeScreen() {
   const { session } = useContext(sessionContext);
-
-  const user: any = session ?? MOCK_USER;
+  const { usersOnline } = useContext(usersOnlineContext);
 
   return (
-    <>
-      <GridLarge>
-        <div>
-          <UserProfileContainer user={user} />
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <UserStatsGrid user={user} />
-          <br />
-          <RPStatsGridContainer userID={user.id} />
-        </div>
-        <div>
-          <UserFriendsGrid user={user} />
-        </div>
-        <div>
-          <UserRoomsGrid user={user} />
-        </div>
-        <div>
-          <LatestArticlesGrid />
-        </div>
-      </GridLarge>
-    </>
+    <PageContainer>
+      <FormContainer>
+        <Header>
+          <Logo>{SITE_NAME}</Logo>
+          <UserStatus>{usersOnline} users online</UserStatus>
+        </Header>
+        <Title>Welcome back, {session?.username}</Title>
+        <Link href="/play">
+          <ButtonSuccess>Start exploring</ButtonSuccess>
+        </Link>
+      </FormContainer>
+      <Footer>Powered by <b>Archangel</b> <br />by <b>LeChris</b></Footer>
+    </PageContainer>
   )
 }

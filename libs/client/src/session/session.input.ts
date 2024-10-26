@@ -15,6 +15,7 @@ export interface SessionDisconnectAccountInput {
 export interface SessionUpdateLanguageInput {
   language: string;
 }
+
 export interface SessionCreateWithCredentialsInput {
   email: string;
   password: string;

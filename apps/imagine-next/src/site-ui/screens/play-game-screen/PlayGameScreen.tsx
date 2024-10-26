@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { themeContext } from '@imagine-cms/web';
 
 export function PlayGameScreen() {
