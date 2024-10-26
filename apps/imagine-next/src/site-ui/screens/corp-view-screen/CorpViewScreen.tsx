@@ -2,7 +2,6 @@
 import { useCorporationFetchOne, useCorporationRankFetchMany } from '@imagine-cms/client';
 import React, { useContext, useEffect } from 'react';
 import { GridLarge } from '../../components/grid/Grid.remix';
-import { configContext } from '@imagine-cms/web';
 import { CorpGridContainerBadge } from '../../components/corp-grid-container/CorpGridContainer.styled';
 import DayJS from 'dayjs';
 import { Card } from '../../components/card/Card';
@@ -11,9 +10,9 @@ import { RoomGridContainer } from '../../components/room-grid-container/RoomGrid
 import { CorpRankGridContainer } from '../../components/corp-rank-grid-container/CorpRankGridContainer';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import { BADGE_EXT, BADGE_URL } from '@imagine-cms/web';
 
 export function CorpViewScreen() {
-  const { config } = useContext(configContext);
   const params = useParams<{ corpID: string }>();
   const corpID = Number(params!.corpID);
   const fetchCorp = useCorporationFetchOne();
@@ -35,10 +34,10 @@ export function CorpViewScreen() {
           <i className="fa fa-caret-left fa-4x" style={{ cursor: 'pointer' }} />
         </Link>
         <div style={{ display: 'flex', flex: 1, gap: '1.4rem', alignItems: 'center' }}>
-          <CorpGridContainerBadge src={`${config!.badgeURL}/${fetchCorp.data?.badgeCode}.${config!.badgeEXT}`} />
+          <CorpGridContainerBadge src={`${BADGE_URL}/${fetchCorp.data?.badgeCode}.${BADGE_EXT}`} />
           <div>
             <h4 style={{ margin: 0 }}>Corporations - Viewing:</h4>
-            <h1 style={{ margin: 0, fontWeight: 'bold' }}>{fetchCorp.data?.name ?? `#${corpID}`}</h1>
+            <h1 style={{ margin: 0, fontWeight: 'bold' }}>{fetchCorp.data?.displayName ?? `#${corpID}`}</h1>
           </div>
         </div>
       </div>

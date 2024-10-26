@@ -1,14 +1,12 @@
-'use client'
-import React, { useContext } from 'react';
-import { configContext } from '@imagine-cms/web';
+import { DISCORD_WIDGET } from '@imagine-cms/web';
+import React from 'react';
 
 export function DiscordWidget() {
-  const { config } = useContext(configContext);
   return (
     <>
       {
-        config?.discordWidget && (
-          <div dangerouslySetInnerHTML={{ __html: config.discordWidget }} />
+        DISCORD_WIDGET && (
+          <div dangerouslySetInnerHTML={{ __html: DISCORD_WIDGET }} />
         )
       }</>
   )

@@ -75,7 +75,7 @@ import { GangEntity } from './gang.entity';
 import {
   RPStatsRepository,
 } from './rp-stats.repository';
-import { RPStatsEntity } from './rp-stats.entity';
+import { RPStatsEntity } from './rp-stats';
 import { CorporationRankRepository } from './corporation-rank.repository';
 import { CorporationRankEntity } from './corporation-rank.entity';
 

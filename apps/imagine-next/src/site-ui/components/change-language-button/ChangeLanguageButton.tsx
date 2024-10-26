@@ -1,14 +1,12 @@
 'use client'
 import React, { useContext, useEffect, useState } from 'react';
 import { useSessionUpdateLanguage } from '@imagine-cms/client';
-import { configContext, sessionContext } from '@imagine-cms/web';
+import { DEFAULT_LANGUAGE, sessionContext } from '@imagine-cms/web';
 import { FIVE_SECONDS_IN_MS, GOOGLE_TRANSLATE_COOKIE, GOOGLE_TRANSLATE_ELEMENT, getCookieValue, setCookie } from './ChangeLanguageButton.util';
 
 export function ChangeLanguageButton() {
-  const { config } = useContext(configContext);
   const { session, setSession } = useContext(sessionContext);
-  const allowedLanguages = config?.allowedLanguages ?? ['en'];
-  const userLanguage = session?.language ?? config?.defaultLanguage ?? 'en';
+  const userLanguage = session?.language ?? DEFAULT_LANGUAGE ?? 'en';
   const [syncInterval, setSyncInterval] = useState<any>();
   const sessionChangeLanguage = useSessionUpdateLanguage();
 

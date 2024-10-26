@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { RPStatsEntity } from '../database/rp-stats.entity';
+import { RPStatsEntity } from '../database/rp-stats';
 
 @ObjectType()
 export class RPStatsModel {

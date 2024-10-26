@@ -6,11 +6,10 @@ import { SiteLogo } from '../site-logo/SiteLogo';
 import { usersOnlineContext } from '@imagine-cms/websocket';
 import { ToggleThemeButton } from '../toggle-theme-button/ToggleThemeButton';
 import { ButtonBrand, ButtonDanger, ButtonClear } from '../button/Button.remix';
-import { GuestGuard, ScopeGuard, UserGuard, configContext } from '@imagine-cms/web';
+import { GuestGuard, ScopeGuard, SITE_NAME, UserGuard } from '@imagine-cms/web';
 import { SiteHeaderActions, SiteHeaderContent, SiteHeaderElement, SiteHeaderImage, SiteHeaderNav, SiteHeaderNavigation, SiteHeaderTools, SiteHeaderWrapper } from './SiteHeader.styled';
 
 export function SiteHeader() {
-  const { config } = useContext(configContext);
   const { usersOnline } = useContext(usersOnlineContext);
   return (
     <SiteHeaderWrapper>
@@ -29,7 +28,7 @@ export function SiteHeader() {
             </ScopeGuard>
             <Link href="/play">
               <ButtonClear>
-                Enter {config!.siteName} - <b>{usersOnline}</b> users online
+                Enter {SITE_NAME} - <b>{usersOnline}</b> users online
               </ButtonClear>
             </Link>
           </SiteHeaderTools>

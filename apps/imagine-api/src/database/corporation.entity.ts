@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 
-@Entity('rp_corporations')
+@Entity('archangel_corporations')
 export class CorporationEntity {
   @PrimaryColumn({ name: 'guild_id' })
   groupID!: number;

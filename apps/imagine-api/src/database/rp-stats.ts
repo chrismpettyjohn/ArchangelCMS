@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('rp_users_stats')
+@Entity('archangel_players')
 export class RPStatsEntity {
   @PrimaryGeneratedColumn()
   id!: number;

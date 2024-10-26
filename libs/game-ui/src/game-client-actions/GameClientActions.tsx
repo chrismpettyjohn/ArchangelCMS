@@ -3,11 +3,10 @@ import { Avatar } from '@imagine-cms/shared-ui';
 import React, { useContext, useEffect, useState } from 'react';
 import { GameClientActionsElement } from './GameClientActions.styled';
 import { usersOnlineContext, websocketContext } from '@imagine-cms/websocket';
-import { ScopeGuard, configContext, sessionContext, themeContext } from '@imagine-cms/web';
+import { ScopeGuard, sessionContext, SITE_NAME, themeContext } from '@imagine-cms/web';
 
 export function GameClientActions() {
   const [, setLocation] = useLocation();
-  const { config } = useContext(configContext);
   const { session } = useContext(sessionContext);
   const { setTheme } = useContext(themeContext);
   const { client } = useContext(websocketContext);
@@ -58,7 +57,7 @@ export function GameClientActions() {
       <GameClientActionsElement>
         <button className="action" onClick={onViewProfile} style={{ maxWidth: 200, overflow: 'hidden' }}>
           <Avatar look={session?.look ?? '-'} headOnly={true} style={{ height: 35 }} />
-          {session?.username ?? config.siteName}
+          {session?.username ?? SITE_NAME}
         </button>
         <ScopeGuard redirect={false} scope="accessAdminPanel">
           <button className="action" style={{ marginRight: 4 }} onClick={onViewAdminPanel}>

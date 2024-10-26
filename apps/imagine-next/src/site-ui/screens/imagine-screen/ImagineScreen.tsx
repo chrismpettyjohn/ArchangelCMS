@@ -1,13 +1,12 @@
 'use client'
 import React, { useContext } from 'react';
-import { configContext, sessionContext } from '@imagine-cms/web';
+import { sessionContext } from '@imagine-cms/web';
 import { Card } from '../../components/card/Card';
 import { ImagineLogoContainer } from './ImagineScreen.styled';
 import { YoutubeVideo } from '../../components/youtube-video/YoutubeVideo';
 import Link from 'next/link';
 
 export function ImagineScreen() {
-  const { config } = useContext(configContext);
   const { session } = useContext(sessionContext);
 
   return (
@@ -25,7 +24,6 @@ export function ImagineScreen() {
             <p>Crafted with precision using the latest technology, it's not just a CMS; it's a game-changer for retros everywhere.</p>
             <p>Imagine offers the unbeatable combination of top-tier performance, blazing-fast speeds, and a development experience that's second to none.</p>
             <p>Solely designed and developed from the ground up by <a href="https://github.com/habbo-hotel" target="_blank" style={{ cursor: 'pointer' }} className="lechris" rel="noreferrer"><b>LeChris</b></a></p>
-            <p><b>Version: </b>RP-{config?.softwareVersion ?? 'xxx'}</p>
           </div>
         </div>
       </Card>

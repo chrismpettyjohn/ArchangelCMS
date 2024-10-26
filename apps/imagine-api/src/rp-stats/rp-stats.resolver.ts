@@ -2,7 +2,7 @@ import { Resolver, Query, Args, ResolveField, Parent } from '@nestjs/graphql';
 import { In } from 'typeorm';
 import { RPStatsModel } from './rp-stats.model';
 import { RPStatsRepository } from '../database/rp-stats.repository';
-import { RPStatsEntity } from '../database/rp-stats.entity';
+import { RPStatsEntity } from '../database/rp-stats';
 import { RPStatsFilterManyInput, RPStatsFilterOneInput } from './rp-stats.input';
 import { GangRepository } from '../database/gang.repository';
 import { CorporationRepository } from '../database/corporation.repository';

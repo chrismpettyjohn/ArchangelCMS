@@ -1,12 +1,11 @@
+import { BADGE_EXT, BADGE_URL } from '@imagine-cms/web';
 import { BadgeProps } from './Badge.types';
-import { configContext } from '@imagine-cms/web';
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 export function Badge({ badge, overrideBadgeURL, overrideBadgeEXT, ...props }: BadgeProps) {
   const [isHidden, setIsHidden] = useState(false);
-  const { config } = useContext(configContext);
-  const badgeURL = overrideBadgeURL ?? config?.badgeURL;
-  const badgeEXT = overrideBadgeEXT ?? config?.badgeEXT;
+  const badgeURL = overrideBadgeURL ?? BADGE_URL;
+  const badgeEXT = overrideBadgeEXT ?? BADGE_EXT;
 
   const imageSrc = useMemo(() => {
     return `${badgeURL}/${badge.code}.${badgeEXT}`

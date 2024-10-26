@@ -1,19 +1,33 @@
 import gql from "graphql-tag";
-import { GROUP_FRAGMENT, GroupFragment } from "../group/group.fragment";
+import { USER_FRAGMENT, UserFragment } from "../user/user.fragment";
+import { ROOM_FRAGMENT, RoomFragment } from "../room/room.fragment";
 
 export const CORPORATION_FRAGMENT: any = gql`
-  ${GROUP_FRAGMENT}
+  ${USER_FRAGMENT}
+  ${ROOM_FRAGMENT}
   fragment CorporationFragment on CorporationModel {
-    groupID
-    tags
-    group {
-      ...GroupFragment
+    id
+    displayName
+    description
+    badgeCode
+    userID
+    roomID
+    user {
+      ...UserFragment
+    }
+    room {
+      ...RoomFragment
     }
   }
 `
 
 export interface CorporationFragment {
-  groupID: number;
-  tags: string;
-  group: GroupFragment;
+  id: number;
+  displayName: string;
+  description: string;
+  badgeCode: string;
+  userID: number;
+  roomID: number;
+  user: UserFragment;
+  room: RoomFragment;
 }

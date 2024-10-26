@@ -1,13 +1,9 @@
-'use client'
-import React, { useContext } from 'react';
+import React from 'react';
 import { Card } from '../../blocks/card/Card';
-import { configContext } from '@imagine-cms/web';
 import { YoutubeVideo } from '../../../site-ui/components/youtube-video/YoutubeVideo';
 import { ImagineLogoContainer } from '../../../site-ui/screens/imagine-screen/ImagineScreen.styled';
 
 export function CerberusScreen() {
-  const { config } = useContext(configContext);
-
   return (
     <>
       <h1>Cerberus</h1>
@@ -20,7 +16,6 @@ export function CerberusScreen() {
             <p>Crafted with precision using the latest technology, it's not just a CMS; it's a game-changer for retros everywhere.</p>
             <p>Imagine offers the unbeatable combination of top-tier performance, blazing-fast speeds, and a development experience that's second to none.</p>
             <p>Solely designed and developed from the ground up by <a href="https://github.com/habbo-hotel" target="_blank" style={{ cursor: 'pointer' }} className="lechris" rel="noreferrer"><b>LeChris</b></a></p>
-            <p><b>Version: </b>RP-{config?.softwareVersion ?? 'xxx'}</p>
           </div>
         </div>
       </Card>

@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { WebSocketClient } from './Websocket.client';
-import { configContext } from '@imagine-cms/web';
 import { WebsocketContextProviderProps } from './WebsocketContext.types';
 import { websocketContext } from './WebsocketContext';
+import { WEBSOCKET_HOST } from '@imagine-cms/web';
 
 export function WebsocketContextProvider({ children, ssoTicket }: WebsocketContextProviderProps) {
-  const { config } = useContext(configContext);
-  const client = useMemo(() => new WebSocketClient(config.websocketURL), [config.websocketURL]);
+  const client = useMemo(() => new WebSocketClient(WEBSOCKET_HOST), [WEBSOCKET_HOST]);
 
   async function onWebsocketConnected() {
     await client.connect();

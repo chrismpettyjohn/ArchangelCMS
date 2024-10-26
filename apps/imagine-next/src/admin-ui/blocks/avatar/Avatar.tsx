@@ -1,12 +1,11 @@
+import { FIGURE_URL } from '@imagine-cms/web';
 import { AvatarProps } from './Avatar.types';
-import { configContext } from '@imagine-cms/web';
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 export function Avatar({ look, headOnly = false, size, direction, headDirection, gesture, ...props }: AvatarProps) {
   const [isHidden, setIsHidden] = useState(false);
-  const { config } = useContext(configContext);
   const imageSrc = useMemo(() => {
-    let baseImageSrc = `${config?.figureURL}?figure=${look}`;
+    let baseImageSrc = `${FIGURE_URL}?figure=${look}`;
 
     if (headOnly) {
       baseImageSrc += `&headonly=1`
@@ -29,7 +28,7 @@ export function Avatar({ look, headOnly = false, size, direction, headDirection,
     }
 
     return baseImageSrc
-  }, [config?.figureURL]);
+  }, [FIGURE_URL]);
 
   if (isHidden) {
     return null;

@@ -1,13 +1,13 @@
 import { Redirect } from 'wouter'
 import React, { useContext } from 'react';
 import { BetaCodeGuardProps } from './BetaCodeGuard.types';
-import { configContext, sessionContext } from '../../context';
+import { sessionContext } from '../../context';
+import { BETA_ENABLED } from '../../const';
 
 export function BetaCodeGuard({ children, redirect = true }: BetaCodeGuardProps) {
-  const { config } = useContext(configContext);
   const { session } = useContext(sessionContext);
 
-  if (!config?.betaCodesRequired) {
+  if (!BETA_ENABLED) {
     return <>{children}</>
   }
 

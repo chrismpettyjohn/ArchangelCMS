@@ -1,11 +1,9 @@
 'use client'
 import { Form } from '../../components/form/Form';
 import { Input } from '../../components/input/Input';
-import { Button } from '../../components/button/Button';
 import { ButtonBrand } from '../../components/button/Button.remix';
 import React, { SyntheticEvent, useContext, useState } from 'react';
-import { GuestContainer } from '../../components/guest-container/GuestContainer';
-import { GuestGuard, configContext, localStorageService, sessionContext } from '@imagine-cms/web';
+import { BETA_ENABLED, GuestGuard, localStorageService, sessionContext } from '@imagine-cms/web';
 import { UserCreateInput, UserGender, useUserCreate, useUserFetchOne } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
@@ -15,7 +13,6 @@ import { SiteLogo } from '../../components/site-logo/SiteLogo';
 export function RegisterScreen() {
   const createUser = useUserCreate();
   const fetchUser = useUserFetchOne();
-  const { config } = useContext(configContext);
   const { setSession } = useContext(sessionContext);
   const [userCreateInput, setUserCreateInput] = useState<UserCreateInput>({
     username: '',
@@ -26,7 +23,7 @@ export function RegisterScreen() {
   })
 
 
-  const betaCodeRequirementsMet = config?.betaCodesRequired ? !!userCreateInput.betaCode : true;
+  const betaCodeRequirementsMet = BETA_ENABLED ? !!userCreateInput.betaCode : true;
 
   const isLoading = createUser.loading;
 
@@ -67,7 +64,7 @@ export function RegisterScreen() {
           <label>Password</label>
           <Input type="password" name="password" value={userCreateInput.password} onChange={e => onChanges({ password: e.currentTarget?.value ?? '' })} placeholder="Password" id="password" />
           {
-            config?.betaCodesRequired && (
+            BETA_ENABLED && (
               <>
 
                 <label>Beta Code</label>

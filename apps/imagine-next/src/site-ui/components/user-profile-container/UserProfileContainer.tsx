@@ -1,23 +1,21 @@
-'use client'
 import DayJS from 'dayjs';
 import Link from 'next/Link';
 import { Badge } from '../badge/Badge';
 import { Avatar } from '../avatar/Avatar';
-import { configContext } from '@imagine-cms/web';
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { UserProfileContainerProps } from './UserProfileContainer.types';
 import { UserBadgeContainerGrid } from '../user-badge-container-grid/UserBadgeContainerGrid';
 import { InformationContainer, UserProfileContainerContent, UserProfileContainerElement, UserProfileStat } from './UserProfileContainer.styled';
 import { useCorporationFetchOne, useGangFetchOne } from '@imagine-cms/client';
+import { DATE_FORMAT } from '@imagine-cms/web';
 
 export function UserProfileContainer({ user }: UserProfileContainerProps) {
   const corporationFetchOne = useCorporationFetchOne();
   const gangFetchOne = useGangFetchOne();
-  const { config } = useContext(configContext);
 
   const lastVisit = useMemo(() => {
-    return DayJS.unix(user.lastOnlineAt).format(config!.dateFormat);
-  }, [user.lastOnlineAt, config!.dateFormat]);
+    return DayJS.unix(user.lastOnlineAt).format(DATE_FORMAT);
+  }, [user.lastOnlineAt, DATE_FORMAT]);
 
   async function refresh() {
     if (user.rpStats.corporationID) {
@@ -55,7 +53,7 @@ export function UserProfileContainer({ user }: UserProfileContainerProps) {
             {user.rpStats.corporationID
               ? (
                 <Link href={`/corps/${user.rpStats.corporationID}`}>
-                  <b style={{ cursor: 'pointer' }}>{corporationFetchOne.data?.name}</b>
+                  <b style={{ cursor: 'pointer' }}>{corporationFetchOne.data?.displayName}</b>
                 </Link>
               )
               : 'No job'}
@@ -66,7 +64,7 @@ export function UserProfileContainer({ user }: UserProfileContainerProps) {
             {user.rpStats.gangID
               ? (
                 <Link href={`/gangs/${user.rpStats.gangID}`}>
-                  <b style={{ cursor: 'pointer' }}>{gangFetchOne.data?.name}</b>
+                  <b style={{ cursor: 'pointer' }}>{gangFetchOne.data?.displayName}</b>
                 </Link>
               )
               : 'No gang'}

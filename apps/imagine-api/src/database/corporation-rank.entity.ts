@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('rp_corporations_positions')
+@Entity('archangel_corporations_positions')
 export class CorporationRankEntity {
   @PrimaryGeneratedColumn()
   id?: number;

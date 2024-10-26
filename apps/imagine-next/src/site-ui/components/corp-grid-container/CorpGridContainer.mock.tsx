@@ -1,13 +1,11 @@
-'use client'
-import React, { useContext } from 'react';
+import React from 'react';
 import { CorpGridContainerBadge, CorpGridContainerElement, CorpGridContainerInfo } from './CorpGridContainer.styled';
-import { configContext } from '@imagine-cms/web';
+import { BADGE_EXT, BADGE_URL } from '@imagine-cms/web';
 
 export function CorpGridContainerMock() {
-  const { config } = useContext(configContext);
   return (
     <CorpGridContainerElement>
-      <CorpGridContainerBadge src={`${config!.badgeURL}/ADM.${config!.badgeEXT}`} />
+      <CorpGridContainerBadge src={`${BADGE_URL}/ADM.${BADGE_EXT}`} />
       <CorpGridContainerInfo>
         <h2>-</h2>
         <p>
