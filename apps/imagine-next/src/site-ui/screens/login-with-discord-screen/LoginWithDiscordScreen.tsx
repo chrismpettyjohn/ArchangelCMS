@@ -5,9 +5,10 @@ import React, { useContext, useEffect, useMemo } from 'react';
 import { LoadingMessage } from '../../components/loading-message/LoadingMessage';
 import { useDiscordUserAuthenticate, useUserFetchOne } from '@imagine-cms/client';
 import { graphQLContext, localStorageService, SESSION_LOCAL_STORAGE_IDX, sessionContext } from '@imagine-cms/web';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export function LoginWithDiscordScreen() {
+  const router = useRouter();
   const { _setSession } = useContext(sessionContext);
   const discordUserAuthenticate = useDiscordUserAuthenticate();
   const fetchUser = useUserFetchOne();
@@ -24,7 +25,7 @@ export function LoginWithDiscordScreen() {
       refreshClient();
       const matchingUser = await fetchUser.fetch({ id: session.userID })
       _setSession(matchingUser as any);
-      redirect('/me');
+      router.push('/me');
     } catch (e: any) {
       toast.error('There was a problem logging in');
     }

@@ -7,9 +7,10 @@ import React, { SyntheticEvent, useState } from 'react';
 import { ButtonBrand } from '../../components/button/Button.remix';
 import { useForgotPasswordRequestRedeem } from '@imagine-cms/client';
 import { GuestContainer } from '../../components/guest-container/GuestContainer';
-import { useParams, redirect } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 export function ForgotPasswordRedeemCodeScreen() {
+  const router = useRouter();
   const [newPassword, setNewPassword] = useState('');
   const { requestCode } = useParams<{ requestCode: string }>();
 
@@ -20,7 +21,7 @@ export function ForgotPasswordRedeemCodeScreen() {
     try {
       await forgotPasswordRequestRedeem.execute({ requestCode, newPassword });
       toast.success('Your password has been updated successfully');
-      redirect('/login');
+      router.push('/login');
     } catch {
       toast.error('There was a problem changing your password');
     }

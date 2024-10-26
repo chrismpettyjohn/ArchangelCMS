@@ -2,13 +2,14 @@ import React from 'react';
 import { ScopeGuard } from '@imagine-cms/web';
 import { SiteSidebarElement } from './SiteSidebar.styled';
 import { ButtonBrand } from '../../../site-ui/components/button/Button.remix';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export function SiteSidebar() {
+  const router = useRouter();
 
   function onViewCerberusAbout() {
-    redirect('/admin/cerberus');
+    router.push('/admin/cerberus');
   }
   return (
     <SiteSidebarElement>

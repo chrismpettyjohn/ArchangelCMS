@@ -6,6 +6,8 @@ export const GameClientActionsElement = styled.div`
     pointer-events: auto; 
     height: fit-content;
     width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
 
     button {
         cursor: pointer;

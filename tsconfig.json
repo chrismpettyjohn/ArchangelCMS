@@ -9,9 +9,6 @@
       "@imagine-cms/imagine-next": [
         "apps/imagine-next/src"
       ],
-      "@imagine-cms/game-ui": [
-        "libs/game-ui/src"
-      ],
       "@imagine-cms/shared-ui": [
         "libs/shared-ui/src"
       ],

@@ -1,10 +1,11 @@
 'use client'
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { sessionContext } from '@imagine-cms/web';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export function LandingScreen() {
+  const router = useRouter();
   const { session } = useContext(sessionContext);
 
-  return redirect(session ? '/me' : '/login');
+  return router.push(session ? '/me' : '/login');
 }

@@ -8,9 +8,10 @@ import { SESSION_LOCAL_STORAGE_IDX, sessionContext, SITE_NAME } from '@imagine-c
 import { Button, Footer, FormContainer, Header, Logo, PageContainer, Title, UserStatus } from './LoginScreen.styled';
 import { usersOnlineContext } from '@imagine-cms/websocket';
 import { useSessionCreateWithCredentials, useUserFetchOne } from '@imagine-cms/client';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export function LoginScreen() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { setSession } = useContext(sessionContext);
@@ -37,7 +38,7 @@ export function LoginScreen() {
       setSession(matchingUser);
 
       toast.success(`Welcome back, ${matchingUser.username}`);
-      redirect('/me');
+      router.push('/me');
 
 
     } catch (e: any) {

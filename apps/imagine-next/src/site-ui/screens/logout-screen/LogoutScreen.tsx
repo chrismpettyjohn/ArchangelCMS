@@ -1,9 +1,10 @@
 'use client'
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { sessionContext, localStorageService, graphQLContext } from '@imagine-cms/web';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export function LogoutScreen() {
+  const router = useRouter();
   const { _setSession } = useContext(sessionContext);
   const { refreshClient } = useContext(graphQLContext);
 
@@ -13,5 +14,5 @@ export function LogoutScreen() {
     refreshClient();
   }, []);
 
-  return redirect('/login')
+  return router.push('/login')
 }

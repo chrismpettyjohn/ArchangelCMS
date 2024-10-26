@@ -7,10 +7,11 @@ import React, { SyntheticEvent, useState } from 'react';
 import { ButtonBrand } from '../../components/button/Button.remix';
 import { useForgotPasswordRequestCreate } from '@imagine-cms/client';
 import { GuestContainer } from '../../components/guest-container/GuestContainer';
-import { redirect } from 'next/navigation'
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export function ForgotPasswordScreen() {
+  const router = useRouter();
   const [username, setUsername] = useState('');
   const forgotPasswordRequestCreate = useForgotPasswordRequestCreate();
 
@@ -21,7 +22,7 @@ export function ForgotPasswordScreen() {
     try {
       await forgotPasswordRequestCreate.execute({ username });
       toast.success('Check your email for instructions on how to reset your password!');
-      redirect('/forgot-password/confirmation');
+      router.push('/forgot-password/confirmation');
     } catch (e: any) {
       toast.error('There was a problem resetting your password');
     }

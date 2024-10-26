@@ -3,10 +3,10 @@ import Link from 'next/Link';
 import { GameClientElement } from './GameClient.styled';
 import React, { useContext, useEffect, useState } from 'react';
 import { NITRO_URL, sessionContext, themeContext } from '@imagine-cms/web';
-import { GameUI } from '@imagine-cms/game-ui';
 import { NITRO_CLIENT_URL } from '../../site-ui.const';
 import { SessionCreateSSOResponse, useSessionCreateSSO } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
+import { GameClientActions } from '../../screens/play-game-screen/game-client-actions/GameClientActions';
 
 export function GameClient() {
   const createSSO = useSessionCreateSSO();
@@ -39,7 +39,7 @@ export function GameClient() {
 
   return (
     <GameClientElement $visible={showClient} $preview={showPreview}>
-      {showClient && <GameUI ssoTicket={ssoToken} />}
+      {showClient && <GameClientActions />}
       {
         showPreview && !showClient && (
           <Link href="/play">

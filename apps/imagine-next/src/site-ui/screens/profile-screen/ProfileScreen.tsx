@@ -1,19 +1,15 @@
 'use client'
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useUserFetchOne } from '@imagine-cms/client';
-import { GridLarge } from '../../components/grid/Grid.remix';
-import { UserRoomsGrid } from '../../components/user-rooms-grid/UserRoomsGrid';
-import { UserStatsGrid } from '../../components/user-stats-grid/UserStatsGrid';
-import { UserFriendsGrid } from '../../components/user-friends-grid/UserFriendsGrid';
-import { UserProfileContainer } from '../../components/user-profile-container/UserProfileContainer';
-import { RPStatsGridContainer } from '../../components/rp-stats-grid-container/RPStatsGridContainer';
-import { UserProfileContainerMock } from '../../components/user-profile-container/UserProfileContainer.mock';
-import { UserRoomsGridMock } from '../../components/user-rooms-grid/UserRoomsGrid.mock';
-import { UserFriendsGridMock } from '../../components/user-friends-grid/UserFriendsGrid.mock';
 import { useParams } from 'next/navigation';
+import { Footer, FormContainer, Header, Logo, PageContainer, Title, UserStatus } from '../login-screen/LoginScreen.styled';
+import { SITE_NAME } from '@imagine-cms/web';
+import { usersOnlineContext } from '@imagine-cms/websocket';
+import { YoutubeVideo } from '../../components/youtube-video/YoutubeVideo';
 
 export function ProfileScreen() {
   const params = useParams<{ username: string }>();
+  const { usersOnline } = useContext(usersOnlineContext);
 
   const username = params!.username;
 
@@ -27,24 +23,16 @@ export function ProfileScreen() {
   const matchingProfile = fetchUser?.data;
 
   return (
-    <>
-      <h1>Viewing Profile:</h1>
-      <br />
-      <GridLarge>
-        <div>
-          {matchingProfile ? <UserProfileContainer user={matchingProfile} /> : <UserProfileContainerMock />}
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <UserStatsGrid user={matchingProfile} />
-          <RPStatsGridContainer userID={fetchUser.data?.id} />
-        </div>
-        <div>
-          {matchingProfile ? <UserRoomsGrid user={matchingProfile} /> : <UserRoomsGridMock />}
-        </div>
-        <div>
-          {matchingProfile ? <UserFriendsGrid user={matchingProfile} /> : <UserFriendsGridMock />}
-        </div>
-      </GridLarge>
-    </>
+    <PageContainer>
+      <FormContainer>
+        <Header>
+          <Logo>{SITE_NAME}</Logo>
+          <UserStatus>{usersOnline} users online</UserStatus>
+        </Header>
+        <Title>{matchingProfile?.username ?? username}'s Profile</Title>
+        <YoutubeVideo videoID="XQxCxkAUJ70" startAt={101} />
+      </FormContainer>
+      <Footer>Powered by <b>Archangel</b> <br />by <b>LeChris</b></Footer>
+    </PageContainer>
   )
 }

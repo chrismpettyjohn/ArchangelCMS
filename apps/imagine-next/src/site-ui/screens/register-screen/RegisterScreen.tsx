@@ -6,11 +6,12 @@ import { BETA_ENABLED, localStorageService, SESSION_LOCAL_STORAGE_IDX, sessionCo
 import { UserCreateInput, UserGender, useUserCreate, useUserFetchOne } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Footer, FormContainer, Header, Logo, PageContainer, Title, UserStatus, Button } from '../login-screen/LoginScreen.styled';
 import { usersOnlineContext } from '@imagine-cms/websocket';
 
 export function RegisterScreen() {
+  const router = useRouter();
   const createUser = useUserCreate();
   const fetchUser = useUserFetchOne();
   const { setSession } = useContext(sessionContext);
@@ -48,7 +49,7 @@ export function RegisterScreen() {
       const matchingUser = await fetchUser.fetch({ id: newSession.userID });
       setSession(matchingUser as any);
       toast.success(`Welcome back, ${matchingUser.username}`)
-      redirect('/me');
+      router.push('/me');
     } catch (e: any) {
       toast.error(`Failed to create user`);
       throw e;
