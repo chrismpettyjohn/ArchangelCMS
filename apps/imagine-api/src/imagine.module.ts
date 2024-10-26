@@ -8,7 +8,6 @@ import { RankModule } from './rank/rank.module';
 import { RoomModule } from './room/room.module';
 import { PhotoModule } from './photo/photo.module';
 import { GroupModule } from './group/group.module';
-import { ConfigModule } from './config/config.module';
 import { CommonModule } from './common/common.module';
 import { GraphQLJSONObject } from 'graphql-type-json';
 import { ArticleModule } from './article/article.module';
@@ -95,7 +94,6 @@ import { RPStatsModule } from './rp-stats/rp-stats.module';
     UserModule,
     RankModule,
     ArticleModule,
-    ConfigModule,
     BanModule,
     WordFilterModule,
     ChatlogModule,

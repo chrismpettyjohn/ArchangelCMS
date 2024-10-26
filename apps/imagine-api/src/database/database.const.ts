@@ -4,7 +4,6 @@ import { UserEntity } from './user.entity';
 import { RoomEntity } from './room.entity';
 import { GroupEntity } from './group.entity';
 import { PhotoEntity } from './photo.entity';
-import { ConfigEntity } from './config.entity';
 import { CommentEntity } from './comment.entity';
 import { ArticleEntity } from './article.entity';
 import { SessionEntity } from './session.entity';
@@ -18,7 +17,6 @@ import { LanguageEntity } from './language.entity';
 import { PhotoRepository } from './photo.repository';
 import { GroupRepository } from './group.repository';
 import { UserBadgeEntity } from './user-badge.entity';
-import { ConfigRepository } from './config.repository';
 import { FriendshipEntity } from './friendship.entity';
 import { WordFilterEntity } from './word-filter.entity';
 import { SessionRepository } from './session.repository';
@@ -84,7 +82,6 @@ export const databaseEntities = [
   RankEntity,
   SessionEntity,
   UserEntity,
-  ConfigEntity,
   BanEntity,
   WordFilterEntity,
   ChatlogEntity,
@@ -126,7 +123,6 @@ export const databaseRepositories = [
   SessionRepository,
   UserRepository,
   ArticleRepository,
-  ConfigRepository,
   BanRepository,
   WordFilterRepository,
   ChatlogRepository,

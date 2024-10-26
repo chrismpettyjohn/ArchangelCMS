@@ -47,3 +47,7 @@ export const GLOBAL_MAX_RESOURCE_LIMIT = 100;
 export const EMAILS_INTERNAL_EMAIL_ADDRESS = getEnvOrFail(
   'EMAILS_INTERNAL_EMAIL_ADDRESS'
 );
+
+export const IMAGINE_BETA_ENABLED = getEnvOrFail('BETA_ENABLED') === 'true';
+
+export const IMAGINE_SITE_NAME = getEnvOrFail('SITE_NAME');

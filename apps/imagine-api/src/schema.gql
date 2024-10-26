@@ -231,28 +231,6 @@ type GroupMembershipModel {
   group: GroupModel
 }
 
-type ConfigModel {
-  siteName: String
-  logoURL: String
-  nitroURL: String
-  websocketURL: String
-  badgeURL: String
-  badgeEXT: String
-  figureURL: String
-  groupBadgeURL: String
-  discordURL: String
-  discordWidget: String
-  facebookURL: String
-  instagramURL: String
-  twitterURL: String
-  snapchatURL: String
-  dateFormat: String
-  softwareVersion: String
-  defaultLanguage: String
-  allowedLanguages: [String!]
-  betaCodesRequired: Boolean
-}
-
 type ArticleModel {
   id: Float
   name: String
@@ -525,7 +503,6 @@ type Query {
   articleComments(filter: ArticleCommentFilterManyInput): [ArticleCommentModel!]!
   articleReaction(filter: ArticleReactionFilterOneInput!): ArticleReactionModel!
   articleReactions(filter: ArticleReactionFilterManyInput): [ArticleReactionModel!]!
-  config: ConfigModel!
   ban(id: Float!): BanModel!
   bans(other: ExtraArgs): [BanModel!]!
   wordFilter(id: Float!): WordFilterModel!
@@ -949,7 +926,6 @@ type Mutation {
   articleCommentDelete(id: Float!): Boolean!
   articleReactionUpdate(filter: ArticleReactionFilterOneInput, input: ArticleReactionCreateInput!): ArticleReactionModel!
   articleReactionDelete(id: Float!): Boolean!
-  configUpdate(configUpdateInput: ConfigUpdateInput!): Boolean!
   banCreate(newBan: BanCreateInput!): BanModel!
   banUpdate(id: Float!, banChanges: BanUpdateInput!): Boolean!
   banDelete(id: Float!): Boolean!
@@ -1097,27 +1073,6 @@ input ArticleCommentCreateInput {
 input ArticleReactionCreateInput {
   articleID: Float!
   reaction: ReactionType!
-}
-
-input ConfigUpdateInput {
-  siteName: String
-  logoURL: String
-  nitroURL: String
-  websocketURL: String
-  badgeURL: String
-  badgeEXT: String
-  figureURL: String
-  groupBadgeURL: String
-  discordURL: String
-  discordWidget: String
-  facebookURL: String
-  instagramURL: String
-  twitterURL: String
-  snapchatURL: String
-  dateFormat: String
-  defaultLanguage: String
-  allowedLanguages: [String!]
-  betaCodesRequired: Boolean
 }
 
 input BanCreateInput {

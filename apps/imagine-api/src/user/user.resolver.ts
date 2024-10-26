@@ -11,7 +11,6 @@ import { UserRepository } from '../database/user.repository';
 import { RankRepository } from '../database/rank.repository';
 import { HasSession } from '../session/has-session.decorator';
 import DayJS from 'dayjs';
-import { ConfigRepository } from '../database/config.repository';
 import { BetaCodeRepository } from '../database/beta-code.repository';
 import {
   UserCreateInput,
@@ -36,6 +35,7 @@ import { SessionCreatedModel } from '../session/session.model';
 import { SessionService } from '../session/session.service';
 import { GovernmentFacilityService } from '../government/facility.service';
 import { CorporationRankRepository } from '../database/corporation-rank.repository';
+import { IMAGINE_BETA_ENABLED } from '../imagine.constant';
 
 @Resolver(() => UserModel)
 export class UserResolver {
@@ -43,7 +43,6 @@ export class UserResolver {
     private readonly userRepo: UserRepository,
     private readonly rankRepo: RankRepository,
     private readonly rpStatsRepo: RPStatsRepository,
-    private readonly configRepo: ConfigRepository,
     private readonly betaCodeRepo: BetaCodeRepository,
     private readonly sessionService: SessionService,
     private readonly corporationPositionRepo: CorporationRankRepository,
@@ -214,17 +213,15 @@ export class UserResolver {
   async userCreate(
     @Args('input') input: UserCreateInput
   ): Promise<SessionCreatedModel> {
-    const config = await this.configRepo.findOneOrFail({});
 
-
-    const matchingBetaCode = config.betaCodesRequired ? await this.betaCodeRepo.findOne({
+    const matchingBetaCode = IMAGINE_BETA_ENABLED ? await this.betaCodeRepo.findOne({
       where: {
         betaCode: input.betaCode,
         userID: IsNull(),
       },
     }) : undefined;
 
-    if (config.betaCodesRequired) {
+    if (IMAGINE_BETA_ENABLED) {
       if (!matchingBetaCode) {
         throw new BadRequestException('invalid beta code');
       }
@@ -240,7 +237,7 @@ export class UserResolver {
       machineAddress: '', // TODO: Add support for machine addresses
     });
 
-    if (config.betaCodesRequired) {
+    if (IMAGINE_BETA_ENABLED) {
       await this.betaCodeRepo.update(
         { id: matchingBetaCode!.id! },
         { userID: newUser.id! }
