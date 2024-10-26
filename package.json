@@ -10,7 +10,7 @@
     "dev:restart": "pnpm run dev:stop && pnpm run dev:start",
     "dev:stop": "pm2 stop all && pm2 delete all",
     "app:api": "pnpm run --filter @imagine-cms/api --",
-    "app:web": "pnpm run --filter @imagine-cms/imagine-web --",
+    "app:web": "pnpm run --filter @imagine-cms/imagine-next --",
     "app:admin": "pnpm run --filter @imagine-cms/admin-web --"
   },
   "devDependencies": {

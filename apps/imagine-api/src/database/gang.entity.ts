@@ -1,7 +1,22 @@
-import { Column, Entity, PrimaryColumn, } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, } from 'typeorm';
 
 @Entity('archangel_gangs')
 export class GangEntity {
-  @PrimaryColumn({ name: 'group_id' })
-  groupID!: number;
+  @PrimaryGeneratedColumn({ name: 'id' })
+  id?: number;
+
+  @Column({ name: 'display_name' })
+  displayName!: string;
+
+  @Column()
+  description!: string;
+
+  @Column({ name: 'badge' })
+  badge!: string;
+
+  @Column({ name: 'user_id' })
+  userID!: number;
+
+  @Column({ name: 'room_id' })
+  roomID!: number;
 }

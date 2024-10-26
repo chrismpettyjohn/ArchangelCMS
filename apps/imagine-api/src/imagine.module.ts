@@ -46,7 +46,7 @@ import { StoreTransactionModule } from './store-transaction/store-transaction.mo
 import { StoreTransactionLogModule } from './store-transaction-log/store-transaction-log.module';
 import { GangModule } from './gang/gang.module';
 import { CorporationModule } from './corporation/corporation.module';
-import { CorporationRankModule } from './corporation-rank/corporation-rank.module';
+import { CorpRoleModule } from './corporation-role/corporation-role.module';
 import { CorporationMemberModule } from './corporation-member/corporation-member.module';
 import { RPStatsModule } from './rp-stats/rp-stats.module';
 
@@ -122,7 +122,7 @@ import { RPStatsModule } from './rp-stats/rp-stats.module';
     StoreTransactionLogModule,
     GangModule,
     CorporationModule,
-    CorporationRankModule,
+    CorpRoleModule,
     CorporationMemberModule,
     RPStatsModule,
   ],

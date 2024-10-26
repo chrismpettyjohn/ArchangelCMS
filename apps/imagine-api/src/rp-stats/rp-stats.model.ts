@@ -26,8 +26,8 @@ export class RPStatsModel {
       userID: entity.id,
       healthCurrent: entity.healthCurrent,
       healthMax: entity.healthMax,
-      corporationID: entity.corporationID!,
-      corporationRankID: entity.corporationPositionID,
+      corporationID: entity.corpID!,
+      corporationRankID: entity.corpRoleID,
       gangID: entity.gangID,
     };
   }

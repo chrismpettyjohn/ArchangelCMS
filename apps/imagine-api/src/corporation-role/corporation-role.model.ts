@@ -1,8 +1,8 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { CorporationRankEntity } from '../database/corporation-rank.entity';
+import { CorpRoleEntity } from '../database/corp-role.entity';
 
 @ObjectType()
-export class CorporationRankModel {
+export class CorpRoleModel {
   @Field(() => Number, { nullable: true })
   id!: number;
 
@@ -15,11 +15,11 @@ export class CorporationRankModel {
   @Field(() => String, { nullable: true })
   description!: string;
 
-  static fromEntity(entity: CorporationRankEntity): CorporationRankModel {
+  static fromEntity(entity: CorpRoleEntity): CorpRoleModel {
     return {
       id: entity.id!,
-      corporationID: entity.groupID,
-      name: entity.name,
+      corporationID: entity.corpID,
+      name: entity.displayName,
       description: entity.description,
     };
   }

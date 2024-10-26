@@ -7,6 +7,7 @@ export const GANG_FRAGMENT: any = gql`
     id
     displayName
     descripton
+    badge
     userID
     roomID
   }
@@ -16,6 +17,7 @@ export interface GangFragment {
   id: number;
   displayName: string;
   description: string;
+  badge: string;
   userID: number;
   roomID: number;
 }

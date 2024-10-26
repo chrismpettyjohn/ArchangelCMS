@@ -156,7 +156,7 @@ type RPStatsModel {
   gangID: Float
   gang: GangModel
   corporation: CorporationModel
-  corporationRank: CorporationRankModel
+  corporationRank: CorpRoleModel
 }
 
 type RoomModel {
@@ -464,17 +464,46 @@ type StorePackageModel {
 }
 
 type GangModel {
-  groupID: Float
+  id: Float
+  displayName: String
+  description: String
+  badgeCode: String
+  roomID: Float
+  userID: Float
   user: UserModel
 }
 
 type CorporationModel {
-  groupID: Float
-  tags: [String!]
+  id: Float
+  displayName: String
+  description: String
+  badge: String
+  industry: CorpIndustry
+  sector: CorpSector
   group: UserModel
 }
 
-type CorporationRankModel {
+enum CorpIndustry {
+  Bank
+  DriversEd
+  Farm
+  Fish
+  Mine
+  Lumber
+  GunStore
+  Retail
+  Hospital
+  Paramedic
+  Police
+  PublicAid
+}
+
+enum CorpSector {
+  Government
+  Private
+}
+
+type CorpRoleModel {
   id: Float
   corporationID: Float
   name: String
@@ -558,7 +587,7 @@ type Query {
   gang(filter: GangFilterOneInput!): GangModel!
   corporations(filter: CorporationFilterManyInput!): [CorporationModel!]!
   corporation(filter: CorporationFilterOneInput!): CorporationModel!
-  corporationRanks(filter: CorporationRankFilterManyInput!): [CorporationRankModel!]!
+  corporationRanks(filter: CorpRoleFilterManyInput!): [CorpRoleModel!]!
   corporationMembers(filter: CorporationMemberFilterManyInput!): [CorporationMemberModel!]!
   rpStat(filter: RPStatsFilterOneInput!): RPStatsModel!
   rpStats(filter: RPStatsFilterManyInput!): [RPStatsModel!]!
@@ -879,7 +908,7 @@ input CorporationFilterOneInput {
   id: Float!
 }
 
-input CorporationRankFilterManyInput {
+input CorpRoleFilterManyInput {
   ids: [Float!]
   corporationRankID: [Float!]
   nameSearch: String
@@ -1212,13 +1241,15 @@ input GangUpdateInput {
 input CorporationCreateInput {
   name: String!
   description: String!
-  badgeCode: String!
+  badge: String!
   roomID: Float!
+  industry: CorpIndustry!
+  sector: CorpSector!
 }
 
 input CorporationUpdateInput {
   name: String
   description: String
-  badgeCode: String
+  badge: String
   roomID: Float
 }

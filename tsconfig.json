@@ -6,9 +6,6 @@
       "@imagine-cms/api": [
         "apps/imagine-api/src"
       ],
-      "@imagine-cms/imagine-web": [
-        "apps/imagine-web/src"
-      ],
       "@imagine-cms/imagine-next": [
         "apps/imagine-next/src"
       ],

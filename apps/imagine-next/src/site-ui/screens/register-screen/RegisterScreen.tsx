@@ -40,6 +40,9 @@ export function RegisterScreen() {
   async function onCreateUser(event: SyntheticEvent) {
     event.preventDefault();
     try {
+      if (!canCreateUser) {
+        return;
+      }
       const newSession = await createUser.execute(userCreateInput)
       localStorageService.set('SESSION', newSession.accessToken);
       const matchingUser = await fetchUser.fetch({ id: newSession.userID });
@@ -60,14 +63,13 @@ export function RegisterScreen() {
           <UserStatus>{usersOnline} users online</UserStatus>
         </Header>
         <Title>Register</Title>
-        <Form>
-          <Input type="email" placeholder="Email" required />
-          <Input type="text" placeholder="Username" required />
-          <Input type="password" placeholder="Password" required />
-          <Input type="password" placeholder="Password Again" required />
+        <Form onSubmit={onCreateUser}>
+          <Input type="email" placeholder="Email" required value={userCreateInput.email} onChange={e => onChanges({ email: e.currentTarget.value })} />
+          <Input type="text" placeholder="Username" required value={userCreateInput.username} onChange={e => onChanges({ username: e.currentTarget.value })} />
+          <Input type="password" placeholder="Password" required value={userCreateInput.password} onChange={e => onChanges({ password: e.currentTarget.value })} />
           <Button type="submit">Create Account</Button>
           <Link href="/login">
-            <Button type="button">Sign In</Button>
+            <Button disabled={!canCreateUser} type="button">Sign In</Button>
           </Link>
         </Form>
       </FormContainer>

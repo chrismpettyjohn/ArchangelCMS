@@ -67,15 +67,17 @@ import { StoreTransactionLogEntity } from './store-transactions-log.entity';
 import { StoreCategoryEntity } from './store-category.entity';
 import { StoreCategoryRepository } from './store-category.repository';
 import { GangRepository } from './gang.repository';
-import { CorporationRepository } from './corporation.repository';
-import { CorporationEntity } from './corporation.entity';
+import { CorpRepository } from './corp.repository';
+import { CorpEntity } from './corp.entity';
 import { GangEntity } from './gang.entity';
 import {
   RPStatsRepository,
 } from './rp-stats.repository';
 import { RPStatsEntity } from './rp-stats';
-import { CorporationRankRepository } from './corporation-rank.repository';
-import { CorporationRankEntity } from './corporation-rank.entity';
+import { CorpRoleRepository } from './corp-role.repository';
+import { CorpRoleEntity } from './corp-role.entity';
+import { GangRoleRepository } from './gang-role.repository';
+import { GangRoleEntity } from './gang-role.entity';
 
 export const databaseEntities = [
   ArticleEntity,
@@ -112,10 +114,11 @@ export const databaseEntities = [
   StoreTransactionEntity,
   StoreTransactionLogEntity,
   StoreCategoryEntity,
-  CorporationEntity,
+  CorpEntity,
   GangEntity,
+  GangRoleEntity,
   RPStatsEntity,
-  CorporationRankEntity,
+  CorpRoleEntity,
 ];
 
 export const databaseRepositories = [
@@ -153,8 +156,9 @@ export const databaseRepositories = [
   StoreTransactionRepository,
   StoreTransactionLogRepository,
   StoreCategoryRepository,
-  CorporationRepository,
+  CorpRepository,
   GangRepository,
+  GangRoleRepository,
   RPStatsRepository,
-  CorporationRankRepository,
+  CorpRoleRepository,
 ];

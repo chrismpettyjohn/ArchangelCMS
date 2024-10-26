@@ -15,10 +15,10 @@ import {
 } from './corporation.input';
 import { GetUser } from '../session/get-user.decorator';
 import { UserEntity } from '../database/user.entity';
-import { CorporationRepository } from '../database/corporation.repository';
+import { CorpRepository } from '../database/corp.repository';
 import { UnauthorizedException } from '@nestjs/common';
 import { ILike, In } from 'typeorm';
-import { CorporationEntity } from '../database/corporation.entity';
+import { CorpEntity } from '../database/corp.entity';
 import { UserModel } from '../user/user.model';
 import { GroupModel } from '../group/group.model';
 import { GroupRepository } from '../database/group.repository';
@@ -30,12 +30,12 @@ export class CorporationResolver {
   constructor(
     private readonly roomRepo: RoomRepository,
     private readonly groupRepo: GroupRepository,
-    private readonly corporationRepo: CorporationRepository,
+    private readonly corporationRepo: CorpRepository,
   ) { }
 
   @ResolveField(() => UserModel, { nullable: true })
   async group(@Parent() parent: CorporationModel): Promise<GroupModel> {
-    const matchingGroup = await this.groupRepo.findOneOrFail({ id: parent.groupID });
+    const matchingGroup = await this.groupRepo.findOneOrFail({ id: parent.id! });
     return GroupModel.fromEntity(matchingGroup);
   }
 
@@ -55,9 +55,9 @@ export class CorporationResolver {
     if (!matchingGroups) {
       return [];
     }
-    const matchingCorps: CorporationEntity[] = await this.corporationRepo.find({
+    const matchingCorps: CorpEntity[] = await this.corporationRepo.find({
       where: {
-        groupID: In(matchingGroups.map(_ => _.id))
+        id: In(matchingGroups.map(_ => _.id))
       }
     })
     return matchingCorps.map(CorporationModel.fromEntity);
@@ -68,7 +68,7 @@ export class CorporationResolver {
     @Args('filter') filter: CorporationFilterOneInput
   ): Promise<CorporationModel> {
     const matchingCorporation = await this.corporationRepo.findOneOrFail({
-      groupID: filter.id,
+      id: filter.id,
     });
     return CorporationModel.fromEntity(matchingCorporation);
   }
@@ -79,16 +79,14 @@ export class CorporationResolver {
     @GetUser() session: UserEntity
   ): Promise<CorporationModel> {
     await this.userOwnsRoom(session, input.roomID);
-    const newGroup = await this.groupRepo.create({
-      userID: session.id!,
-      name: input.name,
-      description: input.description,
-      roomID: input.roomID,
-      badge: '',
-    })
     const newCorporation = await this.corporationRepo.create({
-      groupID: newGroup.id!,
-      tags: '',
+      displayName: input.name,
+      description: input.description,
+      badge: input.badge,
+      industry: input.industry,
+      sector: input.sector,
+      userID: session.id!,
+      roomID: input.roomID,
     });
     return CorporationModel.fromEntity(newCorporation);
   }
@@ -104,12 +102,12 @@ export class CorporationResolver {
     }
     const matchingCorporation: CorporationModel =
       await this.corporation(filter);
-    const matchingGroup = await this.groupRepo.findOneOrFail({ id: matchingCorporation.groupID });
+    const matchingGroup = await this.groupRepo.findOneOrFail({ id: matchingCorporation.id! });
     const doesUserOwnCorp: boolean = matchingGroup.userID === session.id;
     if (!doesUserOwnCorp) {
       throw new UnauthorizedException();
     }
-    await this.groupRepo.update({ id: matchingCorporation.groupID }, input);
+    await this.groupRepo.update({ id: matchingCorporation.id! }, input);
     return true;
   }
 

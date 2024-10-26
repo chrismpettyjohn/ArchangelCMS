@@ -13,6 +13,9 @@ export function GameClient() {
   const [showPreview] = useState(true);
 
   useEffect(() => {
+    if (!session) {
+      return;
+    }
     generateSSO.runQuery();
   }, [session]);
 

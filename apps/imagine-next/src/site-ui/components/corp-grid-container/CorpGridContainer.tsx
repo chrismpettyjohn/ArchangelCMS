@@ -8,7 +8,7 @@ export function CorpGridContainer({ corporation }: CorpGridContainerProps) {
   return (
     <Link href={`/corps/${corporation.id}`}>
       <CorpGridContainerElement>
-        <CorpGridContainerBadge src={`${BADGE_URL}/${corporation.badgeCode}.${BADGE_EXT}`} />
+        <CorpGridContainerBadge src={`${BADGE_URL}/${corporation.badge}.${BADGE_EXT}`} />
         <CorpGridContainerInfo>
           <h2>{corporation.displayName}</h2>
           <p>{corporation.description}</p>

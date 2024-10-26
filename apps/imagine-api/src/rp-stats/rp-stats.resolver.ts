@@ -5,46 +5,46 @@ import { RPStatsRepository } from '../database/rp-stats.repository';
 import { RPStatsEntity } from '../database/rp-stats';
 import { RPStatsFilterManyInput, RPStatsFilterOneInput } from './rp-stats.input';
 import { GangRepository } from '../database/gang.repository';
-import { CorporationRepository } from '../database/corporation.repository';
+import { CorpRepository } from '../database/corp.repository';
 import { GangModel } from '../gang/gang.model';
 import { CorporationModel } from '../corporation/corporation.model';
-import { CorporationRankModel } from '../corporation-rank/corporation-rank.model';
-import { CorporationRankRepository } from '../database/corporation-rank.repository';
+import { CorpRoleModel } from '../corporation-role/corporation-role.model';
+import { CorpRoleRepository } from '../database/corp-role.repository';
 
 @Resolver(() => RPStatsModel)
 export class RPStatsResolver {
   constructor(
     private readonly rpStatsRepo: RPStatsRepository,
     private readonly gangRepo: GangRepository,
-    private readonly corporationRepo: CorporationRepository,
-    private readonly corporationRankRepo: CorporationRankRepository
+    private readonly corporationRepo: CorpRepository,
+    private readonly corporationRankRepo: CorpRoleRepository
   ) { }
 
   @ResolveField(() => GangModel, { nullable: true })
   async gang(@Parent() { gangID }: RPStatsEntity): Promise<GangModel> {
-    const matchingGang = await this.gangRepo.findOneOrFail({ groupID: gangID });
+    const matchingGang = await this.gangRepo.findOneOrFail({ id: gangID });
     return GangModel.fromEntity(matchingGang);
   }
 
   @ResolveField(() => CorporationModel, { nullable: true })
   async corporation(
-    @Parent() { corporationID }: RPStatsEntity
+    @Parent() { corpID: corporationID }: RPStatsEntity
   ): Promise<CorporationModel> {
     const matchingCorp = await this.corporationRepo.findOneOrFail({
-      groupID: corporationID,
+      id: corporationID,
     });
     return CorporationModel.fromEntity(matchingCorp);
   }
 
-  @ResolveField(() => CorporationRankModel, { nullable: true })
+  @ResolveField(() => CorpRoleModel, { nullable: true })
   async corporationRank(
-    @Parent() { corporationID, corporationPositionID: corporationRankID }: RPStatsEntity
-  ): Promise<CorporationRankModel> {
+    @Parent() { corpID: corporationID, corpRoleID: corporationRankID }: RPStatsEntity
+  ): Promise<CorpRoleModel> {
     const matchingCorpRank = await this.corporationRankRepo.findOneOrFail({
-      groupID: corporationID,
+      corpID: corporationID,
       id: corporationRankID,
     });
-    return CorporationRankModel.fromEntity(matchingCorpRank);
+    return CorpRoleModel.fromEntity(matchingCorpRank);
   }
 
   @Query(() => RPStatsModel)

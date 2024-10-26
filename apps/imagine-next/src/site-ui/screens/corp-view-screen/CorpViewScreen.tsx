@@ -34,7 +34,7 @@ export function CorpViewScreen() {
           <i className="fa fa-caret-left fa-4x" style={{ cursor: 'pointer' }} />
         </Link>
         <div style={{ display: 'flex', flex: 1, gap: '1.4rem', alignItems: 'center' }}>
-          <CorpGridContainerBadge src={`${BADGE_URL}/${fetchCorp.data?.badgeCode}.${BADGE_EXT}`} />
+          <CorpGridContainerBadge src={`${BADGE_URL}/${fetchCorp.data?.badge}.${BADGE_EXT}`} />
           <div>
             <h4 style={{ margin: 0 }}>Corporations - Viewing:</h4>
             <h1 style={{ margin: 0, fontWeight: 'bold' }}>{fetchCorp.data?.displayName ?? `#${corpID}`}</h1>

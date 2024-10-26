@@ -37,7 +37,7 @@ export class GangResolver {
 
   @ResolveField(() => UserModel, { nullable: true })
   async user(@Parent() parent: GangModel): Promise<UserModel> {
-    const matchingUser = await this.userRepo.findOneOrFail({ id: parent.groupID });
+    const matchingUser = await this.userRepo.findOneOrFail({ id: parent.id });
     return UserModel.fromEntity(matchingUser);
   }
 
@@ -59,7 +59,7 @@ export class GangResolver {
     }
     const matchingGangs: GangEntity[] = await this.gangRepo.find({
       where: {
-        groupID: In(matchingGroups.map(_ => _.id))
+        id: In(matchingGroups.map(_ => _.id))
       }
     })
     return matchingGangs.map(GangModel.fromEntity);
@@ -68,7 +68,7 @@ export class GangResolver {
   @Query(() => GangModel)
   async gang(@Args('filter') filter: GangFilterOneInput): Promise<GangModel> {
     const matchingGang = await this.gangRepo.findOneOrFail({
-      groupID: filter.id,
+      id: filter.id,
     });
     return GangModel.fromEntity(matchingGang);
   }
@@ -82,16 +82,12 @@ export class GangResolver {
     if (input.roomID) {
       await this.userOwnsRoom(session, input.roomID);
     }
-    const createdAt = DayJS().unix();
-    const newGroup = await this.groupRepo.create({
+    const newGang = await this.gangRepo.create({
       userID: session.id!,
       roomID: input.roomID,
-      name: input.name,
+      badge: input.badgeCode,
+      displayName: input.name,
       description: input.description,
-      badge: '',
-    })
-    const newGang = await this.gangRepo.create({
-      groupID: newGroup.id!,
     });
     return GangModel.fromEntity(newGang);
   }
@@ -103,11 +99,11 @@ export class GangResolver {
     @GetUser() session: UserEntity
   ): Promise<Boolean> {
     const matchingGang: GangModel = await this.gang(filter);
-    const doesUserOwnCorp: boolean = matchingGang.groupID === session.id;
+    const doesUserOwnCorp: boolean = matchingGang.id === session.id;
     if (!doesUserOwnCorp) {
       throw new UnauthorizedException();
     }
-    await this.groupRepo.update({ id: matchingGang.groupID }, input);
+    await this.groupRepo.update({ id: matchingGang.id }, input);
     return true;
   }
 

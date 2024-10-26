@@ -1,16 +1,15 @@
 import { Injectable } from "@nestjs/common";
-import { CorporationEntity } from "../database/corporation.entity";
-import { CorporationRepository } from "../database/corporation.repository";
-import { Like } from "typeorm";
+import { CorpIndustry, CorpEntity } from "../database/corp.entity";
+import { CorpRepository } from "../database/corp.repository";
 
 @Injectable()
 export class GovernmentFacilityService {
 
-    constructor(private readonly corporationRepo: CorporationRepository) { }
+    constructor(private readonly corporationRepo: CorpRepository) { }
 
-    async getWelfareCorp(): Promise<CorporationEntity> {
+    async getWelfareCorp(): Promise<CorpEntity> {
         return this.corporationRepo.findOneOrFail({
-            tags: Like('%welfare%'),
+            industry: CorpIndustry.PublicAid,
         })
     }
 

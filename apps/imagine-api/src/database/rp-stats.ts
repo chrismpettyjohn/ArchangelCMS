@@ -5,7 +5,7 @@ export class RPStatsEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column({ name: 'user_id', unique: true })
+  @Column({ name: 'users_id', unique: true })
   userID!: number;
 
   @Column({ name: 'health_now' })
@@ -14,12 +14,15 @@ export class RPStatsEntity {
   @Column({ name: 'health_max' })
   healthMax!: number;
 
-  @Column({ name: 'corporation_id' })
-  corporationID!: number;
+  @Column({ name: 'corps_id' })
+  corpID!: number;
 
-  @Column({ name: 'corporation_position_id' })
-  corporationPositionID!: number;
+  @Column({ name: 'corps_roles_id' })
+  corpRoleID!: number;
 
-  @Column({ name: 'gang_id' })
+  @Column({ name: 'gangs_id' })
   gangID!: number;
+
+  @Column({ name: 'gangs_roles_id' })
+  gangRoleID!: number;
 }

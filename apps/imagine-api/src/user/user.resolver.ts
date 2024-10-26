@@ -34,7 +34,7 @@ import { RPStatsModel } from '../rp-stats/rp-stats.model';
 import { SessionCreatedModel } from '../session/session.model';
 import { SessionService } from '../session/session.service';
 import { GovernmentFacilityService } from '../government/facility.service';
-import { CorporationRankRepository } from '../database/corporation-rank.repository';
+import { CorpRoleRepository } from '../database/corp-role.repository';
 import { IMAGINE_BETA_ENABLED } from '../imagine.constant';
 
 @Resolver(() => UserModel)
@@ -45,7 +45,7 @@ export class UserResolver {
     private readonly rpStatsRepo: RPStatsRepository,
     private readonly betaCodeRepo: BetaCodeRepository,
     private readonly sessionService: SessionService,
-    private readonly corporationPositionRepo: CorporationRankRepository,
+    private readonly corporationPositionRepo: CorpRoleRepository,
     private readonly governmentFacilityService: GovernmentFacilityService,
   ) { }
 
@@ -245,11 +245,11 @@ export class UserResolver {
     }
 
     const welfareCorp = await this.governmentFacilityService.getWelfareCorp();
-    const welfareCorpPosition = await this.corporationPositionRepo.findOneOrFail({ groupID: welfareCorp.groupID!, orderID: 1 })
+    const welfareCorpPosition = await this.corporationPositionRepo.findOneOrFail({ corpID: welfareCorp.id!, orderID: 1 })
 
     await this.rpStatsRepo.create({
       userID: newUser.id!,
-      corporationID: welfareCorp.groupID!,
+      corporationID: welfareCorp.id!,
       corporationPositionID: welfareCorpPosition.id!,
     } as any);
 

@@ -1,18 +1,18 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('archangel_corporations_positions')
-export class CorporationRankEntity {
+@Entity('archangel_corps_roles')
+export class CorpRoleEntity {
   @PrimaryGeneratedColumn()
   id?: number;
+
+  @Column({ name: 'corps_id' })
+  corpID!: number;
 
   @Column({ name: 'order_id' })
   orderID!: number;
 
-  @Column({ name: 'guild_id' })
-  groupID!: number;
-
-  @Column()
-  name!: string;
+  @Column({ name: 'display_name' })
+  displayName!: string;
 
   @Column()
   description!: string;

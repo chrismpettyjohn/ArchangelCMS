@@ -9,7 +9,7 @@ export const CORPORATION_FRAGMENT: any = gql`
     id
     displayName
     description
-    badgeCode
+    badge
     userID
     roomID
     user {
@@ -25,7 +25,7 @@ export interface CorporationFragment {
   id: number;
   displayName: string;
   description: string;
-  badgeCode: string;
+  badge: string;
   userID: number;
   roomID: number;
   user: UserFragment;

@@ -1,18 +1,34 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { CorporationEntity } from '../database/corporation.entity';
+import { CorpIndustry, CorpEntity, CorpSector } from '../database/corp.entity';
 
 @ObjectType()
 export class CorporationModel {
   @Field(() => Number, { nullable: true })
-  groupID!: number;
+  id!: number;
 
-  @Field(() => [String], { nullable: true })
-  tags!: string[];
+  @Field(() => String, { nullable: true })
+  displayName!: string;
 
-  static fromEntity(entity: CorporationEntity): CorporationModel {
+  @Field(() => String, { nullable: true })
+  description!: string;
+
+  @Field(() => String, { nullable: true })
+  badge!: string;
+
+  @Field(() => CorpIndustry, { nullable: true })
+  industry!: CorpIndustry;
+
+  @Field(() => CorpSector, { nullable: true })
+  sector!: CorpSector;
+
+  static fromEntity(entity: CorpEntity): CorporationModel {
     return {
-      groupID: entity.groupID,
-      tags: entity.tags.split(',')
+      id: entity.id!,
+      displayName: entity.displayName,
+      description: entity.description,
+      badge: entity.badge,
+      industry: entity.industry,
+      sector: entity.sector,
     };
   }
 }
