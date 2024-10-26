@@ -1,0 +1,47 @@
+{
+  "name": "@imagine-cms/imagine-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 5176",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "dayjs": "1.11.10",
+    "draft-js": "0.11.7",
+    "dotenv": "16.3.1",
+    "react-select": "5.8.0",
+    "@apollo/react-hooks": "4.0.0",
+    "@apollo/client": "3.8.2",
+    "apollo-boost": "0.4.9",
+    "graphql": "16.8.0",
+    "graphql-tag": "2.12.6",
+    "apollo-link-ws": "1.0.20",
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.0.4",
+    "query-string": "8.1.0",
+    "framer-motion": "10.17.9",
+    "@emotion/react": "11.11.3",
+    "@emotion/styled": "11.11.0",
+    "react-data-table-component": "7.5.4",
+    "polished": "4.3.1",
+    "react-toastify": "9.1.3",
+    "@imagine-cms/web": "*",
+    "@imagine-cms/game-ui": "*",
+    "@imagine-cms/client": "*",
+    "@imagine-cms/types": "*",
+    "@imagine-cms/websocket": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/draft-js": "0.11.18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4"
+  }
+}

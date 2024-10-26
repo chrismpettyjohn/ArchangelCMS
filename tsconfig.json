@@ -1,0 +1,40 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@imagine-cms/api": [
+        "apps/imagine-api/src"
+      ],
+      "@imagine-cms/imagine-web": [
+        "apps/imagine-web/src"
+      ],
+      "@imagine-cms/imagine-next": [
+        "apps/imagine-next/src"
+      ],
+      "@imagine-cms/game-ui": [
+        "libs/game-ui/src"
+      ],
+      "@imagine-cms/shared-ui": [
+        "libs/shared-ui/src"
+      ],
+      "@imagine-cms/client": [
+        "libs/client/src"
+      ],
+      "@imagine-cms/types": [
+        "libs/types/src"
+      ],
+      "@imagine-cms/web": [
+        "libs/web/src"
+      ],
+      "@imagine-cms/websocket": [
+        "libs/websocket/src"
+      ],
+    },
+    "noEmit": true
+  },
+  "include": [
+    "apps",
+    "libs"
+  ]
+}
