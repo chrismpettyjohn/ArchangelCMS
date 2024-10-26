@@ -1,1 +1,0 @@
-export { HighScoresEconomyScreen as default } from "../../../site-ui/screens/high-scores-economy-screen/HighScoresEconomyScreen";

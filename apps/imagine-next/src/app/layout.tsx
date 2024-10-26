@@ -2,9 +2,8 @@ import 'dotenv/config';
 import './fontawesome.css';
 import Head from 'next/head';
 import type { Metadata } from 'next'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { SiteBody } from '../site-ui/components/site-body/SiteBody';
-import { ImagineContextProviders, LoadingScreen } from '@imagine-cms/web'
+import { ImagineContextProviders, LoadingScreen, ThemeProvider } from '@imagine-cms/web'
 import { UsersOnlineContextProvider, WebsocketContextProvider } from '@imagine-cms/websocket'
 import { Transition } from '../site-ui/components/transition/Transition';
 import { SiteContainer } from '../shared/site-container/SiteContainer';
@@ -29,19 +28,21 @@ export default function RootLayout({
       </Head>
       <html lang="en">
         <body>
-          <ImagineContextProviders loadingScreen={<LoadingScreen />}>
-            <WebsocketContextProvider>
-              <UsersOnlineContextProvider>
-                <SiteBody />
-                <GameClient />
-                <SiteContainer>
-                  <Transition>
-                    {children}
-                  </Transition>
-                </SiteContainer>
-              </UsersOnlineContextProvider>
-            </WebsocketContextProvider>
-          </ImagineContextProviders>
+          <ThemeProvider>
+            <ImagineContextProviders loadingScreen={<LoadingScreen />}>
+              <WebsocketContextProvider>
+                <UsersOnlineContextProvider>
+                  <SiteContainer>
+                    <SiteBody />
+                    <GameClient />
+                    <Transition>
+                      {children}
+                    </Transition>
+                  </SiteContainer>
+                </UsersOnlineContextProvider>
+              </WebsocketContextProvider>
+            </ImagineContextProviders>
+          </ThemeProvider>
         </body>
       </html></>
   )

@@ -1,1 +1,0 @@
-export { LoginWithDiscordScreen as default } from "../../../site-ui/screens/login-with-discord-screen/LoginWithDiscordScreen";

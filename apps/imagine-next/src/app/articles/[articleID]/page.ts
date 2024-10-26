@@ -1,1 +1,0 @@
-export { ArticleViewScreen as default } from '../../../site-ui/screens/article-view-screen/ArticleViewScreen';

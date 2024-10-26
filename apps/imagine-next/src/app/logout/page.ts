@@ -1,1 +1,0 @@
-export { LogoutScreen as default } from "../../site-ui/screens/logout-screen/LogoutScreen";

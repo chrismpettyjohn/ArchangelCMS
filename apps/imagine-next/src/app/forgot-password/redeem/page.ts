@@ -1,1 +1,0 @@
-export { ForgotPasswordRedeemCodeScreen as default } from "../../../site-ui/screens/forgot-password-redeem-code-screen/ForgotPasswordRedeemCodeScreen";

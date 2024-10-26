@@ -1,1 +1,0 @@
-export { BadgeListScreen as default } from "../../site-ui/screens/badge-list-screen/BadgeListScreen";

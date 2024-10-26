@@ -1,1 +1,0 @@
-export { RegisterScreen as default } from "../../site-ui/screens/register-screen/RegisterScreen";

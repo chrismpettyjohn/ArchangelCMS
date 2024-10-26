@@ -1,1 +1,0 @@
-export { CommunityScreen as default } from "../../site-ui/screens/community-screen/CommunityScreen";

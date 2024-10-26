@@ -1,1 +1,0 @@
-export { GangListScreen as default } from "../../site-ui/screens/gang-list-screen/GangListScreen";

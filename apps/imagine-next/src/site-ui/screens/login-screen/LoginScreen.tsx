@@ -1,10 +1,11 @@
-
 'use client'
+import Link from 'next/Link';
 import { toast } from 'react-toastify';
+import { Form } from '../../components/form/Form';
+import { Input } from '../../components/input/Input';
 import React, { SyntheticEvent, useState } from 'react';
-import { GuestGuard, useSignInWithUsernameAndPassword } from '@imagine-cms/web';
-import { Container, Row, Col, Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
-
+import { useSignInWithUsernameAndPassword } from '@imagine-cms/web';
+import { ButtonBrand, ButtonClear } from '../../components/button/Button.remix';
 
 export function LoginScreen() {
   const [username, setUsername] = useState('');
@@ -20,70 +21,22 @@ export function LoginScreen() {
   }
 
   return (
-    <GuestGuard>
-      <div className="login-container bg-light">
-        <div className="logo">
-          <img src="/logo.png" alt="Logo" height="50" />
+    <>
+      <h1>sign in</h1>
+      <Form onSubmit={onLogin}>
+        <label>Username</label>
+        <Input type="text" name="username" placeholder="Username" value={username} onChange={e => setUsername(e.currentTarget.value ?? '')} />
+        <label>Password</label>
+        <Input type="password" name="password" placeholder="Password" required value={password} onChange={(e: any) => setPassword(e?.currentTarget?.value ?? '')} />
+        <div style={{ display: 'flex', flex: 1, gap: 16, justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flex: 1, gap: 16, justifyContent: 'flex-end' }}>
+            <Link href="/register">
+              <ButtonClear type="button">Create Account</ButtonClear>
+            </Link>
+            <ButtonBrand type="submit">Sign In</ButtonBrand>
+          </div>
         </div>
-        <Container className="login-form">
-          <h3 className="text-center mb-4">Login</h3>
-          <Form>
-            <FormGroup>
-              <Label for="username">Username</Label>
-              <Input
-                type="text"
-                id="username"
-                placeholder="Enter username"
-                className="form-control"
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label for="password">Password</Label>
-              <Input
-                type="password"
-                id="password"
-                placeholder="Password"
-                className="form-control"
-              />
-            </FormGroup>
-            <Button color="primary" block>
-              Login
-            </Button>
-          </Form>
-        </Container>
-
-        <footer className="text-center mt-4">
-          &copy; 2023 Habbo Retro
-        </footer>
-
-        <style jsx>{`
-        .login-container {
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-        }
-        .logo {
-          position: absolute;
-          top: 20px;
-          left: 20px;
-        }
-        .login-form {
-          max-width: 400px;
-          width: 100%;
-          padding: 30px;
-          background-color: #f0f0f0;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-          position: absolute;
-          bottom: 10px;
-          width: 100%;
-        }
-      `}</style>
-      </div>
-    </GuestGuard>
+      </Form>
+    </>
   )
 }

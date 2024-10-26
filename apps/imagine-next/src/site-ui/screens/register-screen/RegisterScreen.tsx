@@ -3,7 +3,7 @@ import { Form } from '../../components/form/Form';
 import { Input } from '../../components/input/Input';
 import { ButtonBrand } from '../../components/button/Button.remix';
 import React, { SyntheticEvent, useContext, useState } from 'react';
-import { BETA_ENABLED, GuestGuard, localStorageService, sessionContext } from '@imagine-cms/web';
+import { BETA_ENABLED, localStorageService, sessionContext } from '@imagine-cms/web';
 import { UserCreateInput, UserGender, useUserCreate, useUserFetchOne } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
@@ -52,7 +52,7 @@ export function RegisterScreen() {
   }
 
   return (
-    <GuestGuard>
+    <>
       <SiteLogo />
       <h1>create account</h1>
       <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center', height: '100%' }}>
@@ -82,6 +82,6 @@ export function RegisterScreen() {
           </div>
         </Form>
       </div>
-    </GuestGuard>
+    </>
   )
 }

@@ -33,9 +33,7 @@
     "@imagine-cms/game-ui": "workspace:*",
     "@imagine-cms/client": "workspace:*",
     "@imagine-cms/types": "workspace:*",
-    "@imagine-cms/websocket": "workspace:*",
-    "bootstrap": "5.3.3",
-    "reactstrap": "9.2.3"
+    "@imagine-cms/websocket": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5",

@@ -1,1 +1,0 @@
-export { SettingsScreen as default } from "../../site-ui/screens/settings-screen/SettingsScreen";
