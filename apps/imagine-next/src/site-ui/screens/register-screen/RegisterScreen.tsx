@@ -1,19 +1,20 @@
 'use client'
 import { Form } from '../../components/form/Form';
 import { Input } from '../../components/input/Input';
-import { ButtonBrand } from '../../components/button/Button.remix';
 import React, { SyntheticEvent, useContext, useState } from 'react';
-import { BETA_ENABLED, localStorageService, sessionContext } from '@imagine-cms/web';
+import { BETA_ENABLED, localStorageService, sessionContext, SITE_NAME } from '@imagine-cms/web';
 import { UserCreateInput, UserGender, useUserCreate, useUserFetchOne } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { SiteLogo } from '../../components/site-logo/SiteLogo';
+import { Footer, FormContainer, Header, Logo, PageContainer, Title, UserStatus, Button } from '../login-screen/LoginScreen.styled';
+import { usersOnlineContext } from '@imagine-cms/websocket';
 
 export function RegisterScreen() {
   const createUser = useUserCreate();
   const fetchUser = useUserFetchOne();
   const { setSession } = useContext(sessionContext);
+  const { usersOnline } = useContext(usersOnlineContext);
   const [userCreateInput, setUserCreateInput] = useState<UserCreateInput>({
     username: '',
     email: '',
@@ -52,36 +53,25 @@ export function RegisterScreen() {
   }
 
   return (
-    <>
-      <SiteLogo />
-      <h1>create account</h1>
-      <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-        <Form onSubmit={onCreateUser}>
-          <label>Username</label>
-          <Input type="text" name="username" value={userCreateInput.username} onChange={e => onChanges({ username: e.currentTarget?.value ?? '' })} placeholder="Username" />
-          <label>Email</label>
-          <Input type="text" name="email" value={userCreateInput.email} onChange={e => onChanges({ email: e.currentTarget?.value ?? '' })} placeholder="Email" />
-          <label>Password</label>
-          <Input type="password" name="password" value={userCreateInput.password} onChange={e => onChanges({ password: e.currentTarget?.value ?? '' })} placeholder="Password" id="password" />
-          {
-            BETA_ENABLED && (
-              <>
-
-                <label>Beta Code</label>
-                <Input type="text" name="betaCode" value={userCreateInput.betaCode} onChange={e => onChanges({ betaCode: e.currentTarget?.value ?? '' })} placeholder="Beta Code" />
-              </>
-            )
-          }
-          <div style={{ display: 'flex', flex: 1, gap: 16, justifyContent: 'space-between', alignItems: 'center' }}>
-            <Link href="/login">
-              Already have an account?
-            </Link>
-            <div style={{ display: 'flex', flex: 1, gap: 16, justifyContent: 'flex-end' }}>
-              <ButtonBrand type="submit" disabled={!canCreateUser}>Enter the city</ButtonBrand>
-            </div>
-          </div>
+    <PageContainer>
+      <FormContainer>
+        <Header>
+          <Logo>{SITE_NAME}</Logo>
+          <UserStatus>{usersOnline} users online</UserStatus>
+        </Header>
+        <Title>Register</Title>
+        <Form>
+          <Input type="email" placeholder="Email" required />
+          <Input type="text" placeholder="Username" required />
+          <Input type="password" placeholder="Password" required />
+          <Input type="password" placeholder="Password Again" required />
+          <Button type="submit">Create Account</Button>
+          <Link href="/login">
+            <Button type="button">Sign In</Button>
+          </Link>
         </Form>
-      </div>
-    </>
+      </FormContainer>
+      <Footer>Powered by <b>Archangel</b> <br />by <b>LeChris</b></Footer>
+    </PageContainer>
   )
 }

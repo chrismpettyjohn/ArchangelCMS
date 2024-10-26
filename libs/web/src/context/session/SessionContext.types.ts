@@ -1,16 +1,16 @@
 import { ReactNode } from 'react';
-import { UserWire } from '@imagine-cms/types';
+import { UserFragment } from '../../../../client/src';
 
 export interface SessionContext {
-  session?: UserWire;
-  _setSession(newSession?: UserWire): void;
-  setSession(changes: Partial<UserWire>): void;
+  session?: UserFragment;
+  _setSession(newSession?: UserFragment): void;
+  setSession(changes: Partial<UserFragment>): void;
 }
 
 export const defaultSessionContext: SessionContext = {
   session: undefined,
-  _setSession(newSession?: UserWire) { },
-  setSession(changes: Partial<UserWire>) { },
+  _setSession(newSession?: UserFragment) { },
+  setSession(changes: Partial<UserFragment>) { },
 };
 
 export interface SessionContextProviderProps {

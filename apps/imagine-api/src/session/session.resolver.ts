@@ -1,17 +1,18 @@
-import {omit} from 'lodash';
-import {JwtService} from '@nestjs/jwt';
-import {SessionArgs} from './session.args';
-import {GetUser} from './get-user.decorator';
-import {SessionService} from './session.service';
-import {HashService} from '../common/hash.service';
-import {HasSession} from './has-session.decorator';
-import {UserEntity} from '../database/user.entity';
-import {SessionEntity} from '../database/session.entity';
-import {UserRepository} from '../database/user.repository';
-import {Args, Mutation, Query, Resolver} from '@nestjs/graphql';
-import {SessionRepository} from '../database/session.repository';
-import {BadRequestException, UnauthorizedException} from '@nestjs/common';
+import { omit } from 'lodash';
+import { JwtService } from '@nestjs/jwt';
+import { SessionArgs } from './session.args';
+import { GetUser } from './get-user.decorator';
+import { SessionService } from './session.service';
+import { HashService } from '../common/hash.service';
+import { HasSession } from './has-session.decorator';
+import { UserEntity } from '../database/user.entity';
+import { SessionEntity } from '../database/session.entity';
+import { UserRepository } from '../database/user.repository';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { SessionRepository } from '../database/session.repository';
+import { BadRequestException, UnauthorizedException } from '@nestjs/common';
 import {
+  SessionCreateWithCredentialsInput,
   SessionDisconnectAccountInput,
   SessionUpdateEmailInput,
   SessionUpdateLanguageInput,
@@ -35,7 +36,7 @@ export class SessionResolver {
     private readonly hashService: HashService,
     private readonly sessionRepo: SessionRepository,
     private readonly sessionService: SessionService
-  ) {}
+  ) { }
 
   @Query(() => SessionSSOModel)
   @HasSession()
@@ -50,11 +51,11 @@ export class SessionResolver {
 
   @Query(() => SessionModel)
   async sessionByJWT(@Args('jwt') jwt: string): Promise<SessionEntity> {
-    const parsedJWT: {sessionID: number} = this.jwtService.decode(jwt) as any;
+    const parsedJWT: { sessionID: number } = this.jwtService.decode(jwt) as any;
     if (!parsedJWT) {
       throw new UnauthorizedException();
     }
-    return this.sessionRepo.findOneOrFail({id: parsedJWT.sessionID});
+    return this.sessionRepo.findOneOrFail({ id: parsedJWT.sessionID });
   }
 
   @Query(() => SessionModel)
@@ -63,7 +64,7 @@ export class SessionResolver {
     @Args('id') id: number,
     @GetUser() user: UserEntity
   ): Promise<SessionEntity> {
-    const session = await this.sessionRepo.findOneOrFail({id});
+    const session = await this.sessionRepo.findOneOrFail({ id });
     this.ownsResource(session, user);
     return session;
   }
@@ -75,19 +76,19 @@ export class SessionResolver {
     @GetUser() user: UserEntity
   ): Promise<SessionEntity[]> {
     return this.sessionRepo._find(
-      {...omit(sessionArgs, 'other'), userID: user.id!},
+      { ...omit(sessionArgs, 'other'), userID: user.id! },
       sessionArgs.other
     );
   }
 
   @Mutation(() => SessionCreatedModel)
-  async sessionCreate(
-    @Args('username') username: string,
-    @Args('password') password: string
+  async sessionCreateWithCredentials(
+    @Args('input', { type: () => SessionCreateWithCredentialsInput })
+    input: SessionCreateWithCredentialsInput,
   ): Promise<SessionCreatedModel> {
-    const newSession = await this.sessionService.loginWithUsernameAndPassword(
-      username,
-      password
+    const newSession = await this.sessionService.loginWithEmailAndPassword(
+      input.email,
+      input.password
     );
     return newSession;
   }
@@ -95,7 +96,7 @@ export class SessionResolver {
   @Mutation(() => SessionUpdateEmailModel)
   @HasSession()
   async sessionUpdateEmail(
-    @Args('input', {type: () => SessionUpdateEmailInput})
+    @Args('input', { type: () => SessionUpdateEmailInput })
     input: SessionUpdateEmailInput,
     @GetUser() user: UserEntity
   ): Promise<SessionUpdateEmailModel> {
@@ -109,7 +110,7 @@ export class SessionResolver {
     if (!doesPasswordMatch) {
       throw new UnauthorizedException();
     }
-    await this.userRepo.update({id: user.id!}, {email: input.email});
+    await this.userRepo.update({ id: user.id! }, { email: input.email });
     return {
       success: true,
     };
@@ -118,7 +119,7 @@ export class SessionResolver {
   @Mutation(() => SessionUpdatePasswordModel)
   @HasSession()
   async sessionUpdatePassword(
-    @Args('input', {type: () => SessionUpdatePasswordInput})
+    @Args('input', { type: () => SessionUpdatePasswordInput })
     input: SessionUpdatePasswordInput,
     @GetUser() user: UserEntity
   ): Promise<SessionUpdatePasswordModel> {
@@ -132,7 +133,7 @@ export class SessionResolver {
     if (!doesPasswordMatch) {
       throw new UnauthorizedException();
     }
-    await this.userRepo.update({id: user.id!}, {password: input.newPassword});
+    await this.userRepo.update({ id: user.id! }, { password: input.newPassword });
     return {
       success: true,
     };
@@ -140,11 +141,11 @@ export class SessionResolver {
   @Mutation(() => SessionUpdateLanguageModel)
   @HasSession()
   async sessionUpdateLanguage(
-    @Args('input', {type: () => SessionUpdateLanguageInput})
+    @Args('input', { type: () => SessionUpdateLanguageInput })
     input: SessionUpdateLanguageInput,
     @GetUser() user: UserEntity
   ): Promise<SessionUpdateLanguageModel> {
-    await this.userRepo.update({id: user.id!}, {language: input.language});
+    await this.userRepo.update({ id: user.id! }, { language: input.language });
     return {
       success: true,
     };
@@ -153,43 +154,43 @@ export class SessionResolver {
   @Mutation(() => SessionDisconnectAccountModel)
   @HasSession()
   async sessionDisconnectDiscord(
-    @Args('input', {type: () => SessionDisconnectAccountInput})
+    @Args('input', { type: () => SessionDisconnectAccountInput })
     input: SessionDisconnectAccountInput,
     @GetUser() session: UserEntity
   ): Promise<SessionDisconnectAccountModel> {
     if (!input.confirm) {
       throw new BadRequestException();
     }
-    await this.userRepo.update({id: session.id!}, {discordID: null as any});
-    return {success: true};
+    await this.userRepo.update({ id: session.id! }, { discordID: null as any });
+    return { success: true };
   }
 
   @Mutation(() => SessionDisconnectAccountModel)
   @HasSession()
   async sessionDisconnectFacebook(
-    @Args('input', {type: () => SessionDisconnectAccountInput})
+    @Args('input', { type: () => SessionDisconnectAccountInput })
     input: SessionDisconnectAccountInput,
     @GetUser() session: UserEntity
   ): Promise<SessionDisconnectAccountModel> {
     if (!input.confirm) {
       throw new BadRequestException();
     }
-    await this.userRepo.update({id: session.id!}, {facebookID: null as any});
-    return {success: true};
+    await this.userRepo.update({ id: session.id! }, { facebookID: null as any });
+    return { success: true };
   }
 
   @Mutation(() => SessionDisconnectAccountModel)
   @HasSession()
   async sessionDisconnectGoogle(
-    @Args('input', {type: () => SessionDisconnectAccountInput})
+    @Args('input', { type: () => SessionDisconnectAccountInput })
     input: SessionDisconnectAccountInput,
     @GetUser() session: UserEntity
   ): Promise<SessionDisconnectAccountModel> {
     if (!input.confirm) {
       throw new BadRequestException();
     }
-    await this.userRepo.update({id: session.id!}, {googleID: null as any});
-    return {success: true};
+    await this.userRepo.update({ id: session.id! }, { googleID: null as any });
+    return { success: true };
   }
 
   private ownsResource(session: SessionEntity, authenticatedUser: UserEntity) {

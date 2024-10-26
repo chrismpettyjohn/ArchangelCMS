@@ -3,40 +3,67 @@ import Link from 'next/Link';
 import { toast } from 'react-toastify';
 import { Form } from '../../components/form/Form';
 import { Input } from '../../components/input/Input';
-import React, { SyntheticEvent, useState } from 'react';
-import { useSignInWithUsernameAndPassword } from '@imagine-cms/web';
-import { ButtonBrand, ButtonClear } from '../../components/button/Button.remix';
+import React, { SyntheticEvent, useContext, useState } from 'react';
+import { SESSION_LOCAL_STORAGE_IDX, sessionContext, SITE_NAME } from '@imagine-cms/web';
+import { Button, Footer, FormContainer, Header, Logo, PageContainer, Title, UserStatus } from './LoginScreen.styled';
+import { usersOnlineContext } from '@imagine-cms/websocket';
+import { useSessionCreateWithCredentials, useUserFetchOne } from '@imagine-cms/client';
+import { redirect } from 'next/navigation';
 
 export function LoginScreen() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { tryLogin } = useSignInWithUsernameAndPassword(username, password);
+  const { setSession } = useContext(sessionContext);
+  const { usersOnline } = useContext(usersOnlineContext);
+  const sessionCreate = useSessionCreateWithCredentials();
+  const userLookup = useUserFetchOne();
 
-  const onLogin = async (event: SyntheticEvent) => {
-    event.preventDefault();
-    if (!username || !password) {
-      toast.error('You must provide a username and password');
+  const isDisabled = !email || !password;
+
+  async function onLogin(event: SyntheticEvent) {
+    try {
+      event.preventDefault();
+      if (!email) {
+        toast.error('You must provide an email address');
+      }
+      if (!password) {
+        toast.error('You must provide a password');
+      }
+
+      const newSession = await sessionCreate.execute(email, password);
+      localStorage.setItem(SESSION_LOCAL_STORAGE_IDX, newSession.sessionCreateWithCredentials.accessToken)
+
+      const matchingUser = await userLookup.fetch({ id: newSession.sessionCreateWithCredentials.userID });
+      setSession(matchingUser);
+
+      toast.success(`Welcome back, ${matchingUser.username}`);
+      redirect('/me');
+
+
+    } catch (e: any) {
+      toast.error('Check your credentials and try again')
+      throw e;
     }
-    tryLogin();
   }
 
   return (
-    <>
-      <h1>sign in</h1>
-      <Form onSubmit={onLogin}>
-        <label>Username</label>
-        <Input type="text" name="username" placeholder="Username" value={username} onChange={e => setUsername(e.currentTarget.value ?? '')} />
-        <label>Password</label>
-        <Input type="password" name="password" placeholder="Password" required value={password} onChange={(e: any) => setPassword(e?.currentTarget?.value ?? '')} />
-        <div style={{ display: 'flex', flex: 1, gap: 16, justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', flex: 1, gap: 16, justifyContent: 'flex-end' }}>
-            <Link href="/register">
-              <ButtonClear type="button">Create Account</ButtonClear>
-            </Link>
-            <ButtonBrand type="submit">Sign In</ButtonBrand>
-          </div>
-        </div>
-      </Form>
-    </>
+    <PageContainer>
+      <FormContainer>
+        <Header>
+          <Logo>{SITE_NAME}</Logo>
+          <UserStatus>{usersOnline} users online</UserStatus>
+        </Header>
+        <Title>Login</Title>
+        <Form onSubmit={onLogin}>
+          <Input type="email" placeholder="Email" required value={email} onChange={e => setEmail(e.currentTarget.value)} />
+          <Input type="password" placeholder="Password" required value={password} onChange={e => setPassword(e.currentTarget.value)} />
+          <Button disabled={isDisabled} type="submit">Sign In</Button>
+          <Link href="/register">
+            <Button type="button">Create Account</Button>
+          </Link>
+        </Form>
+      </FormContainer>
+      <Footer>Powered by <b>Archangel</b> <br />by <b>LeChris</b></Footer>
+    </PageContainer>
   )
 }

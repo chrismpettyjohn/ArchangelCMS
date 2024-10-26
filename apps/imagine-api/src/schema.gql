@@ -905,7 +905,7 @@ input RPStatsFilterManyInput {
 }
 
 type Mutation {
-  sessionCreate(username: String!, password: String!): SessionCreatedModel!
+  sessionCreateWithCredentials(input: SessionCreateWithCredentialsInput!): SessionCreatedModel!
   sessionUpdateEmail(input: SessionUpdateEmailInput!): SessionUpdateEmailModel!
   sessionUpdatePassword(input: SessionUpdatePasswordInput!): SessionUpdatePasswordModel!
   sessionUpdateLanguage(input: SessionUpdateLanguageInput!): SessionUpdateLanguageModel!
@@ -972,6 +972,11 @@ type Mutation {
   corporationCreate(filter: CorporationCreateInput!): CorporationModel!
   corporationUpdate(filter: CorporationUpdateInput!): Boolean!
   corporationDelete(filter: CorporationFilterOneInput!): Boolean!
+}
+
+input SessionCreateWithCredentialsInput {
+  email: String!
+  password: String!
 }
 
 input SessionUpdateEmailInput {

@@ -1,5 +1,5 @@
-import {Field, InputType} from '@nestjs/graphql';
-import {IsEmail, IsNotEmpty} from 'class-validator';
+import { Field, InputType } from '@nestjs/graphql';
+import { IsEmail, IsNotEmpty } from 'class-validator';
 
 @InputType()
 export class SessionUpdateEmailInput {
@@ -33,4 +33,13 @@ export class SessionUpdateLanguageInput {
 export class SessionDisconnectAccountInput {
   @Field(() => Boolean)
   confirm!: boolean;
+}
+
+@InputType()
+export class SessionCreateWithCredentialsInput {
+  @Field(() => String)
+  email!: string;
+
+  @Field(() => String)
+  password!: string;
 }

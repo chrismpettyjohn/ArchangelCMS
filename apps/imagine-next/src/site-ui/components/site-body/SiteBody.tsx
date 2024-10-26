@@ -7,7 +7,9 @@ export function SiteBody() {
   return (
     <Global
       styles={css`
-       
+        body {
+          background-color: #134a71;
+        }
       `}
     />
   )

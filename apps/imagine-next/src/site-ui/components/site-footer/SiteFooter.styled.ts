@@ -10,11 +10,13 @@ export const SiteFooterElement = styled.footer`
   height: 100px;
   width: 100%;
   h2, h4 {
-    color: ${({ theme }) => theme.color.s60};
+    color: ${({ theme }) => theme.color.s10};
     cursor: pointer;
-    text-decoration: none;
     &:hover {
       color: ${({ theme }) => theme.color.s30};
     }
+  }
+  a {
+    text-decoration: none;
   }
 `

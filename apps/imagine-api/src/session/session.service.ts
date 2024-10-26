@@ -1,10 +1,10 @@
-import {JwtService} from '@nestjs/jwt';
-import {SessionContents} from './session.types';
-import {HashService} from '../common/hash.service';
-import {SessionCreatedModel} from './session.model';
-import {SessionEntity} from '../database/session.entity';
-import {UserRepository} from '../database/user.repository';
-import {SessionRepository} from '../database/session.repository';
+import { JwtService } from '@nestjs/jwt';
+import { SessionContents } from './session.types';
+import { HashService } from '../common/hash.service';
+import { SessionCreatedModel } from './session.model';
+import { SessionEntity } from '../database/session.entity';
+import { UserRepository } from '../database/user.repository';
+import { SessionRepository } from '../database/session.repository';
 import {
   forwardRef,
   Inject,
@@ -20,13 +20,13 @@ export class SessionService {
     private readonly userRepo: UserRepository,
     private readonly hashService: HashService,
     private readonly sessionRepo: SessionRepository
-  ) {}
+  ) { }
 
-  async loginWithUsernameAndPassword(
-    username: string,
+  async loginWithEmailAndPassword(
+    email: string,
     password: string
   ): Promise<SessionCreatedModel> {
-    const user = await this.userRepo.findOneOrFail({username});
+    const user = await this.userRepo.findOneOrFail({ email: email.toLowerCase() });
 
     if (!user.password) {
       throw new UnauthorizedException();
@@ -56,8 +56,8 @@ export class SessionService {
 
   async generateSession(
     userID: number
-  ): Promise<{accessToken: string; session: SessionEntity}> {
-    const session = await this.sessionRepo.create({userID});
+  ): Promise<{ accessToken: string; session: SessionEntity }> {
+    const session = await this.sessionRepo.create({ userID });
     const accessToken = this.signToken({
       userID,
       sessionID: session.id!,
