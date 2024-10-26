@@ -33,20 +33,20 @@
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-scss": "4.0.0",
     "@rollup/plugin-terser": "0.4.3",
-    "@imagine-cms/client": "*",
-    "@imagine-cms/shared-ui": "*",
-    "@imagine-cms/types": "*",
-    "@imagine-cms/web": "*",
-    "@imagine-cms/websocket": "*"
+    "@imagine-cms/client": "workspace:*",
+    "@imagine-cms/shared-ui": "workspace:*",
+    "@imagine-cms/types": "workspace:*",
+    "@imagine-cms/web": "workspace:*",
+    "@imagine-cms/websocket": "workspace:*"
   },
   "peerDependencies": {
     "react": "17.0.1",
     "wouter": "2.11.0",
-    "@imagine-cms/client": "*",
-    "@imagine-cms/shared-ui": "*",
-    "@imagine-cms/types": "*",
-    "@imagine-cms/web": "*",
-    "@imagine-cms/websocket": "*"
+    "@imagine-cms/client": "workspace:*",
+    "@imagine-cms/shared-ui": "workspace:*",
+    "@imagine-cms/types": "workspace:*",
+    "@imagine-cms/web": "workspace:*",
+    "@imagine-cms/websocket": "workspace:*"
   },
   "eslintConfig": {
     "extends": "react-app"

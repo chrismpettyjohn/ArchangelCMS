@@ -38,9 +38,9 @@
     "apollo-boost": "0.4.9",
     "graphql": "16.8.0",
     "apollo-link-ws": "1.0.20",
-    "@imagine-cms/types": "*",
+    "@imagine-cms/types": "workspace:*",
     "react-toastify": "9.1.3",
-    "@imagine-cms/client": "*"
+    "@imagine-cms/client": "workspace:*"
   },
   "peerDependencies": {
     "react": "17.0.1",
@@ -48,14 +48,14 @@
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
     "graphql-tag": "2.12.6",
-    "@imagine-cms/types": "*",
+    "@imagine-cms/types": "workspace:*",
     "react-toastify": "9.0.0",
     "@apollo/react-hooks": "4.0.0",
     "@apollo/client": "3.8.2",
     "apollo-boost": "0.4.9",
     "graphql": "16.8.0",
     "apollo-link-ws": "1.0.20",
-    "@imagine-cms/client": "*"
+    "@imagine-cms/client": "workspace:*"
   },
   "eslintConfig": {
     "extends": "react-app"

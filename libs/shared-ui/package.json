@@ -32,8 +32,8 @@
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-scss": "4.0.0",
     "@rollup/plugin-terser": "0.4.3",
-    "@imagine-cms/types": "*",
-    "@imagine-cms/web": "*"
+    "@imagine-cms/types": "workspace:*",
+    "@imagine-cms/web": "workspace:*"
   },
   "peerDependencies": {
     "react": "17.0.1",

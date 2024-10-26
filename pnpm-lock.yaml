@@ -13,40 +13,40 @@ importers:
         version: 20.10.5
       '@typescript-eslint/eslint-plugin':
         specifier: 6.15.0
-        version: 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
+        version: 6.15.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3)
       babel-eslint:
         specifier: 10.1.0
-        version: 10.1.0(eslint@8.56.0)
+        version: 10.1.0(eslint@8.50.0)
       eslint-config-react-app:
         specifier: 7.0.1
-        version: 7.0.1(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.56.0)(typescript@5.3.3)
+        version: 7.0.1(@babel/plugin-syntax-flow@7.23.3(@babel/core@7.23.6))(@babel/plugin-transform-react-jsx@7.23.4(@babel/core@7.23.6))(eslint@8.50.0)(typescript@5.3.3)
       eslint-plugin-flowtype:
         specifier: 8.0.3
-        version: 8.0.3(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.56.0)
+        version: 8.0.3(@babel/plugin-syntax-flow@7.23.3(@babel/core@7.23.6))(@babel/plugin-transform-react-jsx@7.23.4(@babel/core@7.23.6))(eslint@8.50.0)
       eslint-plugin-import:
         specifier: 2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.50.0)
       eslint-plugin-jsx-a11y:
         specifier: 6.8.0
-        version: 6.8.0(eslint@8.56.0)
+        version: 6.8.0(eslint@8.50.0)
       eslint-plugin-node:
         specifier: 11.1.0
-        version: 11.1.0(eslint@8.56.0)
+        version: 11.1.0(eslint@8.50.0)
       eslint-plugin-prettier:
         specifier: 5.1.2
-        version: 5.1.2(eslint@8.56.0)(prettier@3.0.3)
+        version: 5.1.2(eslint-config-prettier@9.0.0(eslint@8.50.0))(eslint@8.50.0)(prettier@3.0.3)
       eslint-plugin-react:
         specifier: 7.33.2
-        version: 7.33.2(eslint@8.56.0)
+        version: 7.33.2(eslint@8.50.0)
       eslint-plugin-react-hooks:
         specifier: 4.6.0
-        version: 4.6.0(eslint@8.56.0)
+        version: 4.6.0(eslint@8.50.0)
       gts:
         specifier: 5.2.0
         version: 5.2.0(typescript@5.3.3)
       lerna:
         specifier: 8.0.1
-        version: 8.0.1
+        version: 8.0.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(encoding@0.1.13)
       pm2:
         specifier: 5.3.0
         version: 5.3.0
@@ -61,40 +61,40 @@ importers:
     dependencies:
       '@apollo/server':
         specifier: 4.9.3
-        version: 4.9.3(graphql@16.8.0)
+        version: 4.9.3(encoding@0.1.13)(graphql@16.8.0)
       '@imagine-cms/types':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../libs/types
       '@nestjs/apollo':
         specifier: 12.0.9
-        version: 12.0.9(@apollo/server@4.9.3)(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/graphql@12.0.9)(graphql@16.8.0)
+        version: 12.0.9(@apollo/server@4.9.3(encoding@0.1.13)(graphql@16.8.0))(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/graphql@12.0.9(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14))(graphql@16.8.0)
       '@nestjs/common':
         specifier: 10.2.5
         version: 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 10.2.5
-        version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+        version: 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestjs/graphql':
         specifier: 12.0.9
-        version: 12.0.9(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14)
+        version: 12.0.9(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14)
       '@nestjs/jwt':
         specifier: 10.1.1
-        version: 10.1.1(@nestjs/common@10.2.5)
+        version: 10.1.1(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))
       '@nestjs/platform-express':
         specifier: 10.2.5
-        version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
+        version: 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)
       '@nestjs/platform-ws':
         specifier: 10.2.5
-        version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/websockets@10.2.5)(rxjs@7.8.1)
+        version: 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/websockets@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1))(rxjs@7.8.1)
       '@nestjs/typeorm':
         specifier: 10.0.0
-        version: 10.0.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)(typeorm@0.3.17)
+        version: 10.0.0(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(reflect-metadata@0.1.14)(rxjs@7.8.1)(typeorm@0.3.17(mysql2@3.7.0)(ts-node@10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2)))
       '@nestjs/websockets':
         specifier: 10.2.5
-        version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+        version: 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       apollo-server-express:
         specifier: 3.10.2
-        version: 3.10.2(express@4.18.2)(graphql@16.8.0)
+        version: 3.10.2(encoding@0.1.13)(express@4.18.2)(graphql@16.8.0)
       axios:
         specifier: 1.5.0
         version: 1.5.0
@@ -148,13 +148,13 @@ importers:
         version: 1.6.1
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.85)(@types/node@20.10.5)(typescript@5.2.2)
+        version: 10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2)
       tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0
       typeorm:
         specifier: 0.3.17
-        version: 0.3.17(mysql2@3.7.0)(ts-node@10.9.1)
+        version: 0.3.17(mysql2@3.7.0)(ts-node@10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2))
       typescript:
         specifier: ~5.2.2
         version: 5.2.2
@@ -164,7 +164,7 @@ importers:
     devDependencies:
       '@swc/core':
         specifier: 1.3.85
-        version: 1.3.85
+        version: 1.3.85(@swc/helpers@0.5.2)
       '@types/bcryptjs':
         specifier: 2.4.4
         version: 2.4.4
@@ -194,37 +194,40 @@ importers:
     dependencies:
       '@apollo/client':
         specifier: 3.8.2
-        version: 3.8.2(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 3.8.2(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@apollo/react-hooks':
         specifier: 4.0.0
-        version: 4.0.0(@types/react@18.2.21)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 4.0.0(@types/react@18.2.21)(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@emotion/react':
         specifier: 11.11.3
         version: 11.11.3(@types/react@18.2.21)(react@18.2.0)
       '@emotion/styled':
         specifier: 11.11.0
-        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.21)(react@18.2.0)
+        version: 11.11.0(@emotion/react@11.11.3(@types/react@18.2.21)(react@18.2.0))(@types/react@18.2.21)(react@18.2.0)
       '@imagine-cms/client':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../libs/client
       '@imagine-cms/game-ui':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../libs/game-ui
       '@imagine-cms/types':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../libs/types
       '@imagine-cms/web':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../libs/web
       '@imagine-cms/websocket':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../libs/websocket
       apollo-boost:
         specifier: 0.4.9
         version: 0.4.9(graphql@16.8.0)
       apollo-link-ws:
         specifier: 1.0.20
-        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.9.19)
+        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
+      bootstrap:
+        specifier: 5.3.3
+        version: 5.3.3(@popperjs/core@2.11.8)
       dayjs:
         specifier: 1.11.10
         version: 1.11.10
@@ -233,10 +236,10 @@ importers:
         version: 16.3.1
       draft-js:
         specifier: 0.11.7
-        version: 0.11.7(react-dom@18.2.0)(react@18.2.0)
+        version: 0.11.7(encoding@0.1.13)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       framer-motion:
         specifier: 10.17.9
-        version: 10.17.9(react-dom@18.2.0)(react@18.2.0)
+        version: 10.17.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       graphql:
         specifier: 16.8.0
         version: 16.8.0
@@ -245,7 +248,7 @@ importers:
         version: 2.12.6(graphql@16.8.0)
       next:
         specifier: 14.0.4
-        version: 14.0.4(@babel/core@7.23.6)(react-dom@18.2.0)(react@18.2.0)
+        version: 14.0.4(@babel/core@7.23.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.67.0)
       polished:
         specifier: 4.3.1
         version: 4.3.1
@@ -257,16 +260,19 @@ importers:
         version: 18.2.0
       react-data-table-component:
         specifier: 7.5.4
-        version: 7.5.4(react@18.2.0)(styled-components@6.0.8)
+        version: 7.5.4(react@18.2.0)(styled-components@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       react-dom:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
       react-select:
         specifier: 5.8.0
-        version: 5.8.0(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
+        version: 5.8.0(@types/react@18.2.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-toastify:
         specifier: 9.1.3
-        version: 9.1.3(react-dom@18.2.0)(react@18.2.0)
+        version: 9.1.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      reactstrap:
+        specifier: 9.2.3
+        version: 9.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@types/draft-js':
         specifier: 0.11.18
@@ -294,19 +300,19 @@ importers:
     dependencies:
       react-toastify:
         specifier: 9.0.0
-        version: 9.0.0(react-dom@18.2.0)(react@18.2.0)
+        version: 9.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       wouter:
         specifier: 2.7.4
         version: 2.7.4(react@18.2.0)
     devDependencies:
       '@apollo/client':
         specifier: 3.8.3
-        version: 3.8.3(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 3.8.3(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@apollo/react-hooks':
         specifier: 4.0.0
-        version: 4.0.0(@types/react@18.2.21)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 4.0.0(@types/react@18.2.21)(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@imagine-cms/types':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../types
       '@rollup/plugin-commonjs':
         specifier: 25.0.4
@@ -325,7 +331,7 @@ importers:
         version: 0.4.3(rollup@3.29.2)
       '@rollup/plugin-typescript':
         specifier: 11.1.3
-        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.2.2)
+        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.3.3)
       '@types/node':
         specifier: 20.6.2
         version: 20.6.2
@@ -343,7 +349,7 @@ importers:
         version: 0.4.9(graphql@16.8.0)
       apollo-link-ws:
         specifier: 1.0.20
-        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.9.19)
+        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       graphql:
         specifier: 16.8.0
         version: 16.8.0
@@ -379,21 +385,21 @@ importers:
         version: 11.11.3(@types/react@18.2.21)(react@18.2.0)
       '@emotion/styled':
         specifier: 11.11.0
-        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.21)(react@18.2.0)
+        version: 11.11.0(@emotion/react@11.11.3(@types/react@18.2.21)(react@18.2.0))(@types/react@18.2.21)(react@18.2.0)
       '@imagine-cms/client':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../client
       '@imagine-cms/shared-ui':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../shared-ui
       '@imagine-cms/types':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../types
       '@imagine-cms/web':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../web
       '@imagine-cms/websocket':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../websocket
       '@rollup/plugin-commonjs':
         specifier: 25.0.4
@@ -412,7 +418,7 @@ importers:
         version: 0.4.3(rollup@3.29.2)
       '@rollup/plugin-typescript':
         specifier: 11.1.3
-        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.2.2)
+        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.3.3)
       '@types/node':
         specifier: 20.6.2
         version: 20.6.2
@@ -460,12 +466,12 @@ importers:
         version: 11.11.3(@types/react@18.2.21)(react@18.2.0)
       '@emotion/styled':
         specifier: 11.11.0
-        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.21)(react@18.2.0)
+        version: 11.11.0(@emotion/react@11.11.3(@types/react@18.2.21)(react@18.2.0))(@types/react@18.2.21)(react@18.2.0)
       '@imagine-cms/types':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../types
       '@imagine-cms/web':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../web
       '@rollup/plugin-commonjs':
         specifier: 25.0.4
@@ -484,7 +490,7 @@ importers:
         version: 0.4.3(rollup@3.29.2)
       '@rollup/plugin-typescript':
         specifier: 11.1.3
-        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.2.2)
+        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.3.3)
       '@types/node':
         specifier: 20.6.2
         version: 20.6.2
@@ -547,7 +553,7 @@ importers:
         version: 2.2.4(rollup@3.29.2)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@types/node@20.6.2)(typescript@5.2.2)
+        version: 10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.6.2)(typescript@5.2.2)
       tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0
@@ -559,21 +565,21 @@ importers:
     devDependencies:
       '@apollo/client':
         specifier: 3.8.3
-        version: 3.8.3(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 3.8.3(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@apollo/react-hooks':
         specifier: 4.0.0
-        version: 4.0.0(@types/react@18.2.21)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 4.0.0(@types/react@18.2.21)(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@emotion/react':
         specifier: 11.11.3
         version: 11.11.3(@types/react@18.2.21)(react@18.2.0)
       '@emotion/styled':
         specifier: 11.11.0
-        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.21)(react@18.2.0)
+        version: 11.11.0(@emotion/react@11.11.3(@types/react@18.2.21)(react@18.2.0))(@types/react@18.2.21)(react@18.2.0)
       '@imagine-cms/client':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../client
       '@imagine-cms/types':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../types
       '@rollup/plugin-commonjs':
         specifier: 25.0.4
@@ -592,7 +598,7 @@ importers:
         version: 0.4.3(rollup@3.29.2)
       '@rollup/plugin-typescript':
         specifier: 11.1.3
-        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.2.2)
+        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.3.3)
       '@types/node':
         specifier: 20.6.2
         version: 20.6.2
@@ -610,7 +616,7 @@ importers:
         version: 0.4.9(graphql@16.8.0)
       apollo-link-ws:
         specifier: 1.0.20
-        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.9.19)
+        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       graphql:
         specifier: 16.8.0
         version: 16.8.0
@@ -622,7 +628,7 @@ importers:
         version: 18.2.0
       react-toastify:
         specifier: 9.1.3
-        version: 9.1.3(react-dom@18.2.0)(react@18.2.0)
+        version: 9.1.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rollup:
         specifier: 3.29.2
         version: 3.29.2
@@ -653,18 +659,18 @@ importers:
     devDependencies:
       '@apollo/client':
         specifier: 3.8.3
-        version: 3.8.3(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 3.8.3(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@apollo/react-hooks':
         specifier: 4.0.0
-        version: 4.0.0(@types/react@18.2.21)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+        version: 4.0.0(@types/react@18.2.21)(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       '@imagine-cms/client':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../client
       '@imagine-cms/types':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../types
       '@imagine-cms/web':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../web
       '@rollup/plugin-commonjs':
         specifier: 25.0.4
@@ -683,7 +689,7 @@ importers:
         version: 0.4.3(rollup@3.29.2)
       '@rollup/plugin-typescript':
         specifier: 11.1.3
-        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.2.2)
+        version: 11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.3.3)
       '@types/node':
         specifier: 20.6.2
         version: 20.6.2
@@ -704,7 +710,7 @@ importers:
         version: 0.4.9(graphql@16.8.0)
       apollo-link-ws:
         specifier: 1.0.20
-        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.9.19)
+        version: 1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
       graphql:
         specifier: 16.8.0
         version: 16.8.0
@@ -716,10 +722,10 @@ importers:
         version: 18.2.0
       react-toastify:
         specifier: 9.1.3
-        version: 9.1.3(react-dom@18.2.0)(react@18.2.0)
+        version: 9.1.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-use-websocket:
         specifier: 4.5.0
-        version: 4.5.0(react-dom@18.2.0)(react@18.2.0)
+        version: 4.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rollup:
         specifier: 3.29.2
         version: 3.29.2
@@ -757,6 +763,24 @@ packages:
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
 
+  '@apollo/client@3.11.8':
+    resolution: {integrity: sha512-CgG1wbtMjsV2pRGe/eYITmV5B8lXUCYljB2gB/6jWTFQcrvirUVvKg7qtFdjYkQSFbIffU1IDyxgeaN81eTjbA==}
+    peerDependencies:
+      graphql: ^15.0.0 || ^16.0.0
+      graphql-ws: ^5.5.5
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0
+      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+    peerDependenciesMeta:
+      graphql-ws:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      subscriptions-transport-ws:
+        optional: true
+
   '@apollo/client@3.8.2':
     resolution: {integrity: sha512-SSxRTHlHdlR65mvV5j5e3JkYs9z/eFQfJPgSfqTeKa3jgHKofBaMb+UWxJPInqV5MqBFAkPFt8fYEBZwM7oGZA==}
     peerDependencies:
@@ -779,24 +803,6 @@ packages:
     resolution: {integrity: sha512-mK86JM6hCpMEBGDgdO9U8ZYS8r9lPjXE1tVGpJMdSFUsIcXpmEfHUAbbFpPtYmxn8Qa7XsYy0dwDaDhpf4UUPw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-      graphql-ws: ^5.5.5
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
-    peerDependenciesMeta:
-      graphql-ws:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-      subscriptions-transport-ws:
-        optional: true
-
-  '@apollo/client@3.9.11':
-    resolution: {integrity: sha512-H7e9m7cRcFO93tokwzqrsbnfKorkpV24xU30hFH5u2g6B+c1DMo/ouyF/YrBPdrTzqxQCjTUmds/FLmJ7626GA==}
-    peerDependencies:
-      graphql: ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1830,10 +1836,6 @@ packages:
     resolution: {integrity: sha512-NCC3zz2+nvYd+Ckfh87rA47zfu2QsQpvc6k1yzTk+b9KzRj0wkGa8LSoGOXN6Zv4lRf/EIoZ80biDh9HOI+RNQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@eslint/js@8.56.0':
-    resolution: {integrity: sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-
   '@floating-ui/core@1.6.0':
     resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
 
@@ -2362,6 +2364,9 @@ packages:
   '@pm2/pm2-version-check@1.0.4':
     resolution: {integrity: sha512-SXsM27SGH3yTWKc2fKR4SYNxsmnvuBQ9dd6QHtEWmiZ/VqaOYPAIlS8+vMcn27YLtAEBGvNRSh3TPNvtjZgfqA==}
 
+  '@popperjs/core@2.11.8':
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
   '@protobufjs/aspromise@1.1.2':
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
 
@@ -2809,16 +2814,6 @@ packages:
       typescript:
         optional: true
 
-  '@typescript-eslint/parser@6.15.0':
-    resolution: {integrity: sha512-MkgKNnsjC6QwcMdlNAel24jjkEO/0hQaMDLqP4S9zq5HBAUJNQB6y+3DwLjX7b3l2b37eNAxMPLwb3/kh8VKdA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
   '@typescript-eslint/scope-manager@5.62.0':
     resolution: {integrity: sha512-VXuvVvZeQCQb5Zgf4HAxc04q5j+WrNAtNh9OwCsCgpKqESMTu3tF/jhZ3xG6T4NZwWl65Bg8KuS2uEvhSfLl0w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -2892,9 +2887,6 @@ packages:
   '@typescript-eslint/visitor-keys@6.15.0':
     resolution: {integrity: sha512-1zvtdC1a9h5Tb5jU9x3ADNXO9yjP8rXlaoChu0DQX40vf5ACVpYIVIZhIMZ6d5sDXH7vq4dsZBT1fEGj8D2n2w==}
     engines: {node: ^16.0.0 || >=18.0.0}
-
-  '@ungap/structured-clone@1.2.0':
-    resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
   '@vladfrangu/async_event_emitter@2.2.2':
     resolution: {integrity: sha512-HIzRG7sy88UZjBJamssEczH5q7t5+axva19UbZLO6u0ySbYPrwzWiXBcC0WuHyhKKoeCyneH+FvYzKQq/zTtkQ==}
@@ -3340,6 +3332,11 @@ packages:
     resolution: {integrity: sha512-ml9pReCu3M61kGlqoTm2umSXTlRTuGTx0bfYj+uIUKKYycG5NtSbeetV3faSU6R7ajOPw0g/J1PvK4qNy7s5bA==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
 
+  bootstrap@5.3.3:
+    resolution: {integrity: sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.8
+
   bplist-parser@0.2.0:
     resolution: {integrity: sha512-z0M+byMThzQmD9NILRniCUXYsYpjwnlO8N5uCFaCqIOpqRsJCrQL9NK3JsD67CN5a08nF5oIL2bD6loTdHOuKw==}
     engines: {node: '>= 5.10.0'}
@@ -3472,6 +3469,9 @@ packages:
 
   class-validator@0.14.0:
     resolution: {integrity: sha512-ct3ltplN8I9fOwUd8GrP8UQixwff129BkEtuWDKL5W45cQuLd19xqmTLu5ge78YDm/fdje6FMt0hGOhl0lii3A==}
+
+  classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
 
   clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -4172,11 +4172,6 @@ packages:
 
   eslint@8.50.0:
     resolution: {integrity: sha512-FOnOGSuFuFLv/Sa+FDVRZl4GGVAAFFi8LecRsI5a1tMO5HIE8nCm4ivAlzt4dT3ol/PaaGC0rJEEXQmHJBGoOg==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    hasBin: true
-
-  eslint@8.56.0:
-    resolution: {integrity: sha512-Go19xM6T9puCOWntie1/P997aXxFsOi37JIHRWI514Hc6ZnaHGKY9xFhrU65RT6CcBEzZoGG1e6Nq+DT04ZtZQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
 
@@ -6104,11 +6099,21 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  react-fast-compare@3.2.2:
+    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
   react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+
+  react-popper@2.3.0:
+    resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
+    peerDependencies:
+      '@popperjs/core': ^2.0.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: ^16.8.0 || ^17 || ^18
 
   react-select@5.8.0:
     resolution: {integrity: sha512-TfjLDo58XrhP6VG5M/Mi56Us0Yt8X7xD6cDybC7yoRMUNm7BGO7qk8J0TLQOua/prb8vUOtsfnXZwfm30HGsAA==}
@@ -6143,6 +6148,12 @@ packages:
   react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
+
+  reactstrap@9.2.3:
+    resolution: {integrity: sha512-1nXy7FIBIoOgXr3AIHOpgzcZXdj6rZE5YvNSPd1hYgwv8X64m6TAJsU0ExlieJdlRXhaRfTYRSZoTWa127b0gw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   read-cmd-shim@4.0.0:
     resolution: {integrity: sha512-yILWifhaSEEytfXI76kB9xEEiG1AiozaCJZ83A87ytjRiN+jVibXjedjCRNjoZviinhG+4UkalO3mWTd8u5O0Q==}
@@ -6238,8 +6249,8 @@ packages:
     resolution: {integrity: sha512-dQUtn90WanSNl+7mQKcXAgZxvUe7Z0SqXlgzv0za4LwiUhyzBC58yQO3liFoUgu8GiJVInAhJjkj1N0EtQ5nkQ==}
     hasBin: true
 
-  rehackt@0.0.6:
-    resolution: {integrity: sha512-l3WEzkt4ntlEc/IB3/mF6SRgNHA6zfQR7BlGOgBTOmx7IJJXojDASav+NsgXHFjHn+6RmwqsGPFgZpabWpeOdw==}
+  rehackt@0.1.0:
+    resolution: {integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==}
     peerDependencies:
       '@types/react': '*'
       react: '*'
@@ -6675,12 +6686,6 @@ packages:
     deprecated: The `subscriptions-transport-ws` package is no longer maintained. We recommend you use `graphql-ws` instead. For help migrating Apollo software to `graphql-ws`, see https://www.apollographql.com/docs/apollo-server/data/subscriptions/#switching-from-subscriptions-transport-ws    For general help using `graphql-ws`, see https://github.com/enisdenjo/graphql-ws/blob/master/README.md
     peerDependencies:
       graphql: ^15.7.2 || ^16.0.0
-
-  subscriptions-transport-ws@0.9.19:
-    resolution: {integrity: sha512-dxdemxFFB0ppCLg10FTtRqH/31FNRL1y1BQv8209MK5I4CwALb7iihQg+7p65lFcIl8MHatINWBLOqpgU4Kyyw==}
-    deprecated: The `subscriptions-transport-ws` package is no longer maintained. We recommend you use `graphql-ws` instead. For help migrating Apollo software to `graphql-ws`, see https://www.apollographql.com/docs/apollo-server/data/subscriptions/#switching-from-subscriptions-transport-ws    For general help using `graphql-ws`, see https://github.com/enisdenjo/graphql-ws/blob/master/README.md
-    peerDependencies:
-      graphql: '>=0.10.0'
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -7125,6 +7130,9 @@ packages:
     resolution: {integrity: sha512-sfAcO2yeSU0CSPFI/DmZp3FsFE9T+8913nv1xWBOyzODv13fwkn6Vl7HqxGpkr9F608M+8SuFId3s+BlZqfXww==}
     engines: {node: '>=4.0'}
 
+  warning@4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+
   watchpack@2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}
     engines: {node: '>=10.13.0'}
@@ -7349,47 +7357,7 @@ snapshots:
     dependencies:
       graphql: 16.8.0
 
-  '@apollo/client@3.8.2(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)':
-    dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.0)
-      '@wry/context': 0.7.4
-      '@wry/equality': 0.5.7
-      '@wry/trie': 0.4.3
-      graphql: 16.8.0
-      graphql-tag: 2.12.6(graphql@16.8.0)
-      hoist-non-react-statics: 3.3.2
-      optimism: 0.17.5
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      response-iterator: 0.2.6
-      subscriptions-transport-ws: 0.9.19(graphql@16.8.0)
-      symbol-observable: 4.0.0
-      ts-invariant: 0.10.3
-      tslib: 2.6.2
-      zen-observable-ts: 1.2.5
-
-  '@apollo/client@3.8.3(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)':
-    dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.0)
-      '@wry/context': 0.7.4
-      '@wry/equality': 0.5.7
-      '@wry/trie': 0.4.3
-      graphql: 16.8.0
-      graphql-tag: 2.12.6(graphql@16.8.0)
-      hoist-non-react-statics: 3.3.2
-      optimism: 0.17.5
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      response-iterator: 0.2.6
-      subscriptions-transport-ws: 0.9.19(graphql@16.8.0)
-      symbol-observable: 4.0.0
-      ts-invariant: 0.10.3
-      tslib: 2.6.2
-      zen-observable-ts: 1.2.5
-
-  '@apollo/client@3.9.11(@types/react@18.2.21)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)':
+  '@apollo/client@3.11.8(@types/react@18.2.21)(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.0)
       '@wry/caches': 1.0.1
@@ -7400,17 +7368,63 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       optimism: 0.18.0
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      rehackt: 0.0.6(@types/react@18.2.21)(react@18.2.0)
+      rehackt: 0.1.0(@types/react@18.2.21)(react@18.2.0)
       response-iterator: 0.2.6
-      subscriptions-transport-ws: 0.9.19(graphql@16.8.0)
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
       tslib: 2.6.2
       zen-observable-ts: 1.2.5
+    optionalDependencies:
+      graphql-ws: 5.14.0(graphql@16.8.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      subscriptions-transport-ws: 0.11.0(graphql@16.8.0)
     transitivePeerDependencies:
       - '@types/react'
+
+  '@apollo/client@3.8.2(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))':
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.0)
+      '@wry/context': 0.7.4
+      '@wry/equality': 0.5.7
+      '@wry/trie': 0.4.3
+      graphql: 16.8.0
+      graphql-tag: 2.12.6(graphql@16.8.0)
+      hoist-non-react-statics: 3.3.2
+      optimism: 0.17.5
+      prop-types: 15.8.1
+      response-iterator: 0.2.6
+      symbol-observable: 4.0.0
+      ts-invariant: 0.10.3
+      tslib: 2.6.2
+      zen-observable-ts: 1.2.5
+    optionalDependencies:
+      graphql-ws: 5.14.0(graphql@16.8.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      subscriptions-transport-ws: 0.11.0(graphql@16.8.0)
+
+  '@apollo/client@3.8.3(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))':
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.0)
+      '@wry/context': 0.7.4
+      '@wry/equality': 0.5.7
+      '@wry/trie': 0.4.3
+      graphql: 16.8.0
+      graphql-tag: 2.12.6(graphql@16.8.0)
+      hoist-non-react-statics: 3.3.2
+      optimism: 0.17.5
+      prop-types: 15.8.1
+      response-iterator: 0.2.6
+      symbol-observable: 4.0.0
+      ts-invariant: 0.10.3
+      tslib: 2.6.2
+      zen-observable-ts: 1.2.5
+    optionalDependencies:
+      graphql-ws: 5.14.0(graphql@16.8.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      subscriptions-transport-ws: 0.11.0(graphql@16.8.0)
 
   '@apollo/protobufjs@1.2.6':
     dependencies:
@@ -7443,9 +7457,9 @@ snapshots:
       '@types/long': 4.0.2
       long: 4.0.0
 
-  '@apollo/react-hooks@4.0.0(@types/react@18.2.21)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)':
+  '@apollo/react-hooks@4.0.0(@types/react@18.2.21)(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))':
     dependencies:
-      '@apollo/client': 3.9.11(@types/react@18.2.21)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)(subscriptions-transport-ws@0.9.19)
+      '@apollo/client': 3.11.8(@types/react@18.2.21)(graphql-ws@5.14.0(graphql@16.8.0))(graphql@16.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0))
     transitivePeerDependencies:
       - '@types/react'
       - graphql
@@ -7462,12 +7476,12 @@ snapshots:
       '@apollo/utils.logger': 2.0.1
       graphql: 16.8.0
 
-  '@apollo/server-plugin-landing-page-graphql-playground@4.0.0(@apollo/server@4.9.3)':
+  '@apollo/server-plugin-landing-page-graphql-playground@4.0.0(@apollo/server@4.9.3(encoding@0.1.13)(graphql@16.8.0))':
     dependencies:
-      '@apollo/server': 4.9.3(graphql@16.8.0)
+      '@apollo/server': 4.9.3(encoding@0.1.13)(graphql@16.8.0)
       '@apollographql/graphql-playground-html': 1.6.29
 
-  '@apollo/server@4.9.3(graphql@16.8.0)':
+  '@apollo/server@4.9.3(encoding@0.1.13)(graphql@16.8.0)':
     dependencies:
       '@apollo/cache-control-types': 1.0.3(graphql@16.8.0)
       '@apollo/server-gateway-interface': 1.1.1(graphql@16.8.0)
@@ -7493,7 +7507,7 @@ snapshots:
       lru-cache: 7.18.3
       negotiator: 0.6.3
       node-abort-controller: 3.1.1
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
       uuid: 9.0.1
       whatwg-mimetype: 3.0.0
     transitivePeerDependencies:
@@ -7645,11 +7659,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/eslint-parser@7.23.3(@babel/core@7.23.6)(eslint@8.56.0)':
+  '@babel/eslint-parser@7.23.3(@babel/core@7.23.6)(eslint@8.50.0)':
     dependencies:
       '@babel/core': 7.23.6
       '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
-      eslint: 8.56.0
+      eslint: 8.50.0
       eslint-visitor-keys: 2.1.0
       semver: 6.3.1
 
@@ -8632,9 +8646,10 @@ snapshots:
       '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@18.2.0)
       '@emotion/utils': 1.2.1
       '@emotion/weak-memoize': 0.3.1
-      '@types/react': 18.2.21
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
+    optionalDependencies:
+      '@types/react': 18.2.21
 
   '@emotion/serialize@1.1.3':
     dependencies:
@@ -8646,7 +8661,7 @@ snapshots:
 
   '@emotion/sheet@1.2.2': {}
 
-  '@emotion/styled@11.11.0(@emotion/react@11.11.3)(@types/react@18.2.21)(react@18.2.0)':
+  '@emotion/styled@11.11.0(@emotion/react@11.11.3(@types/react@18.2.21)(react@18.2.0))(@types/react@18.2.21)(react@18.2.0)':
     dependencies:
       '@babel/runtime': 7.23.6
       '@emotion/babel-plugin': 11.11.0
@@ -8655,8 +8670,9 @@ snapshots:
       '@emotion/serialize': 1.1.3
       '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@18.2.0)
       '@emotion/utils': 1.2.1
-      '@types/react': 18.2.21
       react: 18.2.0
+    optionalDependencies:
+      '@types/react': 18.2.21
 
   '@emotion/unitless@0.8.1': {}
 
@@ -8671,11 +8687,6 @@ snapshots:
   '@eslint-community/eslint-utils@4.4.0(eslint@8.50.0)':
     dependencies:
       eslint: 8.50.0
-      eslint-visitor-keys: 3.4.3
-
-  '@eslint-community/eslint-utils@4.4.0(eslint@8.56.0)':
-    dependencies:
-      eslint: 8.56.0
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.10.0': {}
@@ -8695,8 +8706,6 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.50.0': {}
-
-  '@eslint/js@8.56.0': {}
 
   '@floating-ui/core@1.6.0':
     dependencies:
@@ -8842,12 +8851,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@lerna/create@8.0.1(typescript@5.2.2)':
+  '@lerna/create@8.0.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(encoding@0.1.13)(typescript@5.2.2)':
     dependencies:
       '@npmcli/run-script': 7.0.2
-      '@nx/devkit': 17.2.7(nx@17.2.7)
+      '@nx/devkit': 17.2.7(nx@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2)))
       '@octokit/plugin-enterprise-rest': 6.0.1
-      '@octokit/rest': 19.0.11
+      '@octokit/rest': 19.0.11(encoding@0.1.13)
       byte-size: 8.1.1
       chalk: 4.1.0
       clone-deep: 4.0.1
@@ -8877,12 +8886,12 @@ snapshots:
       make-dir: 4.0.0
       minimatch: 3.0.5
       multimatch: 5.0.0
-      node-fetch: 2.6.7
+      node-fetch: 2.6.7(encoding@0.1.13)
       npm-package-arg: 8.1.1
       npm-packlist: 5.1.1
       npm-registry-fetch: 14.0.5
       npmlog: 6.0.2
-      nx: 17.2.7
+      nx: 17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2))
       p-map: 4.0.0
       p-map-series: 2.1.0
       p-queue: 6.6.2
@@ -8919,13 +8928,13 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-  '@nestjs/apollo@12.0.9(@apollo/server@4.9.3)(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/graphql@12.0.9)(graphql@16.8.0)':
+  '@nestjs/apollo@12.0.9(@apollo/server@4.9.3(encoding@0.1.13)(graphql@16.8.0))(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/graphql@12.0.9(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14))(graphql@16.8.0)':
     dependencies:
-      '@apollo/server': 4.9.3(graphql@16.8.0)
-      '@apollo/server-plugin-landing-page-graphql-playground': 4.0.0(@apollo/server@4.9.3)
+      '@apollo/server': 4.9.3(encoding@0.1.13)(graphql@16.8.0)
+      '@apollo/server-plugin-landing-page-graphql-playground': 4.0.0(@apollo/server@4.9.3(encoding@0.1.13)(graphql@16.8.0))
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/graphql': 12.0.9(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14)
+      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/graphql': 12.0.9(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14)
       graphql: 16.8.0
       iterall: 1.3.0
       lodash.omit: 4.5.0
@@ -8933,20 +8942,19 @@ snapshots:
 
   '@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)':
     dependencies:
-      class-transformer: 0.5.1
-      class-validator: 0.14.0
       iterare: 1.2.1
       reflect-metadata: 0.1.14
       rxjs: 7.8.1
       tslib: 2.6.2
       uid: 2.0.2
+    optionalDependencies:
+      class-transformer: 0.5.1
+      class-validator: 0.14.0
 
-  '@nestjs/core@10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)':
+  '@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1)':
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/platform-express': 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
-      '@nestjs/websockets': 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nuxtjs/opencollective': 0.3.2
+      '@nuxtjs/opencollective': 0.3.2(encoding@0.1.13)
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
       path-to-regexp: 3.2.0
@@ -8954,20 +8962,21 @@ snapshots:
       rxjs: 7.8.1
       tslib: 2.6.2
       uid: 2.0.2
+    optionalDependencies:
+      '@nestjs/platform-express': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)
+      '@nestjs/websockets': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
     transitivePeerDependencies:
       - encoding
 
-  '@nestjs/graphql@12.0.9(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14)':
+  '@nestjs/graphql@12.0.9(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.8.0)(reflect-metadata@0.1.14)':
     dependencies:
       '@graphql-tools/merge': 9.0.0(graphql@16.8.0)
       '@graphql-tools/schema': 10.0.0(graphql@16.8.0)
       '@graphql-tools/utils': 10.0.6(graphql@16.8.0)
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/mapped-types': 2.0.2(@nestjs/common@10.2.5)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)
+      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/mapped-types': 2.0.2(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)
       chokidar: 3.5.3
-      class-transformer: 0.5.1
-      class-validator: 0.14.0
       fast-glob: 3.3.1
       graphql: 16.8.0
       graphql-tag: 2.12.6(graphql@16.8.0)
@@ -8979,27 +8988,31 @@ snapshots:
       tslib: 2.6.2
       uuid: 9.0.0
       ws: 8.13.0
+    optionalDependencies:
+      class-transformer: 0.5.1
+      class-validator: 0.14.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@nestjs/jwt@10.1.1(@nestjs/common@10.2.5)':
+  '@nestjs/jwt@10.1.1(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))':
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@types/jsonwebtoken': 9.0.2
       jsonwebtoken: 9.0.0
 
-  '@nestjs/mapped-types@2.0.2(@nestjs/common@10.2.5)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)':
+  '@nestjs/mapped-types@2.0.2(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)':
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      reflect-metadata: 0.1.14
+    optionalDependencies:
       class-transformer: 0.5.1
       class-validator: 0.14.0
-      reflect-metadata: 0.1.14
 
-  '@nestjs/platform-express@10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)':
+  '@nestjs/platform-express@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)':
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       body-parser: 1.20.2
       cors: 2.8.5
       express: 4.18.2
@@ -9008,10 +9021,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nestjs/platform-ws@10.2.5(@nestjs/common@10.2.5)(@nestjs/websockets@10.2.5)(rxjs@7.8.1)':
+  '@nestjs/platform-ws@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/websockets@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1))(rxjs@7.8.1)':
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/websockets': 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/websockets': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       rxjs: 7.8.1
       tslib: 2.6.2
       ws: 8.13.0
@@ -9019,19 +9032,19 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@nestjs/typeorm@10.0.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)(typeorm@0.3.17)':
+  '@nestjs/typeorm@10.0.0(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1))(reflect-metadata@0.1.14)(rxjs@7.8.1)(typeorm@0.3.17(mysql2@3.7.0)(ts-node@10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2)))':
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       reflect-metadata: 0.1.14
       rxjs: 7.8.1
-      typeorm: 0.3.17(mysql2@3.7.0)(ts-node@10.9.1)
+      typeorm: 0.3.17(mysql2@3.7.0)(ts-node@10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2))
       uuid: 9.0.0
 
-  '@nestjs/websockets@10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)':
+  '@nestjs/websockets@10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/core@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)':
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.5(@nestjs/common@10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.1))(@nestjs/platform-express@10.2.5)(@nestjs/websockets@10.2.5)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       iterare: 1.2.1
       object-hash: 3.0.0
       reflect-metadata: 0.1.14
@@ -9138,36 +9151,36 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nrwl/devkit@17.2.7(nx@17.2.7)':
+  '@nrwl/devkit@17.2.7(nx@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2)))':
     dependencies:
-      '@nx/devkit': 17.2.7(nx@17.2.7)
+      '@nx/devkit': 17.2.7(nx@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2)))
     transitivePeerDependencies:
       - nx
 
-  '@nrwl/tao@17.2.7':
+  '@nrwl/tao@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2))':
     dependencies:
-      nx: 17.2.7
+      nx: 17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2))
       tslib: 2.6.2
     transitivePeerDependencies:
       - '@swc-node/register'
       - '@swc/core'
       - debug
 
-  '@nuxtjs/opencollective@0.3.2':
+  '@nuxtjs/opencollective@0.3.2(encoding@0.1.13)':
     dependencies:
       chalk: 4.1.2
       consola: 2.15.3
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
 
-  '@nx/devkit@17.2.7(nx@17.2.7)':
+  '@nx/devkit@17.2.7(nx@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2)))':
     dependencies:
-      '@nrwl/devkit': 17.2.7(nx@17.2.7)
+      '@nrwl/devkit': 17.2.7(nx@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2)))
       ejs: 3.1.9
       enquirer: 2.3.6
       ignore: 5.3.0
-      nx: 17.2.7
+      nx: 17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2))
       semver: 7.5.3
       tmp: 0.2.1
       tslib: 2.6.2
@@ -9204,11 +9217,11 @@ snapshots:
 
   '@octokit/auth-token@3.0.4': {}
 
-  '@octokit/core@4.2.4':
+  '@octokit/core@4.2.4(encoding@0.1.13)':
     dependencies:
       '@octokit/auth-token': 3.0.4
-      '@octokit/graphql': 5.0.6
-      '@octokit/request': 6.2.8
+      '@octokit/graphql': 5.0.6(encoding@0.1.13)
+      '@octokit/request': 6.2.8(encoding@0.1.13)
       '@octokit/request-error': 3.0.3
       '@octokit/types': 9.3.2
       before-after-hook: 2.2.3
@@ -9222,9 +9235,9 @@ snapshots:
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.0
 
-  '@octokit/graphql@5.0.6':
+  '@octokit/graphql@5.0.6(encoding@0.1.13)':
     dependencies:
-      '@octokit/request': 6.2.8
+      '@octokit/request': 6.2.8(encoding@0.1.13)
       '@octokit/types': 9.3.2
       universal-user-agent: 6.0.0
     transitivePeerDependencies:
@@ -9234,19 +9247,19 @@ snapshots:
 
   '@octokit/plugin-enterprise-rest@6.0.1': {}
 
-  '@octokit/plugin-paginate-rest@6.1.2(@octokit/core@4.2.4)':
+  '@octokit/plugin-paginate-rest@6.1.2(@octokit/core@4.2.4(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 4.2.4
+      '@octokit/core': 4.2.4(encoding@0.1.13)
       '@octokit/tsconfig': 1.0.2
       '@octokit/types': 9.3.2
 
-  '@octokit/plugin-request-log@1.0.4(@octokit/core@4.2.4)':
+  '@octokit/plugin-request-log@1.0.4(@octokit/core@4.2.4(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 4.2.4
+      '@octokit/core': 4.2.4(encoding@0.1.13)
 
-  '@octokit/plugin-rest-endpoint-methods@7.2.3(@octokit/core@4.2.4)':
+  '@octokit/plugin-rest-endpoint-methods@7.2.3(@octokit/core@4.2.4(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 4.2.4
+      '@octokit/core': 4.2.4(encoding@0.1.13)
       '@octokit/types': 10.0.0
 
   '@octokit/request-error@3.0.3':
@@ -9255,23 +9268,23 @@ snapshots:
       deprecation: 2.3.1
       once: 1.4.0
 
-  '@octokit/request@6.2.8':
+  '@octokit/request@6.2.8(encoding@0.1.13)':
     dependencies:
       '@octokit/endpoint': 7.0.6
       '@octokit/request-error': 3.0.3
       '@octokit/types': 9.3.2
       is-plain-object: 5.0.0
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
       universal-user-agent: 6.0.0
     transitivePeerDependencies:
       - encoding
 
-  '@octokit/rest@19.0.11':
+  '@octokit/rest@19.0.11(encoding@0.1.13)':
     dependencies:
-      '@octokit/core': 4.2.4
-      '@octokit/plugin-paginate-rest': 6.1.2(@octokit/core@4.2.4)
-      '@octokit/plugin-request-log': 1.0.4(@octokit/core@4.2.4)
-      '@octokit/plugin-rest-endpoint-methods': 7.2.3(@octokit/core@4.2.4)
+      '@octokit/core': 4.2.4(encoding@0.1.13)
+      '@octokit/plugin-paginate-rest': 6.1.2(@octokit/core@4.2.4(encoding@0.1.13))
+      '@octokit/plugin-request-log': 1.0.4(@octokit/core@4.2.4(encoding@0.1.13))
+      '@octokit/plugin-rest-endpoint-methods': 7.2.3(@octokit/core@4.2.4(encoding@0.1.13))
     transitivePeerDependencies:
       - encoding
 
@@ -9371,6 +9384,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@popperjs/core@2.11.8': {}
+
   '@protobufjs/aspromise@1.1.2': {}
 
   '@protobufjs/base64@1.1.2': {}
@@ -9402,17 +9417,20 @@ snapshots:
       glob: 8.1.0
       is-reference: 1.2.1
       magic-string: 0.27.0
+    optionalDependencies:
       rollup: 3.29.2
 
   '@rollup/plugin-image@3.0.2(rollup@3.29.2)':
     dependencies:
       '@rollup/pluginutils': 5.0.4(rollup@3.29.2)
       mini-svg-data-uri: 1.4.4
+    optionalDependencies:
       rollup: 3.29.2
 
   '@rollup/plugin-json@6.0.0(rollup@3.29.2)':
     dependencies:
       '@rollup/pluginutils': 5.0.4(rollup@3.29.2)
+    optionalDependencies:
       rollup: 3.29.2
 
   '@rollup/plugin-node-resolve@15.2.1(rollup@3.29.2)':
@@ -9423,28 +9441,41 @@ snapshots:
       is-builtin-module: 3.2.1
       is-module: 1.0.0
       resolve: 1.22.6
+    optionalDependencies:
       rollup: 3.29.2
 
   '@rollup/plugin-terser@0.4.3(rollup@3.29.2)':
     dependencies:
-      rollup: 3.29.2
       serialize-javascript: 6.0.1
       smob: 1.4.1
       terser: 5.20.0
+    optionalDependencies:
+      rollup: 3.29.2
 
   '@rollup/plugin-typescript@11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.2.2)':
     dependencies:
       '@rollup/pluginutils': 5.0.4(rollup@3.29.2)
       resolve: 1.22.8
+      typescript: 5.2.2
+    optionalDependencies:
       rollup: 3.29.2
       tslib: 2.6.2
-      typescript: 5.2.2
+
+  '@rollup/plugin-typescript@11.1.3(rollup@3.29.2)(tslib@2.6.2)(typescript@5.3.3)':
+    dependencies:
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.2)
+      resolve: 1.22.8
+      typescript: 5.3.3
+    optionalDependencies:
+      rollup: 3.29.2
+      tslib: 2.6.2
 
   '@rollup/pluginutils@5.0.4(rollup@3.29.2)':
     dependencies:
       '@types/estree': 1.0.2
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
       rollup: 3.29.2
 
   '@rushstack/eslint-patch@1.6.1': {}
@@ -9532,7 +9563,7 @@ snapshots:
   '@swc/core-win32-x64-msvc@1.3.85':
     optional: true
 
-  '@swc/core@1.3.85':
+  '@swc/core@1.3.85(@swc/helpers@0.5.2)':
     dependencies:
       '@swc/types': 0.1.5
     optionalDependencies:
@@ -9546,6 +9577,7 @@ snapshots:
       '@swc/core-win32-arm64-msvc': 1.3.85
       '@swc/core-win32-ia32-msvc': 1.3.85
       '@swc/core-win32-x64-msvc': 1.3.85
+      '@swc/helpers': 0.5.2
 
   '@swc/helpers@0.5.2':
     dependencies:
@@ -9746,7 +9778,7 @@ snapshots:
 
   '@types/zen-observable@0.8.4': {}
 
-  '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.50.0)(typescript@5.3.3)':
+  '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
       '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
@@ -9760,51 +9792,35 @@ snapshots:
       natural-compare-lite: 1.4.0
       semver: 7.5.4
       tsutils: 3.21.0(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.56.0)(typescript@5.3.3)':
+  '@typescript-eslint/eslint-plugin@6.15.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/scope-manager': 5.62.0
-      '@typescript-eslint/type-utils': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/utils': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      debug: 4.3.4
-      eslint: 8.56.0
-      graphemer: 1.4.0
-      ignore: 5.3.0
-      natural-compare-lite: 1.4.0
-      semver: 7.5.4
-      tsutils: 3.21.0(typescript@5.3.3)
-      typescript: 5.3.3
-    transitivePeerDependencies:
-      - supports-color
-
-  '@typescript-eslint/eslint-plugin@6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)':
-    dependencies:
-      '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
       '@typescript-eslint/scope-manager': 6.15.0
-      '@typescript-eslint/type-utils': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/utils': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/type-utils': 6.15.0(eslint@8.50.0)(typescript@5.3.3)
+      '@typescript-eslint/utils': 6.15.0(eslint@8.50.0)(typescript@5.3.3)
       '@typescript-eslint/visitor-keys': 6.15.0
       debug: 4.3.4
-      eslint: 8.56.0
+      eslint: 8.50.0
       graphemer: 1.4.0
       ignore: 5.3.0
       natural-compare: 1.4.0
       semver: 7.5.4
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/experimental-utils@5.62.0(eslint@8.56.0)(typescript@5.3.3)':
+  '@typescript-eslint/experimental-utils@5.62.0(eslint@8.50.0)(typescript@5.3.3)':
     dependencies:
-      '@typescript-eslint/utils': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      eslint: 8.56.0
+      '@typescript-eslint/utils': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
+      eslint: 8.50.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -9816,6 +9832,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.2.2)
       debug: 4.3.4
       eslint: 8.50.0
+    optionalDependencies:
       typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
@@ -9827,29 +9844,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.3.3)
       debug: 4.3.4
       eslint: 8.50.0
-      typescript: 5.3.3
-    transitivePeerDependencies:
-      - supports-color
-
-  '@typescript-eslint/parser@5.62.0(eslint@8.56.0)(typescript@5.3.3)':
-    dependencies:
-      '@typescript-eslint/scope-manager': 5.62.0
-      '@typescript-eslint/types': 5.62.0
-      '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.3.3)
-      debug: 4.3.4
-      eslint: 8.56.0
-      typescript: 5.3.3
-    transitivePeerDependencies:
-      - supports-color
-
-  '@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3)':
-    dependencies:
-      '@typescript-eslint/scope-manager': 6.15.0
-      '@typescript-eslint/types': 6.15.0
-      '@typescript-eslint/typescript-estree': 6.15.0(typescript@5.3.3)
-      '@typescript-eslint/visitor-keys': 6.15.0
-      debug: 4.3.4
-      eslint: 8.56.0
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -9871,28 +9866,19 @@ snapshots:
       debug: 4.3.4
       eslint: 8.50.0
       tsutils: 3.21.0(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/type-utils@5.62.0(eslint@8.56.0)(typescript@5.3.3)':
-    dependencies:
-      '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.3.3)
-      '@typescript-eslint/utils': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      debug: 4.3.4
-      eslint: 8.56.0
-      tsutils: 3.21.0(typescript@5.3.3)
-      typescript: 5.3.3
-    transitivePeerDependencies:
-      - supports-color
-
-  '@typescript-eslint/type-utils@6.15.0(eslint@8.56.0)(typescript@5.3.3)':
+  '@typescript-eslint/type-utils@6.15.0(eslint@8.50.0)(typescript@5.3.3)':
     dependencies:
       '@typescript-eslint/typescript-estree': 6.15.0(typescript@5.3.3)
-      '@typescript-eslint/utils': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/utils': 6.15.0(eslint@8.50.0)(typescript@5.3.3)
       debug: 4.3.4
-      eslint: 8.56.0
+      eslint: 8.50.0
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -9910,6 +9896,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.5.4
       tsutils: 3.21.0(typescript@5.2.2)
+    optionalDependencies:
       typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
@@ -9923,6 +9910,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.5.4
       tsutils: 3.21.0(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -9936,6 +9924,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.5.4
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -9955,30 +9944,15 @@ snapshots:
       - supports-color
       - typescript
 
-  '@typescript-eslint/utils@5.62.0(eslint@8.56.0)(typescript@5.3.3)':
+  '@typescript-eslint/utils@6.15.0(eslint@8.50.0)(typescript@5.3.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.56.0)
-      '@types/json-schema': 7.0.15
-      '@types/semver': 7.5.6
-      '@typescript-eslint/scope-manager': 5.62.0
-      '@typescript-eslint/types': 5.62.0
-      '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.3.3)
-      eslint: 8.56.0
-      eslint-scope: 5.1.1
-      semver: 7.5.4
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
-  '@typescript-eslint/utils@6.15.0(eslint@8.56.0)(typescript@5.3.3)':
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.56.0)
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.50.0)
       '@types/json-schema': 7.0.15
       '@types/semver': 7.5.6
       '@typescript-eslint/scope-manager': 6.15.0
       '@typescript-eslint/types': 6.15.0
       '@typescript-eslint/typescript-estree': 6.15.0(typescript@5.3.3)
-      eslint: 8.56.0
+      eslint: 8.50.0
       semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
@@ -9993,8 +9967,6 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.15.0
       eslint-visitor-keys: 3.4.3
-
-  '@ungap/structured-clone@1.2.0': {}
 
   '@vladfrangu/async_event_emitter@2.2.2': {}
 
@@ -10169,10 +10141,10 @@ snapshots:
       tslib: 1.14.1
       zen-observable: 0.8.15
 
-  apollo-datasource@3.3.2:
+  apollo-datasource@3.3.2(encoding@0.1.13):
     dependencies:
       '@apollo/utils.keyvaluecache': 1.0.2
-      apollo-server-env: 4.2.1
+      apollo-server-env: 4.2.1(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
 
@@ -10198,10 +10170,10 @@ snapshots:
       graphql: 16.8.0
       tslib: 1.14.1
 
-  apollo-link-ws@1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.9.19):
+  apollo-link-ws@1.0.20(graphql@16.8.0)(subscriptions-transport-ws@0.11.0(graphql@16.8.0)):
     dependencies:
       apollo-link: 1.2.14(graphql@16.8.0)
-      subscriptions-transport-ws: 0.9.19(graphql@16.8.0)
+      subscriptions-transport-ws: 0.11.0(graphql@16.8.0)
       tslib: 1.14.1
     transitivePeerDependencies:
       - graphql
@@ -10218,7 +10190,7 @@ snapshots:
     dependencies:
       '@apollo/protobufjs': 1.2.6
 
-  apollo-server-core@3.12.1(graphql@16.8.0):
+  apollo-server-core@3.12.1(encoding@0.1.13)(graphql@16.8.0):
     dependencies:
       '@apollo/utils.keyvaluecache': 1.0.2
       '@apollo/utils.logger': 1.0.1
@@ -10228,12 +10200,12 @@ snapshots:
       '@graphql-tools/mock': 8.7.20(graphql@16.8.0)
       '@graphql-tools/schema': 8.5.1(graphql@16.8.0)
       '@josephg/resolvable': 1.0.1
-      apollo-datasource: 3.3.2
+      apollo-datasource: 3.3.2(encoding@0.1.13)
       apollo-reporting-protobuf: 3.4.0
-      apollo-server-env: 4.2.1
+      apollo-server-env: 4.2.1(encoding@0.1.13)
       apollo-server-errors: 3.3.1(graphql@16.8.0)
-      apollo-server-plugin-base: 3.7.2(graphql@16.8.0)
-      apollo-server-types: 3.8.0(graphql@16.8.0)
+      apollo-server-plugin-base: 3.7.2(encoding@0.1.13)(graphql@16.8.0)
+      apollo-server-types: 3.8.0(encoding@0.1.13)(graphql@16.8.0)
       async-retry: 1.3.3
       fast-json-stable-stringify: 2.1.0
       graphql: 16.8.0
@@ -10247,9 +10219,9 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  apollo-server-env@4.2.1:
+  apollo-server-env@4.2.1(encoding@0.1.13):
     dependencies:
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
 
@@ -10257,7 +10229,7 @@ snapshots:
     dependencies:
       graphql: 16.8.0
 
-  apollo-server-express@3.10.2(express@4.18.2)(graphql@16.8.0):
+  apollo-server-express@3.10.2(encoding@0.1.13)(express@4.18.2)(graphql@16.8.0):
     dependencies:
       '@types/accepts': 1.3.5
       '@types/body-parser': 1.19.2
@@ -10265,8 +10237,8 @@ snapshots:
       '@types/express': 4.17.13
       '@types/express-serve-static-core': 4.17.30
       accepts: 1.3.8
-      apollo-server-core: 3.12.1(graphql@16.8.0)
-      apollo-server-types: 3.8.0(graphql@16.8.0)
+      apollo-server-core: 3.12.1(encoding@0.1.13)(graphql@16.8.0)
+      apollo-server-types: 3.8.0(encoding@0.1.13)(graphql@16.8.0)
       body-parser: 1.20.2
       cors: 2.8.5
       express: 4.18.2
@@ -10276,19 +10248,19 @@ snapshots:
       - encoding
       - supports-color
 
-  apollo-server-plugin-base@3.7.2(graphql@16.8.0):
+  apollo-server-plugin-base@3.7.2(encoding@0.1.13)(graphql@16.8.0):
     dependencies:
-      apollo-server-types: 3.8.0(graphql@16.8.0)
+      apollo-server-types: 3.8.0(encoding@0.1.13)(graphql@16.8.0)
       graphql: 16.8.0
     transitivePeerDependencies:
       - encoding
 
-  apollo-server-types@3.8.0(graphql@16.8.0):
+  apollo-server-types@3.8.0(encoding@0.1.13)(graphql@16.8.0):
     dependencies:
       '@apollo/utils.keyvaluecache': 1.0.2
       '@apollo/utils.logger': 1.0.1
       apollo-reporting-protobuf: 3.4.0
-      apollo-server-env: 4.2.1
+      apollo-server-env: 4.2.1(encoding@0.1.13)
       graphql: 16.8.0
     transitivePeerDependencies:
       - encoding
@@ -10448,13 +10420,13 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  babel-eslint@10.1.0(eslint@8.56.0):
+  babel-eslint@10.1.0(eslint@8.50.0):
     dependencies:
       '@babel/code-frame': 7.23.5
       '@babel/parser': 7.23.6
       '@babel/traverse': 7.23.6
       '@babel/types': 7.23.6
-      eslint: 8.56.0
+      eslint: 8.50.0
       eslint-visitor-keys: 1.3.0
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -10573,6 +10545,10 @@ snapshots:
       unpipe: 1.0.0
     transitivePeerDependencies:
       - supports-color
+
+  bootstrap@5.3.3(@popperjs/core@2.11.8):
+    dependencies:
+      '@popperjs/core': 2.11.8
 
   bplist-parser@0.2.0:
     dependencies:
@@ -10744,6 +10720,8 @@ snapshots:
       '@types/validator': 13.11.1
       libphonenumber-js: 1.10.44
       validator: 13.11.0
+
+  classnames@2.5.1: {}
 
   clean-stack@2.2.0: {}
 
@@ -10954,15 +10932,16 @@ snapshots:
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
+    optionalDependencies:
       typescript: 5.2.2
 
   create-require@1.1.1: {}
 
   croner@4.1.97: {}
 
-  cross-fetch@3.1.8:
+  cross-fetch@3.1.8(encoding@0.1.13):
     dependencies:
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
 
@@ -11013,6 +10992,7 @@ snapshots:
   debug@3.2.7(supports-color@5.5.0):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
       supports-color: 5.5.0
 
   debug@4.3.4:
@@ -11143,9 +11123,9 @@ snapshots:
 
   dotenv@16.3.1: {}
 
-  draft-js@0.11.7(react-dom@18.2.0)(react@18.2.0):
+  draft-js@0.11.7(encoding@0.1.13)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      fbjs: 2.0.0
+      fbjs: 2.0.0(encoding@0.1.13)
       immutable: 3.7.6
       object-assign: 4.1.1
       react: 18.2.0
@@ -11307,11 +11287,12 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.2.2)
       eslint: 8.50.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.50.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint@8.50.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0))(eslint@8.50.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.50.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.50.0)
       eslint-plugin-react: 7.33.2(eslint@8.50.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.50.0)
+    optionalDependencies:
       typescript: 5.2.2
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -11321,23 +11302,24 @@ snapshots:
     dependencies:
       eslint: 8.50.0
 
-  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.56.0)(typescript@5.3.3):
+  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.23.3(@babel/core@7.23.6))(@babel/plugin-transform-react-jsx@7.23.4(@babel/core@7.23.6))(eslint@8.50.0)(typescript@5.3.3):
     dependencies:
       '@babel/core': 7.23.6
-      '@babel/eslint-parser': 7.23.3(@babel/core@7.23.6)(eslint@8.56.0)
+      '@babel/eslint-parser': 7.23.3(@babel/core@7.23.6)(eslint@8.50.0)
       '@rushstack/eslint-patch': 1.6.1
-      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/parser': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3)
+      '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
       babel-preset-react-app: 10.0.1
       confusing-browser-globals: 1.0.11
-      eslint: 8.56.0
-      eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.56.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0)(eslint@8.56.0)
-      eslint-plugin-jest: 25.7.0(@typescript-eslint/eslint-plugin@5.62.0)(eslint@8.56.0)(typescript@5.3.3)
-      eslint-plugin-jsx-a11y: 6.8.0(eslint@8.56.0)
-      eslint-plugin-react: 7.33.2(eslint@8.56.0)
-      eslint-plugin-react-hooks: 4.6.0(eslint@8.56.0)
-      eslint-plugin-testing-library: 5.11.1(eslint@8.56.0)(typescript@5.3.3)
+      eslint: 8.50.0
+      eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.23.3(@babel/core@7.23.6))(@babel/plugin-transform-react-jsx@7.23.4(@babel/core@7.23.6))(eslint@8.50.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.50.0)
+      eslint-plugin-jest: 25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3)
+      eslint-plugin-jsx-a11y: 6.8.0(eslint@8.50.0)
+      eslint-plugin-react: 7.33.2(eslint@8.50.0)
+      eslint-plugin-react-hooks: 4.6.0(eslint@8.50.0)
+      eslint-plugin-testing-library: 5.11.1(eslint@8.50.0)(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - '@babel/plugin-syntax-flow'
@@ -11355,13 +11337,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.50.0):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0))(eslint@8.50.0):
     dependencies:
       debug: 4.3.4
       enhanced-resolve: 5.15.0
       eslint: 8.50.0
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.50.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint@8.50.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0))(eslint@8.50.0))(eslint@8.50.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.50.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.2
       is-core-module: 2.13.1
@@ -11372,40 +11354,14 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.50.0):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0))(eslint@8.50.0))(eslint@8.50.0):
     dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.2.2)
       debug: 3.2.7(supports-color@5.5.0)
+    optionalDependencies:
+      '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
       eslint: 8.50.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.50.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0):
-    dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      debug: 3.2.7(supports-color@5.5.0)
-      eslint: 8.56.0
-      eslint-import-resolver-node: 0.3.9
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-node@0.3.9)(eslint@8.50.0):
-    dependencies:
-      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
-      debug: 3.2.7(supports-color@5.5.0)
-      eslint: 8.50.0
-      eslint-import-resolver-node: 0.3.9
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0):
-    dependencies:
-      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
-      debug: 3.2.7(supports-color@5.5.0)
-      eslint: 8.56.0
-      eslint-import-resolver-node: 0.3.9
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0))(eslint@8.50.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -11415,49 +11371,16 @@ snapshots:
       eslint-utils: 2.1.0
       regexpp: 3.2.0
 
-  eslint-plugin-es@3.0.1(eslint@8.56.0):
-    dependencies:
-      eslint: 8.56.0
-      eslint-utils: 2.1.0
-      regexpp: 3.2.0
-
-  eslint-plugin-flowtype@8.0.3(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.56.0):
+  eslint-plugin-flowtype@8.0.3(@babel/plugin-syntax-flow@7.23.3(@babel/core@7.23.6))(@babel/plugin-transform-react-jsx@7.23.4(@babel/core@7.23.6))(eslint@8.50.0):
     dependencies:
       '@babel/plugin-syntax-flow': 7.23.3(@babel/core@7.23.6)
       '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.23.6)
-      eslint: 8.56.0
+      eslint: 8.50.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0)(eslint@8.56.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.50.0):
     dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      array-includes: 3.1.7
-      array.prototype.findlastindex: 1.2.3
-      array.prototype.flat: 1.3.2
-      array.prototype.flatmap: 1.3.2
-      debug: 3.2.7(supports-color@5.5.0)
-      doctrine: 2.1.0
-      eslint: 8.56.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0)
-      hasown: 2.0.0
-      is-core-module: 2.13.1
-      is-glob: 4.0.3
-      minimatch: 3.1.2
-      object.fromentries: 2.0.7
-      object.groupby: 1.0.1
-      object.values: 1.1.7
-      semver: 6.3.1
-      tsconfig-paths: 3.15.0
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.15.0)(eslint@8.50.0):
-    dependencies:
-      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
       array-includes: 3.1.7
       array.prototype.findlastindex: 1.2.3
       array.prototype.flat: 1.3.2
@@ -11466,7 +11389,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.50.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-node@0.3.9)(eslint@8.50.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0))(eslint@8.50.0))(eslint@8.50.0)
       hasown: 2.0.0
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -11476,42 +11399,19 @@ snapshots:
       object.values: 1.1.7
       semver: 6.3.1
       tsconfig-paths: 3.15.0
+    optionalDependencies:
+      '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.15.0)(eslint@8.56.0):
+  eslint-plugin-jest@25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3):
     dependencies:
-      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
-      array-includes: 3.1.7
-      array.prototype.findlastindex: 1.2.3
-      array.prototype.flat: 1.3.2
-      array.prototype.flatmap: 1.3.2
-      debug: 3.2.7(supports-color@5.5.0)
-      doctrine: 2.1.0
-      eslint: 8.56.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0)
-      hasown: 2.0.0
-      is-core-module: 2.13.1
-      is-glob: 4.0.3
-      minimatch: 3.1.2
-      object.fromentries: 2.0.7
-      object.groupby: 1.0.1
-      object.values: 1.1.7
-      semver: 6.3.1
-      tsconfig-paths: 3.15.0
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-
-  eslint-plugin-jest@25.7.0(@typescript-eslint/eslint-plugin@5.62.0)(eslint@8.56.0)(typescript@5.3.3):
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/experimental-utils': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      eslint: 8.56.0
+      '@typescript-eslint/experimental-utils': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
+      eslint: 8.50.0
+    optionalDependencies:
+      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -11536,26 +11436,6 @@ snapshots:
       object.entries: 1.1.7
       object.fromentries: 2.0.7
 
-  eslint-plugin-jsx-a11y@6.8.0(eslint@8.56.0):
-    dependencies:
-      '@babel/runtime': 7.23.6
-      aria-query: 5.3.0
-      array-includes: 3.1.7
-      array.prototype.flatmap: 1.3.2
-      ast-types-flow: 0.0.8
-      axe-core: 4.7.0
-      axobject-query: 3.2.1
-      damerau-levenshtein: 1.0.8
-      emoji-regex: 9.2.2
-      es-iterator-helpers: 1.0.15
-      eslint: 8.56.0
-      hasown: 2.0.0
-      jsx-ast-utils: 3.3.5
-      language-tags: 1.0.9
-      minimatch: 3.1.2
-      object.entries: 1.1.7
-      object.fromentries: 2.0.7
-
   eslint-plugin-node@11.1.0(eslint@8.50.0):
     dependencies:
       eslint: 8.50.0
@@ -11566,38 +11446,27 @@ snapshots:
       resolve: 1.22.8
       semver: 6.3.1
 
-  eslint-plugin-node@11.1.0(eslint@8.56.0):
-    dependencies:
-      eslint: 8.56.0
-      eslint-plugin-es: 3.0.1(eslint@8.56.0)
-      eslint-utils: 2.1.0
-      ignore: 5.3.0
-      minimatch: 3.1.2
-      resolve: 1.22.8
-      semver: 6.3.1
-
-  eslint-plugin-prettier@5.0.0(eslint-config-prettier@9.0.0)(eslint@8.50.0)(prettier@3.0.3):
+  eslint-plugin-prettier@5.0.0(eslint-config-prettier@9.0.0(eslint@8.50.0))(eslint@8.50.0)(prettier@3.0.3):
     dependencies:
       eslint: 8.50.0
+      prettier: 3.0.3
+      prettier-linter-helpers: 1.0.0
+      synckit: 0.8.6
+    optionalDependencies:
       eslint-config-prettier: 9.0.0(eslint@8.50.0)
-      prettier: 3.0.3
-      prettier-linter-helpers: 1.0.0
-      synckit: 0.8.6
 
-  eslint-plugin-prettier@5.1.2(eslint@8.56.0)(prettier@3.0.3):
+  eslint-plugin-prettier@5.1.2(eslint-config-prettier@9.0.0(eslint@8.50.0))(eslint@8.50.0)(prettier@3.0.3):
     dependencies:
-      eslint: 8.56.0
+      eslint: 8.50.0
       prettier: 3.0.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.6
+    optionalDependencies:
+      eslint-config-prettier: 9.0.0(eslint@8.50.0)
 
   eslint-plugin-react-hooks@4.6.0(eslint@8.50.0):
     dependencies:
       eslint: 8.50.0
-
-  eslint-plugin-react-hooks@4.6.0(eslint@8.56.0):
-    dependencies:
-      eslint: 8.56.0
 
   eslint-plugin-react@7.33.2(eslint@8.50.0):
     dependencies:
@@ -11619,30 +11488,10 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.10
 
-  eslint-plugin-react@7.33.2(eslint@8.56.0):
+  eslint-plugin-testing-library@5.11.1(eslint@8.50.0)(typescript@5.3.3):
     dependencies:
-      array-includes: 3.1.7
-      array.prototype.flatmap: 1.3.2
-      array.prototype.tosorted: 1.1.2
-      doctrine: 2.1.0
-      es-iterator-helpers: 1.0.15
-      eslint: 8.56.0
-      estraverse: 5.3.0
-      jsx-ast-utils: 3.3.5
-      minimatch: 3.1.2
-      object.entries: 1.1.7
-      object.fromentries: 2.0.7
-      object.hasown: 1.1.3
-      object.values: 1.1.7
-      prop-types: 15.8.1
-      resolve: 2.0.0-next.5
-      semver: 6.3.1
-      string.prototype.matchall: 4.0.10
-
-  eslint-plugin-testing-library@5.11.1(eslint@8.56.0)(typescript@5.3.3):
-    dependencies:
-      '@typescript-eslint/utils': 5.62.0(eslint@8.56.0)(typescript@5.3.3)
-      eslint: 8.56.0
+      '@typescript-eslint/utils': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
+      eslint: 8.50.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -11676,49 +11525,6 @@ snapshots:
       '@humanwhocodes/config-array': 0.11.13
       '@humanwhocodes/module-importer': 1.0.1
       '@nodelib/fs.walk': 1.2.8
-      ajv: 6.12.6
-      chalk: 4.1.2
-      cross-spawn: 7.0.3
-      debug: 4.3.4
-      doctrine: 3.0.0
-      escape-string-regexp: 4.0.0
-      eslint-scope: 7.2.2
-      eslint-visitor-keys: 3.4.3
-      espree: 9.6.1
-      esquery: 1.5.0
-      esutils: 2.0.3
-      fast-deep-equal: 3.1.3
-      file-entry-cache: 6.0.1
-      find-up: 5.0.0
-      glob-parent: 6.0.2
-      globals: 13.24.0
-      graphemer: 1.4.0
-      ignore: 5.3.0
-      imurmurhash: 0.1.4
-      is-glob: 4.0.3
-      is-path-inside: 3.0.3
-      js-yaml: 4.1.0
-      json-stable-stringify-without-jsonify: 1.0.1
-      levn: 0.4.1
-      lodash.merge: 4.6.2
-      minimatch: 3.1.2
-      natural-compare: 1.4.0
-      optionator: 0.9.3
-      strip-ansi: 6.0.1
-      text-table: 0.2.0
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint@8.56.0:
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.56.0)
-      '@eslint-community/regexpp': 4.10.0
-      '@eslint/eslintrc': 2.1.4
-      '@eslint/js': 8.56.0
-      '@humanwhocodes/config-array': 0.11.13
-      '@humanwhocodes/module-importer': 1.0.1
-      '@nodelib/fs.walk': 1.2.8
-      '@ungap/structured-clone': 1.2.0
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
@@ -11904,10 +11710,10 @@ snapshots:
 
   fbjs-css-vars@1.0.2: {}
 
-  fbjs@2.0.0:
+  fbjs@2.0.0(encoding@0.1.13):
     dependencies:
       core-js: 3.36.0
-      cross-fetch: 3.1.8
+      cross-fetch: 3.1.8(encoding@0.1.13)
       fbjs-css-vars: 1.0.2
       loose-envify: 1.4.0
       object-assign: 4.1.1
@@ -11976,7 +11782,7 @@ snapshots:
   flatted@3.2.9: {}
 
   follow-redirects@1.15.3(debug@4.3.4):
-    dependencies:
+    optionalDependencies:
       debug: 4.3.4
 
   for-each@0.3.3:
@@ -11996,13 +11802,13 @@ snapshots:
 
   forwarded@0.2.0: {}
 
-  framer-motion@10.17.9(react-dom@18.2.0)(react@18.2.0):
+  framer-motion@10.17.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
       tslib: 2.6.2
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   fresh@0.5.2: {}
 
@@ -12111,7 +11917,7 @@ snapshots:
       - supports-color
 
   git-node-fs@1.0.0(js-git@0.7.8):
-    dependencies:
+    optionalDependencies:
       js-git: 0.7.8
 
   git-raw-commits@3.0.0:
@@ -12265,13 +12071,13 @@ snapshots:
 
   gts@5.2.0(typescript@5.3.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.50.0)(typescript@5.3.3)
+      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.3.3))(eslint@8.50.0)(typescript@5.3.3)
       '@typescript-eslint/parser': 5.62.0(eslint@8.50.0)(typescript@5.3.3)
       chalk: 4.1.2
       eslint: 8.50.0
       eslint-config-prettier: 9.0.0(eslint@8.50.0)
       eslint-plugin-node: 11.1.0(eslint@8.50.0)
-      eslint-plugin-prettier: 5.0.0(eslint-config-prettier@9.0.0)(eslint@8.50.0)(prettier@3.0.3)
+      eslint-plugin-prettier: 5.0.0(eslint-config-prettier@9.0.0(eslint@8.50.0))(eslint@8.50.0)(prettier@3.0.3)
       execa: 5.1.1
       inquirer: 7.3.3
       json5: 2.2.3
@@ -12804,13 +12610,13 @@ snapshots:
 
   lazy@1.0.11: {}
 
-  lerna@8.0.1:
+  lerna@8.0.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(encoding@0.1.13):
     dependencies:
-      '@lerna/create': 8.0.1(typescript@5.2.2)
+      '@lerna/create': 8.0.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(encoding@0.1.13)(typescript@5.2.2)
       '@npmcli/run-script': 7.0.2
-      '@nx/devkit': 17.2.7(nx@17.2.7)
+      '@nx/devkit': 17.2.7(nx@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2)))
       '@octokit/plugin-enterprise-rest': 6.0.1
-      '@octokit/rest': 19.0.11
+      '@octokit/rest': 19.0.11(encoding@0.1.13)
       byte-size: 8.1.1
       chalk: 4.1.0
       clone-deep: 4.0.1
@@ -12846,12 +12652,12 @@ snapshots:
       make-dir: 4.0.0
       minimatch: 3.0.5
       multimatch: 5.0.0
-      node-fetch: 2.6.7
+      node-fetch: 2.6.7(encoding@0.1.13)
       npm-package-arg: 8.1.1
       npm-packlist: 5.1.1
       npm-registry-fetch: 14.0.5
       npmlog: 6.0.2
-      nx: 17.2.7
+      nx: 17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2))
       p-map: 4.0.0
       p-map-series: 2.1.0
       p-pipe: 3.1.0
@@ -13292,7 +13098,7 @@ snapshots:
 
   netmask@2.0.2: {}
 
-  next@14.0.4(@babel/core@7.23.6)(react-dom@18.2.0)(react@18.2.0):
+  next@14.0.4(@babel/core@7.23.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.67.0):
     dependencies:
       '@next/env': 14.0.4
       '@swc/helpers': 0.5.2
@@ -13314,19 +13120,24 @@ snapshots:
       '@next/swc-win32-arm64-msvc': 14.0.4
       '@next/swc-win32-ia32-msvc': 14.0.4
       '@next/swc-win32-x64-msvc': 14.0.4
+      sass: 1.67.0
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
 
   node-abort-controller@3.1.1: {}
 
-  node-fetch@2.6.7:
+  node-fetch@2.6.7(encoding@0.1.13):
     dependencies:
       whatwg-url: 5.0.0
+    optionalDependencies:
+      encoding: 0.1.13
 
-  node-fetch@2.7.0:
+  node-fetch@2.7.0(encoding@0.1.13):
     dependencies:
       whatwg-url: 5.0.0
+    optionalDependencies:
+      encoding: 0.1.13
 
   node-gyp@10.0.1:
     dependencies:
@@ -13502,9 +13313,9 @@ snapshots:
       eventemitter2: 0.4.14
       lazy: 1.0.11
 
-  nx@17.2.7:
+  nx@17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2)):
     dependencies:
-      '@nrwl/tao': 17.2.7
+      '@nrwl/tao': 17.2.7(@swc/core@1.3.85(@swc/helpers@0.5.2))
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.6
@@ -13549,6 +13360,7 @@ snapshots:
       '@nx/nx-linux-x64-musl': 17.2.7
       '@nx/nx-win32-arm64-msvc': 17.2.7
       '@nx/nx-win32-x64-msvc': 17.2.7
+      '@swc/core': 1.3.85(@swc/helpers@0.5.2)
     transitivePeerDependencies:
       - debug
 
@@ -14046,11 +13858,11 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
-  react-data-table-component@7.5.4(react@18.2.0)(styled-components@6.0.8):
+  react-data-table-component@7.5.4(react@18.2.0)(styled-components@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)):
     dependencies:
       deepmerge: 4.3.1
       react: 18.2.0
-      styled-components: 6.0.8(react-dom@18.2.0)(react@18.2.0)
+      styled-components: 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   react-dom@18.2.0(react@18.2.0):
     dependencies:
@@ -14058,11 +13870,21 @@ snapshots:
       react: 18.2.0
       scheduler: 0.23.0
 
+  react-fast-compare@3.2.2: {}
+
   react-is@16.13.1: {}
 
   react-is@18.2.0: {}
 
-  react-select@5.8.0(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0):
+  react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@popperjs/core': 2.11.8
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-fast-compare: 3.2.2
+      warning: 4.0.3
+
+  react-select@5.8.0(@types/react@18.2.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.23.6
       '@emotion/cache': 11.11.0
@@ -14073,24 +13895,24 @@ snapshots:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
+      react-transition-group: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       use-isomorphic-layout-effect: 1.1.2(@types/react@18.2.21)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
 
-  react-toastify@9.0.0(react-dom@18.2.0)(react@18.2.0):
+  react-toastify@9.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       clsx: 1.2.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  react-toastify@9.1.3(react-dom@18.2.0)(react@18.2.0):
+  react-toastify@9.1.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       clsx: 1.2.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  react-transition-group@4.4.5(react-dom@18.2.0)(react@18.2.0):
+  react-transition-group@4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.23.6
       dom-helpers: 5.2.1
@@ -14099,7 +13921,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  react-use-websocket@4.5.0(react-dom@18.2.0)(react@18.2.0):
+  react-use-websocket@4.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -14107,6 +13929,17 @@ snapshots:
   react@18.2.0:
     dependencies:
       loose-envify: 1.4.0
+
+  reactstrap@9.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@babel/runtime': 7.23.6
+      '@popperjs/core': 2.11.8
+      classnames: 2.5.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-transition-group: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   read-cmd-shim@4.0.0: {}
 
@@ -14232,8 +14065,8 @@ snapshots:
     dependencies:
       jsesc: 0.5.0
 
-  rehackt@0.0.6(@types/react@18.2.21)(react@18.2.0):
-    dependencies:
+  rehackt@0.1.0(@types/react@18.2.21)(react@18.2.0):
+    optionalDependencies:
       '@types/react': 18.2.21
       react: 18.2.0
 
@@ -14658,7 +14491,7 @@ snapshots:
       minimist: 1.2.8
       through: 2.3.8
 
-  styled-components@6.0.8(react-dom@18.2.0)(react@18.2.0):
+  styled-components@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/cli': 7.22.15(@babel/core@7.23.6)
       '@babel/core': 7.23.6
@@ -14686,27 +14519,16 @@ snapshots:
 
   styled-jsx@5.1.1(@babel/core@7.23.6)(react@18.2.0):
     dependencies:
-      '@babel/core': 7.23.6
       client-only: 0.0.1
       react: 18.2.0
+    optionalDependencies:
+      '@babel/core': 7.23.6
 
   stylis@4.2.0: {}
 
   stylis@4.3.0: {}
 
   subscriptions-transport-ws@0.11.0(graphql@16.8.0):
-    dependencies:
-      backo2: 1.0.2
-      eventemitter3: 3.1.2
-      graphql: 16.8.0
-      iterall: 1.3.0
-      symbol-observable: 1.2.0
-      ws: 7.5.9
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-
-  subscriptions-transport-ws@0.9.19(graphql@16.8.0):
     dependencies:
       backo2: 1.0.2
       eventemitter3: 3.1.2
@@ -14827,10 +14649,9 @@ snapshots:
 
   ts-mixer@6.0.3: {}
 
-  ts-node@10.9.1(@swc/core@1.3.85)(@types/node@20.10.5)(typescript@5.2.2):
+  ts-node@10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
-      '@swc/core': 1.3.85
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
@@ -14845,8 +14666,10 @@ snapshots:
       typescript: 5.2.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+    optionalDependencies:
+      '@swc/core': 1.3.85(@swc/helpers@0.5.2)
 
-  ts-node@10.9.1(@types/node@20.6.2)(typescript@5.2.2):
+  ts-node@10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.6.2)(typescript@5.2.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
@@ -14863,6 +14686,8 @@ snapshots:
       typescript: 5.2.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+    optionalDependencies:
+      '@swc/core': 1.3.85(@swc/helpers@0.5.2)
 
   tsconfig-paths-webpack-plugin@4.1.0:
     dependencies:
@@ -14972,7 +14797,7 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typeorm@0.3.17(mysql2@3.7.0)(ts-node@10.9.1):
+  typeorm@0.3.17(mysql2@3.7.0)(ts-node@10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2)):
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
@@ -14984,13 +14809,14 @@ snapshots:
       dotenv: 16.3.1
       glob: 8.1.0
       mkdirp: 2.1.6
-      mysql2: 3.7.0
       reflect-metadata: 0.1.13
       sha.js: 2.4.11
-      ts-node: 10.9.1(@swc/core@1.3.85)(@types/node@20.10.5)(typescript@5.2.2)
       tslib: 2.6.2
       uuid: 9.0.1
       yargs: 17.7.2
+    optionalDependencies:
+      mysql2: 3.7.0
+      ts-node: 10.9.1(@swc/core@1.3.85(@swc/helpers@0.5.2))(@types/node@20.10.5)(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -15065,8 +14891,9 @@ snapshots:
 
   use-isomorphic-layout-effect@1.1.2(@types/react@18.2.21)(react@18.2.0):
     dependencies:
-      '@types/react': 18.2.21
       react: 18.2.0
+    optionalDependencies:
+      '@types/react': 18.2.21
 
   use-sync-external-store@1.2.0(react@18.2.0):
     dependencies:
@@ -15111,6 +14938,10 @@ snapshots:
       git-node-fs: 1.0.0(js-git@0.7.8)
       ini: 1.3.8
       js-git: 0.7.8
+
+  warning@4.0.3:
+    dependencies:
+      loose-envify: 1.4.0
 
   watchpack@2.4.0:
     dependencies:
