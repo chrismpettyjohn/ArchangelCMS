@@ -1,12 +1,11 @@
 'use client';
 import Link from 'next/link';
-import React, {useContext} from 'react';
-import {SiteNav} from '../site-nav/SiteNav';
-import {SiteLogo} from '../site-logo/SiteLogo';
-import {usersOnlineContext} from '@imagine-cms/websocket';
-import {ToggleThemeButton} from '../toggle-theme-button/ToggleThemeButton';
-import {ButtonBrand, ButtonDanger, ButtonClear} from '../button/Button.remix';
-import {GuestGuard, ScopeGuard, SITE_NAME, UserGuard} from '@imagine-cms/web';
+import React, { useContext } from 'react';
+import { SiteNav } from '../site-nav/SiteNav';
+import { SiteLogo } from '../site-logo/SiteLogo';
+import { ToggleThemeButton } from '../toggle-theme-button/ToggleThemeButton';
+import { ButtonBrand, ButtonDanger, ButtonClear } from '../button/Button.remix';
+import { GuestGuard, ScopeGuard, SITE_NAME, UserGuard } from '@imagine-cms/web';
 import {
   SiteHeaderActions,
   SiteHeaderContent,
@@ -19,7 +18,6 @@ import {
 } from './SiteHeader.styled';
 
 export function SiteHeader() {
-  const {usersOnline} = useContext(usersOnlineContext);
   return (
     <SiteHeaderWrapper>
       <SiteHeaderImage>
@@ -35,7 +33,7 @@ export function SiteHeader() {
             </ScopeGuard>
             <Link href="/play">
               <ButtonClear>
-                Enter {SITE_NAME} - <b>{usersOnline}</b> users online
+                Enter {SITE_NAME} - <b>0</b> users online
               </ButtonClear>
             </Link>
           </SiteHeaderTools>
@@ -52,12 +50,12 @@ export function SiteHeader() {
             <ToggleThemeButton />
             <UserGuard>
               <Link href="/settings">
-                <ButtonClear style={{padding: 0, width: 100}}>
+                <ButtonClear style={{ padding: 0, width: 100 }}>
                   <i className="fa fa-cog" /> Settings
                 </ButtonClear>
               </Link>
               <Link href="/logout">
-                <ButtonClear style={{color: '#7C0F0F', padding: 0, width: 100}}>
+                <ButtonClear style={{ color: '#7C0F0F', padding: 0, width: 100 }}>
                   <i className="fa fa-sign-out" /> Sign Out
                 </ButtonClear>
               </Link>

@@ -8,10 +8,6 @@ import {
   LoadingScreen,
   ThemeProvider,
 } from '@imagine-cms/web';
-import {
-  UsersOnlineContextProvider,
-  WebsocketContextProvider,
-} from '@imagine-cms/websocket';
 import { GameClient } from '../site-ui/components/game-client/GameClient';
 
 export const metadata: Metadata = {
@@ -33,13 +29,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body>
           <ThemeProvider>
             <ImagineContextProviders loadingScreen={<LoadingScreen />}>
-              <WebsocketContextProvider>
-                <UsersOnlineContextProvider>
-                  <SiteBody />
-                  <GameClient />
-                  {children}
-                </UsersOnlineContextProvider>
-              </WebsocketContextProvider>
+              <SiteBody />
+              <GameClient />
+              {children}
             </ImagineContextProviders>
           </ThemeProvider>
         </body>

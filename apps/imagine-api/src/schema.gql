@@ -61,8 +61,6 @@ type UserModel {
   lastOnlineAt: Float
   homeRoomID: Float
   discordID: String
-  facebookID: String
-  googleID: String
   language: String
   rpStats: RPStatsModel
   hasBetaCode: Boolean!
@@ -151,6 +149,12 @@ type RPStatsModel {
   userID: Float
   healthCurrent: Float
   healthMax: Float
+  energyCurrent: Float
+  energyMax: Float
+  armorCurrent: Float
+  armorMax: Float
+  hungerCurrent: Float
+  hungerMax: Float
   corporationID: Float
   corporationRankID: Float
   gangID: Float
@@ -278,12 +282,6 @@ type DiscordAuthModel {
   sessionToken: String
 }
 
-type FacebookAuthModel {
-  sessionID: Float
-  userID: Float
-  sessionToken: String
-}
-
 type FriendshipModel {
   userID: Float
   friendID: Float
@@ -294,38 +292,6 @@ type WordFilterModel {
   id: Float
   word: String
   replacement: String
-}
-
-type LanguageModel {
-  id: Float
-  hidden: Boolean
-  language: String
-  flagURL: String
-  createdAt: Timestamp
-}
-
-"""
-`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
-"""
-scalar Timestamp
-
-type LanguagePhraseModel {
-  id: Float
-  key: String
-  type: LanguagePhraseType
-  description: String
-  createdAt: Timestamp
-}
-
-enum LanguagePhraseType {
-  Site
-  Game
-}
-
-type GoogleAuthModel {
-  sessionID: Float
-  userID: Float
-  sessionToken: String
 }
 
 type UserBadgeModel {
@@ -550,10 +516,6 @@ type Query {
   photoComments(filter: PhotoCommentFilterManyInput): [PhotoCommentModel!]!
   photoReaction(filter: PhotoReactionFilterOneInput!): PhotoReactionModel!
   photoReactions(filter: PhotoReactionFilterManyInput): [PhotoReactionModel!]!
-  language(id: Float!): LanguageModel!
-  languages: [LanguageModel!]!
-  languagePhrase(id: Float!): LanguagePhraseModel!
-  languagePhrases: [LanguagePhraseModel!]!
   friendships(filter: FriendshipFilterManyInput!): [FriendshipModel!]!
   userBadges(filter: UserBadgeFilterManyInput!): [UserBadgeModel!]!
   supportTickets(filter: SupportTicketFilterManyInput): [SupportTicketModel!]!
@@ -939,8 +901,6 @@ type Mutation {
   sessionUpdatePassword(input: SessionUpdatePasswordInput!): SessionUpdatePasswordModel!
   sessionUpdateLanguage(input: SessionUpdateLanguageInput!): SessionUpdateLanguageModel!
   sessionDisconnectDiscord(input: SessionDisconnectAccountInput!): SessionDisconnectAccountModel!
-  sessionDisconnectFacebook(input: SessionDisconnectAccountInput!): SessionDisconnectAccountModel!
-  sessionDisconnectGoogle(input: SessionDisconnectAccountInput!): SessionDisconnectAccountModel!
   userCreate(input: UserCreateInput!): SessionCreatedModel!
   userUpdate(id: Float!, userChanges: UserUpdateInput!): Boolean!
   userDelete(id: Float!): Boolean!
@@ -970,15 +930,7 @@ type Mutation {
   photoCommentDelete(id: Float!): Boolean!
   photoReactionUpdate(filter: PhotoReactionFilterOneInput, input: PhotoReactionCreateInput!): PhotoReactionModel!
   photoReactionDelete(id: Float!): Boolean!
-  languageCreate(input: LanguageInput!): LanguageModel!
-  languageUpdate(id: Float!, input: LanguageInput!): LanguageModel!
-  languageDelete(id: Float!): Boolean!
-  languagePhraseCreate(input: LanguagePhraseInput!): LanguagePhraseModel!
-  languagePhraseUpdate(id: Float!, input: LanguagePhraseInput!): LanguagePhraseModel!
-  languagePhraseDelete(id: Float!): Boolean!
   discordUserAuthenticate(input: DiscordAuthInput!): DiscordAuthModel!
-  facebookUserAuthenticate(input: FacebookAuthInput!): FacebookAuthModel!
-  googleUserAuthenticate(input: GoogleAuthInput!): GoogleAuthModel!
   forgotPasswordRequestCreate(input: ForgotPasswordRequestCreateInput!): Boolean!
   forgotPasswordRequestRedeem(input: ForgotPasswordRequestRedeemInput!): Boolean!
   betaCodeCreate: BetaCodeModel!
@@ -1141,28 +1093,8 @@ input PhotoReactionCreateInput {
   reaction: ReactionType!
 }
 
-input LanguageInput {
-  hidden: Boolean!
-  language: String!
-  flagURL: String!
-}
-
-input LanguagePhraseInput {
-  key: String!
-  type: LanguagePhraseType!
-  description: String!
-}
-
 input DiscordAuthInput {
   discordAuthToken: String!
-}
-
-input FacebookAuthInput {
-  facebookAuthToken: String!
-}
-
-input GoogleAuthInput {
-  googleAuthToken: String!
 }
 
 input ForgotPasswordRequestCreateInput {

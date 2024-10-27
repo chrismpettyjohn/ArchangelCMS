@@ -1,6 +1,6 @@
 'use client';
-import React, {useContext} from 'react';
-import {sessionContext, SITE_NAME} from '@imagine-cms/web';
+import React, { useContext } from 'react';
+import { sessionContext, SITE_NAME } from '@imagine-cms/web';
 import {
   Footer,
   FormContainer,
@@ -10,7 +10,6 @@ import {
   Title,
   UserStatus,
 } from '../login-screen/LoginScreen.styled';
-import {usersOnlineContext} from '@imagine-cms/websocket';
 import {
   ButtonDanger,
   ButtonSuccess,
@@ -18,15 +17,14 @@ import {
 import Link from 'next/link';
 
 export function MeScreen() {
-  const {session} = useContext(sessionContext);
-  const {usersOnline} = useContext(usersOnlineContext);
+  const { session } = useContext(sessionContext);
 
   return (
     <PageContainer>
       <FormContainer>
         <Header>
           <Logo>{SITE_NAME}</Logo>
-          <UserStatus>{usersOnline} users online</UserStatus>
+          <UserStatus>1 users online</UserStatus>
         </Header>
         <Title>Welcome back, {session?.username}</Title>
         <Link href="/play">

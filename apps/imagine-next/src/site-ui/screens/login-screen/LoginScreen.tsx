@@ -19,7 +19,6 @@ import {
   Title,
   UserStatus,
 } from './LoginScreen.styled';
-import { usersOnlineContext } from '@imagine-cms/websocket';
 import {
   useSessionCreateWithCredentials,
   useUserFetchOne,
@@ -31,7 +30,6 @@ export function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { setSession } = useContext(sessionContext);
-  const { usersOnline } = useContext(usersOnlineContext);
   const sessionCreate = useSessionCreateWithCredentials();
   const userLookup = useUserFetchOne();
 
@@ -71,7 +69,7 @@ export function LoginScreen() {
       <FormContainer>
         <Header>
           <Logo>{SITE_NAME}</Logo>
-          <UserStatus>{usersOnline} users online</UserStatus>
+          <UserStatus>1 users online</UserStatus>
         </Header>
         <Title>Login</Title>
         <Form onSubmit={onLogin}>

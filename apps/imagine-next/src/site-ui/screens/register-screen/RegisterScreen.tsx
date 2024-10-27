@@ -1,7 +1,7 @@
 'use client';
-import {Form} from '../../components/form/Form';
-import {Input} from '../../components/input/Input';
-import React, {SyntheticEvent, useContext, useState} from 'react';
+import { Form } from '../../components/form/Form';
+import { Input } from '../../components/input/Input';
+import React, { SyntheticEvent, useContext, useState } from 'react';
 import {
   BETA_ENABLED,
   localStorageService,
@@ -15,9 +15,9 @@ import {
   useUserCreate,
   useUserFetchOne,
 } from '@imagine-cms/client';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import Link from 'next/link';
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import {
   Footer,
   FormContainer,
@@ -28,14 +28,12 @@ import {
   UserStatus,
   Button,
 } from '../login-screen/LoginScreen.styled';
-import {usersOnlineContext} from '@imagine-cms/websocket';
 
 export function RegisterScreen() {
   const router = useRouter();
   const createUser = useUserCreate();
   const fetchUser = useUserFetchOne();
-  const {setSession} = useContext(sessionContext);
-  const {usersOnline} = useContext(usersOnlineContext);
+  const { setSession } = useContext(sessionContext);
   const [userCreateInput, setUserCreateInput] = useState<UserCreateInput>({
     username: '',
     email: '',
@@ -75,7 +73,7 @@ export function RegisterScreen() {
         SESSION_LOCAL_STORAGE_IDX,
         newSession.accessToken
       );
-      const matchingUser = await fetchUser.fetch({id: newSession.userID});
+      const matchingUser = await fetchUser.fetch({ id: newSession.userID });
       setSession(matchingUser as any);
       toast.success(`Welcome back, ${matchingUser.username}`);
       router.push('/me');
@@ -90,7 +88,7 @@ export function RegisterScreen() {
       <FormContainer>
         <Header>
           <Logo>{SITE_NAME}</Logo>
-          <UserStatus>{usersOnline} users online</UserStatus>
+          <UserStatus>1 users online</UserStatus>
         </Header>
         <Title>Register</Title>
         <Form onSubmit={onCreateUser}>
@@ -99,21 +97,21 @@ export function RegisterScreen() {
             placeholder="Email"
             required
             value={userCreateInput.email}
-            onChange={e => onChanges({email: e.currentTarget.value})}
+            onChange={e => onChanges({ email: e.currentTarget.value })}
           />
           <Input
             type="text"
             placeholder="Username"
             required
             value={userCreateInput.username}
-            onChange={e => onChanges({username: e.currentTarget.value})}
+            onChange={e => onChanges({ username: e.currentTarget.value })}
           />
           <Input
             type="password"
             placeholder="Password"
             required
             value={userCreateInput.password}
-            onChange={e => onChanges({password: e.currentTarget.value})}
+            onChange={e => onChanges({ password: e.currentTarget.value })}
           />
           <Button disabled={!canCreateUser} type="submit">
             Create Account
