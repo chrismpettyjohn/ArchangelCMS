@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 
 export const GameClientActionsElement = styled.div`
-  display: fixed;
   background: transparent;
   gap: ${({ theme }) => theme.space.oneUnit};
   pointer-events: auto;
   height: fit-content;
   width: 100%;
+  display: flex;
   top: 20px;
+  position: fixed;
   left: 20px;
 
   button {

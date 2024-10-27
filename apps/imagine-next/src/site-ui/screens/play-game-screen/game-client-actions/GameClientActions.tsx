@@ -3,7 +3,6 @@ import {
   ScopeGuard,
   sessionContext,
   SITE_NAME,
-  themeContext,
 } from '@imagine-cms/web';
 import { useRouter } from 'next/navigation';
 import { GameClientActionsElement } from './GameClientActions.styled';
@@ -12,16 +11,13 @@ import { Avatar } from '../../../components/avatar/Avatar';
 export function GameClientActions() {
   const router = useRouter();
   const { session } = useContext(sessionContext);
-  const { setTheme } = useContext(themeContext);
   const [isExpanded, setExpanded] = useState<boolean>(false);
 
   function onViewProfile(): void {
-    setTheme({ showClient: false });
     router.push('/me');
   }
 
   function onViewAdminPanel(): void {
-    setTheme({ showClient: false });
     router.push('/admin/dashboard');
   }
 

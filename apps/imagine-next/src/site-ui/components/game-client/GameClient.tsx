@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { GameClientElement } from './GameClient.styled';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { NITRO_URL, sessionContext, themeContext } from '@imagine-cms/web';
 import { NITRO_CLIENT_URL } from '../../site-ui.const';
 import {
@@ -10,13 +10,15 @@ import {
 } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
 import { GameClientActions } from '../../screens/play-game-screen/game-client-actions/GameClientActions';
+import { usePathname } from 'next/navigation';
 
 export function GameClient() {
+  const pathname = usePathname();
   const createSSO = useSessionCreateSSO();
   const { session } = useContext(sessionContext);
-  const { showClient } = useContext(themeContext);
   const [showPreview] = useState(true);
   const [ssoToken, setSSOToken] = useState<string>();
+  const showClient = useMemo(() => pathname == '/play', [pathname]);
 
   async function onEnterClient() {
     try {

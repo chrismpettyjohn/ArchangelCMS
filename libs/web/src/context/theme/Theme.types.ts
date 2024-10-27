@@ -16,7 +16,6 @@ export function getThemePreference() {
 
 export interface ThemeContext {
   theme: SiteTheme;
-  showClient: boolean;
   showFooter: boolean;
   showModalOverlay: boolean;
   applicationMode: boolean;
@@ -25,7 +24,6 @@ export interface ThemeContext {
 
 export const defaultThemeContextInterface: ThemeContext = {
   theme: getThemePreference(),
-  showClient: false,
   showFooter: true,
   showModalOverlay: true,
   applicationMode: false,

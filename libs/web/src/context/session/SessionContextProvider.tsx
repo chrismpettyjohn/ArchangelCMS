@@ -15,6 +15,7 @@ export function SessionContextProvider({ children, loadingScreen }: SessionConte
   async function checkExistingSession() {
     try {
       if (!existingJwt) {
+        setIsLoading(false);
         return;
       }
       const response: SessionByJwtQueryResponse = await fetchSession.execute(existingJwt);
