@@ -1,6 +1,6 @@
-import {RankWire} from '../rank/Rank';
-import {SessionWire} from '../session/Session';
-import {ArticleWire} from '../article/Article';
+import { RankWire } from '../rank/Rank';
+import { SessionWire } from '../session/Session';
+import { ArticleWire } from '../article/Article';
 
 export enum UserGender {
   Male = 'M',
@@ -27,8 +27,6 @@ export interface UserWire {
   onlineStatus: UserOnlineStatus;
   homeRoomID: number;
   discordID?: string;
-  facebookID?: string;
-  googleID?: string;
   language?: string;
   hasBetaCode?: boolean;
   rank?: RankWire;

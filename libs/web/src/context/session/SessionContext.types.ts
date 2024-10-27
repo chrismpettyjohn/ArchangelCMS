@@ -1,5 +1,5 @@
+import { UserFragment } from '@imagine-cms/client';
 import { ReactNode } from 'react';
-import { UserFragment } from '../../../../client/src';
 
 export interface SessionContext {
   session?: UserFragment;

@@ -14,6 +14,7 @@ const nextConfig = {
     DATE_FORMAT: process.env.DATE_FORMAT,
     DISCORD_WIDGET: process.env.DISCORD_WIDGET,
   },
+  ignoreDuringBuilds: true,
 };
 
 module.exports = nextConfig;

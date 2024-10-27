@@ -14,7 +14,6 @@ import { ArticleModule } from './article/article.module';
 import { SessionModule } from './session/session.module';
 import { ChatlogModule } from './chatlog/chatlog.module';
 import { DiscordModule } from './discord/discord.module';
-import { FacebookModule } from './facebook/facebook.module';
 import { DatabaseModule } from './database/database.module';
 import { databaseEntities } from './database/database.const';
 import { FriendshipModule } from './friendship/friendship.module';
@@ -27,7 +26,6 @@ import {
   IMAGINE_DATABASE_USER,
   IMAGINE_GRAPHQL_PLAYGROUND,
 } from './imagine.constant';
-import { GoogleModule } from './google/google.module';
 import { UserBadgeModule } from './user-badge/user-badge.module';
 import { SupportTicketModule } from './support-ticket/support-ticket.module';
 import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
@@ -100,8 +98,6 @@ import { RPStatsModule } from './rp-stats/rp-stats.module';
     GroupModule,
     PhotoModule,
     DiscordModule,
-    FacebookModule,
-    GoogleModule,
     FriendshipModule,
     UserBadgeModule,
     SupportTicketModule,

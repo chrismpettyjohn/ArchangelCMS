@@ -93,12 +93,6 @@ export * from './discord/discord-user-authenticate.mutation';
 export * from './discord/discord.fragment';
 export * from './discord/discord.input';
 
-// Facebook
-export * from './facebook/facebook-user-authenticate.hook';
-export * from './facebook/facebook-user-authenticate.mutation';
-export * from './facebook/facebook.fragment';
-export * from './facebook/facebook.input';
-
 // Forgot Password
 export * from './forgot-password/forgot-password-create.hook';
 export * from './forgot-password/forgot-password-create.mutation';
@@ -174,12 +168,6 @@ export * from './group-membership/group-membership-fetch-many.hook';
 export * from './group-membership/group-membership-fetch-many.query';
 export * from './group-membership/group-membership.fragment';
 export * from './group-membership/group-membership.input';
-
-// Google
-export * from './google/google-user-authenticate.hook';
-export * from './google/google-user-authenticate.mutation';
-export * from './google/google.fragment';
-export * from './google/google.input';
 
 // Photo
 export * from './photo/photo.fragment';
@@ -272,10 +260,6 @@ export * from './session/session-create-with-credentials.hook';
 export * from './session/session-create-with-credentials.mutation';
 export * from './session/session-disconnect-discord.hook';
 export * from './session/session-disconnect-discord.mutation';
-export * from './session/session-disconnect-facebook.hook';
-export * from './session/session-disconnect-facebook.mutation';
-export * from './session/session-disconnect-google.hook';
-export * from './session/session-disconnect-google.mutation';
 export * from './session/session-update-email.hook';
 export * from './session/session-update-email.mutation';
 export * from './session/session-update-password.hook';

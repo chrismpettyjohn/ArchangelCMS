@@ -17,8 +17,6 @@ export interface UserFragment {
   onlineStatus: 0 | 1;
   homeRoomID: number;
   discordID?: string;
-  facebookID?: string;
-  googleID?: string;
   language?: string;
   hasBetaCode?: boolean;
   rank: RankFragment;
@@ -43,8 +41,6 @@ export const USER_FRAGMENT: any = gql`
     onlineStatus
     homeRoomID
     discordID
-    facebookID
-    googleID
     language
     hasBetaCode
     rank {

@@ -165,34 +165,6 @@ export class SessionResolver {
     return { success: true };
   }
 
-  @Mutation(() => SessionDisconnectAccountModel)
-  @HasSession()
-  async sessionDisconnectFacebook(
-    @Args('input', { type: () => SessionDisconnectAccountInput })
-    input: SessionDisconnectAccountInput,
-    @GetUser() session: UserEntity
-  ): Promise<SessionDisconnectAccountModel> {
-    if (!input.confirm) {
-      throw new BadRequestException();
-    }
-    await this.userRepo.update({ id: session.id! }, { facebookID: null as any });
-    return { success: true };
-  }
-
-  @Mutation(() => SessionDisconnectAccountModel)
-  @HasSession()
-  async sessionDisconnectGoogle(
-    @Args('input', { type: () => SessionDisconnectAccountInput })
-    input: SessionDisconnectAccountInput,
-    @GetUser() session: UserEntity
-  ): Promise<SessionDisconnectAccountModel> {
-    if (!input.confirm) {
-      throw new BadRequestException();
-    }
-    await this.userRepo.update({ id: session.id! }, { googleID: null as any });
-    return { success: true };
-  }
-
   private ownsResource(session: SessionEntity, authenticatedUser: UserEntity) {
     if (Number(session.userID) !== Number(authenticatedUser.id)) {
       throw new UnauthorizedException('');
