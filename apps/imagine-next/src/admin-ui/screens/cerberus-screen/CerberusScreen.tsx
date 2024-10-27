@@ -1,29 +1,61 @@
 import React from 'react';
-import { Card } from '../../blocks/card/Card';
-import { YoutubeVideo } from '../../../site-ui/components/youtube-video/YoutubeVideo';
-import { ImagineLogoContainer } from '../../../site-ui/screens/imagine-screen/ImagineScreen.styled';
+import {Card} from '../../blocks/card/Card';
+import {YoutubeVideo} from '../../../site-ui/components/youtube-video/YoutubeVideo';
+import {ImagineLogoContainer} from '../../../site-ui/screens/imagine-screen/ImagineScreen.styled';
 
 export function CerberusScreen() {
   return (
     <>
       <h1>Cerberus</h1>
       <Card header="About">
-        <div style={{ display: 'flex', gap: 16 }}>
+        <div style={{display: 'flex', gap: 16}}>
           <ImagineLogoContainer>
-            <img src="https://i.imgur.com/CtyHVEq.png" height={250} width={250} loading="lazy" />
+            <img
+              src="https://i.imgur.com/CtyHVEq.png"
+              height={250}
+              width={250}
+              loading="lazy"
+            />
           </ImagineLogoContainer>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <p>Crafted with precision using the latest technology, it's not just a CMS; it's a game-changer for retros everywhere.</p>
-            <p>Imagine offers the unbeatable combination of top-tier performance, blazing-fast speeds, and a development experience that's second to none.</p>
-            <p>Solely designed and developed from the ground up by <a href="https://github.com/habbo-hotel" target="_blank" style={{ cursor: 'pointer' }} className="lechris" rel="noreferrer"><b>LeChris</b></a></p>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            <p>
+              Crafted with precision using the latest technology, it's not just
+              a CMS; it's a game-changer for retros everywhere.
+            </p>
+            <p>
+              Imagine offers the unbeatable combination of top-tier performance,
+              blazing-fast speeds, and a development experience that's second to
+              none.
+            </p>
+            <p>
+              Solely designed and developed from the ground up by{' '}
+              <a
+                href="https://github.com/habbo-hotel"
+                target="_blank"
+                style={{cursor: 'pointer'}}
+                className="lechris"
+                rel="noreferrer"
+              >
+                <b>LeChris</b>
+              </a>
+            </p>
           </div>
         </div>
       </Card>
       <br />
       <Card>
         <YoutubeVideo videoID="7Kn0V5mpJe4" startAt={15} />
-        <div>WE MAKING IT OUT OF THE PRESCHOOL WITH THIS ONE 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥💯💯💯💯💯💯💯💯💯</div>
+        <div>
+          WE MAKING IT OUT OF THE PRESCHOOL WITH THIS ONE
+          🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥💯💯💯💯💯💯💯💯💯
+        </div>
       </Card>
     </>
-  )
+  );
 }

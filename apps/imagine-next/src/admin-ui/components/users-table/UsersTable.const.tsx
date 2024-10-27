@@ -1,40 +1,40 @@
 import React from 'react';
-import { Badge } from '../../blocks/badge/Badge';
-import { UserFragment } from '@imagine-cms/client';
-import { Button } from '../../blocks/button/Button';
-import { TableColumn } from "react-data-table-component";
-import { SmallUserContainer } from '../small-user-container/SmallUserContainer';
+import {Badge} from '../../blocks/badge/Badge';
+import {UserFragment} from '@imagine-cms/client';
+import {Button} from '../../blocks/button/Button';
+import {TableColumn} from 'react-data-table-component';
+import {SmallUserContainer} from '../small-user-container/SmallUserContainer';
 import Link from 'next/link';
 
 export const USERS_TABLE_COLUMNS: TableColumn<UserFragment>[] = [
   {
     name: 'User',
     cell: user => (
-      <div style={{ padding: 8 }}>
-        <SmallUserContainer user={user} style={{ width: 200 }} />
+      <div style={{padding: 8}}>
+        <SmallUserContainer user={user} style={{width: 200}} />
       </div>
     ),
   },
   {
     name: 'Rank',
-    cell: ({ rank }) => (
+    cell: ({rank}) => (
       <Link href={`/permissions/${rank.id}`}>
-        <Badge badge={{ code: rank.badgeCode as any }} />
+        <Badge badge={{code: rank.badgeCode as any}} />
         {rank.name}
       </Link>
-    )
+    ),
   },
   {
     name: 'Credits',
-    cell: ({ credits }) => credits.toLocaleString(),
+    cell: ({credits}) => credits.toLocaleString(),
   },
   {
     name: 'Pixels',
-    cell: ({ activityPoints }) => activityPoints.toLocaleString(),
+    cell: ({activityPoints}) => activityPoints.toLocaleString(),
   },
   {
     name: 'Points',
-    cell: ({ vipPoints }) => vipPoints.toLocaleString(),
+    cell: ({vipPoints}) => vipPoints.toLocaleString(),
   },
   {
     name: 'Tools',
@@ -46,6 +46,6 @@ export const USERS_TABLE_COLUMNS: TableColumn<UserFragment>[] = [
           </Button>
         </Link>
       </>
-    )
+    ),
   },
-]
+];

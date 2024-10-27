@@ -1,4 +1,4 @@
-import { PhotoFragment } from "@imagine-cms/client";
+import {PhotoFragment} from '@imagine-cms/client';
 
 export interface PhotoCommentsCardProps {
   photo: PhotoFragment;

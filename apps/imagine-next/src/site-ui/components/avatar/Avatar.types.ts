@@ -1,4 +1,4 @@
-import { HTMLProps } from "react";
+import {HTMLProps} from 'react';
 
 export interface AvatarProps extends Omit<HTMLProps<HTMLImageElement>, 'size'> {
   overrideImgSrc?: string;

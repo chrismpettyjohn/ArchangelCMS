@@ -1,31 +1,36 @@
-'use client'
+'use client';
 import Link from 'next/Link';
-import { usePhotoFetchMany } from '@imagine-cms/client';
-import React, { useEffect, useMemo, useState } from 'react';
-import { PhotosGridContainerChild, PhotosGridContainerContent, PhotosGridContainerElement, PhotosGridContainerPagination } from './PhotosGridContainer.styled';
+import {usePhotoFetchMany} from '@imagine-cms/client';
+import React, {useEffect, useMemo, useState} from 'react';
+import {
+  PhotosGridContainerChild,
+  PhotosGridContainerContent,
+  PhotosGridContainerElement,
+  PhotosGridContainerPagination,
+} from './PhotosGridContainer.styled';
 
 const PHOTOS_PER_PAGE = 8;
 
 export function PhotosGridContainer() {
   const [page, setPage] = useState(0);
-  const { data, fetch, loading } = usePhotoFetchMany();
+  const {data, fetch, loading} = usePhotoFetchMany();
 
   const canGoDown = page > 0;
 
   const onFetchPhotos = () => {
-    fetch({ skip: page * PHOTOS_PER_PAGE, limit: PHOTOS_PER_PAGE })
-  }
+    fetch({skip: page * PHOTOS_PER_PAGE, limit: PHOTOS_PER_PAGE});
+  };
 
   const onGoUpOnePage = () => {
     setPage(_ => _ + 1);
-  }
+  };
 
   const onGoDownOnePage = () => {
     if (!canGoDown) {
       return;
     }
     setPage(_ => _ - 1);
-  }
+  };
 
   useEffect(() => {
     onFetchPhotos();
@@ -35,41 +40,42 @@ export function PhotosGridContainer() {
 
   return (
     <PhotosGridContainerElement>
-      <PhotosGridContainerPagination onClick={onGoDownOnePage} style={{ cursor: canGoDown ? 'pointer' : 'not-allowed' }}>
-        {
-          canGoDown && (
-            <i className={loading ? 'fa fa-spinner fa-spin' : 'fa fa-arrow-left'} />
-          )
-        }
+      <PhotosGridContainerPagination
+        onClick={onGoDownOnePage}
+        style={{cursor: canGoDown ? 'pointer' : 'not-allowed'}}
+      >
+        {canGoDown && (
+          <i
+            className={loading ? 'fa fa-spinner fa-spin' : 'fa fa-arrow-left'}
+          />
+        )}
       </PhotosGridContainerPagination>
       <PhotosGridContainerContent>
-        {
-          loading && (
-            <>
-              <PhotosGridContainerChild />
-              <PhotosGridContainerChild />
-              <PhotosGridContainerChild />
-              <PhotosGridContainerChild />
-              <PhotosGridContainerChild />
-              <PhotosGridContainerChild />
-              <PhotosGridContainerChild />
-              <PhotosGridContainerChild />
-            </>
-          )
-        }
-        {
-          stories.map(_ => (
-            <Link key={`photo_${_.id}`} href={`/photos/${_.id}`}>
-              <PhotosGridContainerChild>
-                <img src={_.photoURL} loading="lazy" />
-              </PhotosGridContainerChild>
-            </Link>
-          ))
-        }
+        {loading && (
+          <>
+            <PhotosGridContainerChild />
+            <PhotosGridContainerChild />
+            <PhotosGridContainerChild />
+            <PhotosGridContainerChild />
+            <PhotosGridContainerChild />
+            <PhotosGridContainerChild />
+            <PhotosGridContainerChild />
+            <PhotosGridContainerChild />
+          </>
+        )}
+        {stories.map(_ => (
+          <Link key={`photo_${_.id}`} href={`/photos/${_.id}`}>
+            <PhotosGridContainerChild>
+              <img src={_.photoURL} loading="lazy" />
+            </PhotosGridContainerChild>
+          </Link>
+        ))}
       </PhotosGridContainerContent>
       <PhotosGridContainerPagination onClick={onGoUpOnePage}>
-        <i className={loading ? 'fa fa-spinner fa-spin' : 'fa fa-arrow-right'} />
+        <i
+          className={loading ? 'fa fa-spinner fa-spin' : 'fa fa-arrow-right'}
+        />
       </PhotosGridContainerPagination>
     </PhotosGridContainerElement>
-  )
+  );
 }

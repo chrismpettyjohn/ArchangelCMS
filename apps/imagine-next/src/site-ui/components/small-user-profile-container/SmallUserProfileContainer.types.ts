@@ -1,7 +1,8 @@
-import { UserWire } from "@imagine-cms/types";
-import { HTMLProps, ReactNode } from "react";
+import {UserWire} from '@imagine-cms/types';
+import {HTMLProps, ReactNode} from 'react';
 
-export interface SmallUserProfileContainerProps extends HTMLProps<HTMLDivElement> {
+export interface SmallUserProfileContainerProps
+  extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   user: UserWire;
   showOnlineStatus?: boolean;

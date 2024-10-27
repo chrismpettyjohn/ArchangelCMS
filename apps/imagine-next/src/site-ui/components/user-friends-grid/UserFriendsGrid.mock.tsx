@@ -1,8 +1,8 @@
-import { Card } from '../card/Card';
-'use client'
+import {Card} from '../card/Card';
+('use client');
 import React from 'react';
-import { GridLarge } from '../grid/Grid.remix';
-import { SmallUserProfileContainerMock } from '../small-user-profile-container/SmallUserProfileContainerMock';
+import {GridLarge} from '../grid/Grid.remix';
+import {SmallUserProfileContainerMock} from '../small-user-profile-container/SmallUserProfileContainerMock';
 
 export function UserFriendsGridMock() {
   return (
@@ -13,5 +13,5 @@ export function UserFriendsGridMock() {
       </GridLarge>
       <GridLarge>&nbsp;</GridLarge>
     </>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { BugReportFragment } from "@imagine-cms/client";
+import {BugReportFragment} from '@imagine-cms/client';
 
 export interface ResolveBugReportButtonProps {
   bugReport: BugReportFragment;

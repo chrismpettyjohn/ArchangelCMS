@@ -1,11 +1,15 @@
-'use client'
+'use client';
 import React from 'react';
-import { GangGridContainerAvatar, GangGridContainerElement, GangGridContainerInfo } from './GangGridContainer.styled';
-import { GangGridContainerProps } from './GangGridContainer.types';
-import { Avatar } from '../avatar/Avatar';
+import {
+  GangGridContainerAvatar,
+  GangGridContainerElement,
+  GangGridContainerInfo,
+} from './GangGridContainer.styled';
+import {GangGridContainerProps} from './GangGridContainer.types';
+import {Avatar} from '../avatar/Avatar';
 import Link from 'next/Link';
 
-export function GangGridContainer({ gang }: GangGridContainerProps) {
+export function GangGridContainer({gang}: GangGridContainerProps) {
   return (
     <Link href={`/gangs/${gang.id}`}>
       <GangGridContainerElement>
@@ -20,5 +24,5 @@ export function GangGridContainer({ gang }: GangGridContainerProps) {
         </GangGridContainerInfo>
       </GangGridContainerElement>
     </Link>
-  )
+  );
 }

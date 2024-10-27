@@ -1,5 +1,3 @@
-import { HTMLProps } from "react";
+import {HTMLProps} from 'react';
 
-export interface FormProps extends HTMLProps<HTMLFormElement> {
-
-}
+export interface FormProps extends HTMLProps<HTMLFormElement> {}

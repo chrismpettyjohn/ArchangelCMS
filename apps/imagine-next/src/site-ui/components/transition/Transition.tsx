@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { TransitionProps } from './Transition.types';
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import {TransitionProps} from './Transition.types';
+import {AnimatePresence, motion} from 'framer-motion';
+import {usePathname} from 'next/navigation';
 
 const variants = {
   in: {
@@ -10,23 +10,17 @@ const variants = {
     y: 0,
     transition: {
       duration: 0.75,
-      delay: 0.5
-    }
-  }
+      delay: 0.5,
+    },
+  },
 };
 
-
-export function Transition({ children }: TransitionProps) {
+export function Transition({children}: TransitionProps) {
   const pathname = usePathname();
   return (
     <div className="effect-1">
-      <AnimatePresence
-        initial={false}
-        mode="wait"
-      >
-
+      <AnimatePresence initial={false} mode="wait">
         <motion.div
-
           key={pathname}
           variants={variants}
           animate="in"
@@ -37,5 +31,5 @@ export function Transition({ children }: TransitionProps) {
         </motion.div>
       </AnimatePresence>
     </div>
-  )
+  );
 }

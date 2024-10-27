@@ -1,9 +1,9 @@
-'use client'
+'use client';
 import React from 'react';
-import { Accordion } from '../../components/accordion/Accordion';
-import { HighScoresContainer } from '../../components/high-scores-container/HighScoresContainer';
-import { RPStatsOrderBy } from '@imagine-cms/client';
-import { HighScoresByRPStatsGrid } from '../../components/high-scores-by-rp-stats-grid/HighScoresByRPStatsGrid';
+import {Accordion} from '../../components/accordion/Accordion';
+import {HighScoresContainer} from '../../components/high-scores-container/HighScoresContainer';
+import {RPStatsOrderBy} from '@imagine-cms/client';
+import {HighScoresByRPStatsGrid} from '../../components/high-scores-by-rp-stats-grid/HighScoresByRPStatsGrid';
 
 export function HighScoresCrimeScreen() {
   return (
@@ -21,12 +21,12 @@ export function HighScoresCrimeScreen() {
       </Accordion>
       <br />
       <Accordion header="Successful evasions">
-        <HighScoresByRPStatsGrid orderBy={RPStatsOrderBy.successfulEvasionsTotal}>
+        <HighScoresByRPStatsGrid
+          orderBy={RPStatsOrderBy.successfulEvasionsTotal}
+        >
           evasions
         </HighScoresByRPStatsGrid>
       </Accordion>
-
-
     </HighScoresContainer>
-  )
+  );
 }

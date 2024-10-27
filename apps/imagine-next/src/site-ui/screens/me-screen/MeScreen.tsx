@@ -1,14 +1,25 @@
-'use client'
-import React, { useContext } from 'react';
-import { sessionContext, SITE_NAME } from '@imagine-cms/web';
-import { Footer, FormContainer, Header, Logo, PageContainer, Title, UserStatus } from '../login-screen/LoginScreen.styled';
-import { usersOnlineContext } from '@imagine-cms/websocket';
-import { ButtonDanger, ButtonSuccess } from '../../components/button/Button.remix';
+'use client';
+import React, {useContext} from 'react';
+import {sessionContext, SITE_NAME} from '@imagine-cms/web';
+import {
+  Footer,
+  FormContainer,
+  Header,
+  Logo,
+  PageContainer,
+  Title,
+  UserStatus,
+} from '../login-screen/LoginScreen.styled';
+import {usersOnlineContext} from '@imagine-cms/websocket';
+import {
+  ButtonDanger,
+  ButtonSuccess,
+} from '../../components/button/Button.remix';
 import Link from 'next/link';
 
 export function MeScreen() {
-  const { session } = useContext(sessionContext);
-  const { usersOnline } = useContext(usersOnlineContext);
+  const {session} = useContext(sessionContext);
+  const {usersOnline} = useContext(usersOnlineContext);
 
   return (
     <PageContainer>
@@ -26,7 +37,10 @@ export function MeScreen() {
           <ButtonDanger>Logout</ButtonDanger>
         </Link>
       </FormContainer>
-      <Footer>Powered by <b>Archangel</b> <br />by <b>LeChris</b></Footer>
+      <Footer>
+        Powered by <b>Archangel</b> <br />
+        by <b>LeChris</b>
+      </Footer>
     </PageContainer>
-  )
+  );
 }

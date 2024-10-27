@@ -1,18 +1,23 @@
 import React from 'react';
-import { Button } from '../../blocks/button/Button';
-import { ArticleFragment } from '@imagine-cms/client';
-import { TableColumn } from "react-data-table-component";
-import { SmallUserContainer } from '../small-user-container/SmallUserContainer';
+import {Button} from '../../blocks/button/Button';
+import {ArticleFragment} from '@imagine-cms/client';
+import {TableColumn} from 'react-data-table-component';
+import {SmallUserContainer} from '../small-user-container/SmallUserContainer';
 import Link from 'next/link';
 
 export const ARTICLES_TABLE_COLUMNS: TableColumn<ArticleFragment>[] = [
   {
     name: '',
     cell: article => (
-      <div style={{ padding: 8 }}>
-        <img src={article.imageURL} height={100} style={{ borderRadius: 8 }} loading="lazy" />
+      <div style={{padding: 8}}>
+        <img
+          src={article.imageURL}
+          height={100}
+          style={{borderRadius: 8}}
+          loading="lazy"
+        />
       </div>
-    )
+    ),
   },
   {
     name: 'Name',
@@ -24,18 +29,20 @@ export const ARTICLES_TABLE_COLUMNS: TableColumn<ArticleFragment>[] = [
   },
   {
     name: 'Author',
-    cell: article => <SmallUserContainer user={article.user} style={{ width: 200 }} />
+    cell: article => (
+      <SmallUserContainer user={article.user} style={{width: 200}} />
+    ),
   },
   {
     name: 'Tools',
-    cell: ({ id }) => (
-      <div style={{ display: 'flex', padding: 8 }}>
+    cell: ({id}) => (
+      <div style={{display: 'flex', padding: 8}}>
         <Link href={`/articles/${id}`}>
           <Button>
             <i className="fa fa-eye" /> View More
           </Button>
         </Link>
       </div>
-    )
+    ),
   },
-]
+];

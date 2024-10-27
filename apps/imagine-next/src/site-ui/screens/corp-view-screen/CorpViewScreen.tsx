@@ -1,26 +1,29 @@
-'use client'
-import { useCorporationFetchOne, useCorporationRankFetchMany } from '@imagine-cms/client';
-import React, { useContext, useEffect } from 'react';
-import { GridLarge } from '../../components/grid/Grid.remix';
-import { CorpGridContainerBadge } from '../../components/corp-grid-container/CorpGridContainer.styled';
+'use client';
+import {
+  useCorporationFetchOne,
+  useCorporationRankFetchMany,
+} from '@imagine-cms/client';
+import React, {useContext, useEffect} from 'react';
+import {GridLarge} from '../../components/grid/Grid.remix';
+import {CorpGridContainerBadge} from '../../components/corp-grid-container/CorpGridContainer.styled';
 import DayJS from 'dayjs';
-import { Card } from '../../components/card/Card';
-import { SmallUserProfileContainer } from '../../components/small-user-profile-container/SmallUserProfileContainer';
-import { RoomGridContainer } from '../../components/room-grid-container/RoomGridContainer';
-import { CorpRankGridContainer } from '../../components/corp-rank-grid-container/CorpRankGridContainer';
-import { useParams } from 'next/navigation';
+import {Card} from '../../components/card/Card';
+import {SmallUserProfileContainer} from '../../components/small-user-profile-container/SmallUserProfileContainer';
+import {RoomGridContainer} from '../../components/room-grid-container/RoomGridContainer';
+import {CorpRankGridContainer} from '../../components/corp-rank-grid-container/CorpRankGridContainer';
+import {useParams} from 'next/navigation';
 import Link from 'next/link';
-import { BADGE_EXT, BADGE_URL } from '@imagine-cms/web';
+import {BADGE_EXT, BADGE_URL} from '@imagine-cms/web';
 
 export function CorpViewScreen() {
-  const params = useParams<{ corpID: string }>();
+  const params = useParams<{corpID: string}>();
   const corpID = Number(params!.corpID);
   const fetchCorp = useCorporationFetchOne();
   const fetchCorpRanks = useCorporationRankFetchMany();
 
   async function refresh() {
-    await fetchCorp.fetch({ id: corpID });
-    await fetchCorpRanks.fetch({ corporationIDs: [corpID] });
+    await fetchCorp.fetch({id: corpID});
+    await fetchCorpRanks.fetch({corporationIDs: [corpID]});
   }
 
   useEffect(() => {
@@ -29,20 +32,35 @@ export function CorpViewScreen() {
 
   return (
     <>
-      <div style={{ display: 'flex', flex: 1, gap: '1.4rem', marginBottom: '2rem' }}>
+      <div
+        style={{display: 'flex', flex: 1, gap: '1.4rem', marginBottom: '2rem'}}
+      >
         <Link href="/corps">
-          <i className="fa fa-caret-left fa-4x" style={{ cursor: 'pointer' }} />
+          <i className="fa fa-caret-left fa-4x" style={{cursor: 'pointer'}} />
         </Link>
-        <div style={{ display: 'flex', flex: 1, gap: '1.4rem', alignItems: 'center' }}>
-          <CorpGridContainerBadge src={`${BADGE_URL}/${fetchCorp.data?.badge}.${BADGE_EXT}`} />
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            gap: '1.4rem',
+            alignItems: 'center',
+          }}
+        >
+          <CorpGridContainerBadge
+            src={`${BADGE_URL}/${fetchCorp.data?.badge}.${BADGE_EXT}`}
+          />
           <div>
-            <h4 style={{ margin: 0 }}>Corporations - Viewing:</h4>
-            <h1 style={{ margin: 0, fontWeight: 'bold' }}>{fetchCorp.data?.displayName ?? `#${corpID}`}</h1>
+            <h4 style={{margin: 0}}>Corporations - Viewing:</h4>
+            <h1 style={{margin: 0, fontWeight: 'bold'}}>
+              {fetchCorp.data?.displayName ?? `#${corpID}`}
+            </h1>
           </div>
         </div>
       </div>
       <GridLarge>
-        <div style={{ display: 'flex', flex: 1, flexDirection: 'column', gap: 16 }}>
+        <div
+          style={{display: 'flex', flex: 1, flexDirection: 'column', gap: 16}}
+        >
           <h2>About</h2>
           <Card>
             <div>
@@ -52,35 +70,50 @@ export function CorpViewScreen() {
 
             <div>
               <h4>Owned By:</h4>
-              <div style={{ maxWidth: 200 }}>
-                {
-                  fetchCorp.data
-                    ? <SmallUserProfileContainer user={fetchCorp.data.user as any} showMotto={false} showRank={false} />
-                    : <i className="fa fa-spinner fa-spin" />
-                }
+              <div style={{maxWidth: 200}}>
+                {fetchCorp.data ? (
+                  <SmallUserProfileContainer
+                    user={fetchCorp.data.user as any}
+                    showMotto={false}
+                    showRank={false}
+                  />
+                ) : (
+                  <i className="fa fa-spinner fa-spin" />
+                )}
               </div>
             </div>
             <div>
               <h4>Based in:</h4>
-              {
-                fetchCorp.data
-                  ? <RoomGridContainer room={fetchCorp.data.room} />
-                  : <i className="fa fa-spinner fa-spin" />
-              }
+              {fetchCorp.data ? (
+                <RoomGridContainer room={fetchCorp.data.room} />
+              ) : (
+                <i className="fa fa-spinner fa-spin" />
+              )}
             </div>
           </Card>
         </div>
-        <div style={{ flex: 1 }}>
+        <div style={{flex: 1}}>
           <h2>Ranks</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', maxHeight: 500, overflowY: 'auto', gap: 16 }}>
-            {
-              fetchCorp.data && fetchCorpRanks.data?.map(_ => (
-                <CorpRankGridContainer key={`corp_rank_${_.corporationRankID}`} corporation={fetchCorp.data!} rank={_} />
-              ))
-            }
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              maxHeight: 500,
+              overflowY: 'auto',
+              gap: 16,
+            }}
+          >
+            {fetchCorp.data &&
+              fetchCorpRanks.data?.map(_ => (
+                <CorpRankGridContainer
+                  key={`corp_rank_${_.corporationRankID}`}
+                  corporation={fetchCorp.data!}
+                  rank={_}
+                />
+              ))}
           </div>
         </div>
       </GridLarge>
     </>
-  )
+  );
 }

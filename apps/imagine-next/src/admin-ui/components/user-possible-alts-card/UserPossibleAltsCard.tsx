@@ -1,10 +1,10 @@
-import { Card } from '../../blocks/card/Card';
-import React, { useEffect, useMemo } from 'react'
-import { useUserFetchMany } from '@imagine-cms/client';
-import { UserPossibleAltsCardProps } from './UserPossibleAltsCard.types';
-import { SmallUserContainer } from '../small-user-container/SmallUserContainer';
+import {Card} from '../../blocks/card/Card';
+import React, {useEffect, useMemo} from 'react';
+import {useUserFetchMany} from '@imagine-cms/client';
+import {UserPossibleAltsCardProps} from './UserPossibleAltsCard.types';
+import {SmallUserContainer} from '../small-user-container/SmallUserContainer';
 
-export function UserPossibleAltsCard({ user }: UserPossibleAltsCardProps) {
+export function UserPossibleAltsCard({user}: UserPossibleAltsCardProps) {
   const fetchUsers = useUserFetchMany();
 
   useEffect(() => {
@@ -27,24 +27,26 @@ export function UserPossibleAltsCard({ user }: UserPossibleAltsCardProps) {
 
   return (
     <Card header={<>Possible Alts ({matchingUsers.length})</>}>
-      {
-        fetchUsers.loading && (
-          <div style={{ display: 'flex', gap: 8 }}>
-            <i className="fa fa-spinner fa-spin" />
-            Loading alts...
-          </div>
-        )
-      }
-      {
-        matchingUsers.length === 0 && <p>No possible alts found</p>
-      }
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 16, alignItems: 'center', justifyContent: 'center' }}>
-        {
-          matchingUsers.map(_ => (
-            <SmallUserContainer key={`alt_user_${_.id}`} user={_} />
-          ))
-        }
+      {fetchUsers.loading && (
+        <div style={{display: 'flex', gap: 8}}>
+          <i className="fa fa-spinner fa-spin" />
+          Loading alts...
+        </div>
+      )}
+      {matchingUsers.length === 0 && <p>No possible alts found</p>}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr 1fr',
+          gap: 16,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {matchingUsers.map(_ => (
+          <SmallUserContainer key={`alt_user_${_.id}`} user={_} />
+        ))}
       </div>
-    </Card >
-  )
+    </Card>
+  );
 }

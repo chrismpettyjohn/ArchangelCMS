@@ -1,34 +1,34 @@
 'use client';
-import styled from "@emotion/styled";
-import { Grid } from "./Grid";
+import styled from '@emotion/styled';
+import {Grid} from './Grid';
 
 export const GridLarge = styled(Grid)`
-  ${({ theme }) => `
+  ${({theme}) => `
     @media (min-width: ${theme.breakPoints.desktop}) {
       grid-template-columns: 1fr 1fr;
     }
   `}
-`
+`;
 export const GridMedium = styled(Grid)`
-  ${({ theme }) => `
+  ${({theme}) => `
     @media (min-width: ${theme.breakPoints.desktop}) {
       grid-template-columns: 1fr 1fr 1fr;
     }
   `}
-`
+`;
 
 export const GridLargeSmall = styled(Grid)`
-  ${({ theme }) => `
+  ${({theme}) => `
     @media (min-width: ${theme.breakPoints.desktop}) {
       grid-template-columns: 2fr 1fr;
     }
   `}
-`
+`;
 
 export const GridSmallLarge = styled(Grid)`
-  ${({ theme }) => `
+  ${({theme}) => `
     @media (min-width: ${theme.breakPoints.desktop}) {
       grid-template-columns: 1fr 2fr;
     }
   `}
-`
+`;

@@ -1,8 +1,8 @@
-import { Card } from '../card/Card';
-'use client'
+import {Card} from '../card/Card';
+('use client');
 import React from 'react';
-import { GridLarge } from '../grid/Grid.remix';
-import { RoomGridContainerMock } from '../room-grid-container/RoomGridContainerMock';
+import {GridLarge} from '../grid/Grid.remix';
+import {RoomGridContainerMock} from '../room-grid-container/RoomGridContainerMock';
 
 export function UserRoomsGridMock() {
   return (
@@ -13,5 +13,5 @@ export function UserRoomsGridMock() {
       </GridLarge>
       <GridLarge>&nbsp;</GridLarge>
     </>
-  )
+  );
 }

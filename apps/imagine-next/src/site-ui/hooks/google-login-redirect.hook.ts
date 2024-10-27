@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
+import {useMemo} from 'react';
 import QueryString from 'query-string';
-import { GOOGLE_APP_ID, GOOGLE_REDIRECT_URL } from '@imagine-cms/web';
+import {GOOGLE_APP_ID, GOOGLE_REDIRECT_URL} from '@imagine-cms/web';
 
 const GOOGLE_OAUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
 

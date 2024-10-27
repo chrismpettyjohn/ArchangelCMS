@@ -1,16 +1,25 @@
-'use client'
-import Link from 'next/link'
-import React, { useContext } from 'react';
-import { SiteNav } from '../site-nav/SiteNav';
-import { SiteLogo } from '../site-logo/SiteLogo';
-import { usersOnlineContext } from '@imagine-cms/websocket';
-import { ToggleThemeButton } from '../toggle-theme-button/ToggleThemeButton';
-import { ButtonBrand, ButtonDanger, ButtonClear } from '../button/Button.remix';
-import { GuestGuard, ScopeGuard, SITE_NAME, UserGuard } from '@imagine-cms/web';
-import { SiteHeaderActions, SiteHeaderContent, SiteHeaderElement, SiteHeaderImage, SiteHeaderNav, SiteHeaderNavigation, SiteHeaderTools, SiteHeaderWrapper } from './SiteHeader.styled';
+'use client';
+import Link from 'next/link';
+import React, {useContext} from 'react';
+import {SiteNav} from '../site-nav/SiteNav';
+import {SiteLogo} from '../site-logo/SiteLogo';
+import {usersOnlineContext} from '@imagine-cms/websocket';
+import {ToggleThemeButton} from '../toggle-theme-button/ToggleThemeButton';
+import {ButtonBrand, ButtonDanger, ButtonClear} from '../button/Button.remix';
+import {GuestGuard, ScopeGuard, SITE_NAME, UserGuard} from '@imagine-cms/web';
+import {
+  SiteHeaderActions,
+  SiteHeaderContent,
+  SiteHeaderElement,
+  SiteHeaderImage,
+  SiteHeaderNav,
+  SiteHeaderNavigation,
+  SiteHeaderTools,
+  SiteHeaderWrapper,
+} from './SiteHeader.styled';
 
 export function SiteHeader() {
-  const { usersOnline } = useContext(usersOnlineContext);
+  const {usersOnline} = useContext(usersOnlineContext);
   return (
     <SiteHeaderWrapper>
       <SiteHeaderImage>
@@ -21,9 +30,7 @@ export function SiteHeader() {
           <SiteHeaderTools>
             <ScopeGuard scope="accessAdminPanel" redirect={false}>
               <Link href="/admin/dashboard">
-                <ButtonDanger>
-                  Admin Panel
-                </ButtonDanger>
+                <ButtonDanger>Admin Panel</ButtonDanger>
               </Link>
             </ScopeGuard>
             <Link href="/play">
@@ -45,31 +52,27 @@ export function SiteHeader() {
             <ToggleThemeButton />
             <UserGuard>
               <Link href="/settings">
-                <ButtonClear style={{ padding: 0, width: 100 }}>
+                <ButtonClear style={{padding: 0, width: 100}}>
                   <i className="fa fa-cog" /> Settings
                 </ButtonClear>
               </Link>
               <Link href="/logout">
-                <ButtonClear style={{ color: '#7C0F0F', padding: 0, width: 100 }}>
+                <ButtonClear style={{color: '#7C0F0F', padding: 0, width: 100}}>
                   <i className="fa fa-sign-out" /> Sign Out
                 </ButtonClear>
               </Link>
             </UserGuard>
             <GuestGuard redirect={false}>
               <Link href="/login">
-                <ButtonBrand>
-                  Login
-                </ButtonBrand>
+                <ButtonBrand>Login</ButtonBrand>
               </Link>
               <Link href="/register">
-                <ButtonBrand>
-                  Create Account
-                </ButtonBrand>
+                <ButtonBrand>Create Account</ButtonBrand>
               </Link>
             </GuestGuard>
           </SiteHeaderActions>
         </SiteHeaderContent>
-      </SiteHeaderElement >
+      </SiteHeaderElement>
     </SiteHeaderWrapper>
-  )
+  );
 }

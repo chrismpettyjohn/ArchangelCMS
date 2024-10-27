@@ -1,4 +1,4 @@
-import { RankFragment } from "@imagine-cms/client";
+import {RankFragment} from '@imagine-cms/client';
 
 export interface RankMembersCardProps {
   rank: RankFragment;

@@ -1,6 +1,6 @@
 import '@emotion/react';
-import { ImagineTheme } from '@imagine-cms/web';
+import {ImagineTheme} from '@imagine-cms/web';
 
 declare module '@emotion/react' {
-  export interface Theme extends ImagineTheme { }
+  export interface Theme extends ImagineTheme {}
 }

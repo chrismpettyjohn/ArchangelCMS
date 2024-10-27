@@ -1,14 +1,25 @@
 import Toolbar from './toolbar/Toolbar';
-import React, { useRef, useState } from 'react';
-import { WYSIWYGEditorProps } from './WYSIWYGEditor.types';
-import { wysiwygStyleFn, wysiwygStyleMap } from './WYSIWYGEditor.const';
-import { Editor, EditorCommand, EditorState, RichUtils, convertToRaw, convertFromHTML, ContentState } from 'draft-js';
+import React, {useRef, useState} from 'react';
+import {WYSIWYGEditorProps} from './WYSIWYGEditor.types';
+import {wysiwygStyleFn, wysiwygStyleMap} from './WYSIWYGEditor.const';
+import {
+  Editor,
+  EditorCommand,
+  EditorState,
+  RichUtils,
+  convertToRaw,
+  convertFromHTML,
+  ContentState,
+} from 'draft-js';
 
-export function WYSIWYGEditor({ defaultContent, onChanges }: WYSIWYGEditorProps) {
+export function WYSIWYGEditor({defaultContent, onChanges}: WYSIWYGEditorProps) {
   const editor = useRef<any>(null);
   const [editorState, setEditorState] = useState(() => {
     const blocks = convertFromHTML(defaultContent);
-    const state = ContentState.createFromBlockArray(blocks.contentBlocks, blocks.entityMap);
+    const state = ContentState.createFromBlockArray(
+      blocks.contentBlocks,
+      blocks.entityMap
+    );
     return EditorState.createWithContent(state);
   });
 
@@ -36,7 +47,7 @@ export function WYSIWYGEditor({ defaultContent, onChanges }: WYSIWYGEditorProps)
           editorState={editorState}
           customStyleMap={wysiwygStyleMap}
           blockStyleFn={wysiwygStyleFn}
-          onChange={(editorState) => {
+          onChange={editorState => {
             const contentState = editorState.getCurrentContent();
             onChanges(convertToRaw(contentState));
             setEditorState(editorState);
@@ -44,5 +55,5 @@ export function WYSIWYGEditor({ defaultContent, onChanges }: WYSIWYGEditorProps)
         />
       </div>
     </div>
-  )
+  );
 }

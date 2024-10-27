@@ -20,7 +20,6 @@ import { databaseEntities } from './database/database.const';
 import { FriendshipModule } from './friendship/friendship.module';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { WordFilterModule } from './word-filter/word-filter.module';
-import { InternationalizationModule } from './internationalization/internationalization.module';
 import {
   IMAGINE_DATABASE_HOST,
   IMAGINE_DATABASE_NAME,
@@ -100,7 +99,6 @@ import { RPStatsModule } from './rp-stats/rp-stats.module';
     RoomModule,
     GroupModule,
     PhotoModule,
-    InternationalizationModule,
     DiscordModule,
     FacebookModule,
     GoogleModule,

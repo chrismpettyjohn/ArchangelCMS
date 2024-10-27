@@ -1,4 +1,4 @@
-import { RankFragment, RankUpdateInput } from "@imagine-cms/client";
+import {RankFragment, RankUpdateInput} from '@imagine-cms/client';
 
 export interface RankDetailsEditorCardProps {
   defaultRank: RankFragment;

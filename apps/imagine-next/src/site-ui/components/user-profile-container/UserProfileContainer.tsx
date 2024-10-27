@@ -1,15 +1,20 @@
 import DayJS from 'dayjs';
 import Link from 'next/Link';
-import { Badge } from '../badge/Badge';
-import { Avatar } from '../avatar/Avatar';
-import React, { useEffect, useMemo } from 'react';
-import { UserProfileContainerProps } from './UserProfileContainer.types';
-import { UserBadgeContainerGrid } from '../user-badge-container-grid/UserBadgeContainerGrid';
-import { InformationContainer, UserProfileContainerContent, UserProfileContainerElement, UserProfileStat } from './UserProfileContainer.styled';
-import { useCorporationFetchOne, useGangFetchOne } from '@imagine-cms/client';
-import { DATE_FORMAT } from '@imagine-cms/web';
+import {Badge} from '../badge/Badge';
+import {Avatar} from '../avatar/Avatar';
+import React, {useEffect, useMemo} from 'react';
+import {UserProfileContainerProps} from './UserProfileContainer.types';
+import {UserBadgeContainerGrid} from '../user-badge-container-grid/UserBadgeContainerGrid';
+import {
+  InformationContainer,
+  UserProfileContainerContent,
+  UserProfileContainerElement,
+  UserProfileStat,
+} from './UserProfileContainer.styled';
+import {useCorporationFetchOne, useGangFetchOne} from '@imagine-cms/client';
+import {DATE_FORMAT} from '@imagine-cms/web';
 
-export function UserProfileContainer({ user }: UserProfileContainerProps) {
+export function UserProfileContainer({user}: UserProfileContainerProps) {
   const corporationFetchOne = useCorporationFetchOne();
   const gangFetchOne = useGangFetchOne();
 
@@ -19,10 +24,10 @@ export function UserProfileContainer({ user }: UserProfileContainerProps) {
 
   async function refresh() {
     if (user.rpStats.corporationID) {
-      await corporationFetchOne.fetch({ id: user.rpStats.corporationID })
+      await corporationFetchOne.fetch({id: user.rpStats.corporationID});
     }
     if (user.rpStats.gangID) {
-      await gangFetchOne.fetch({ id: user.rpStats.gangID })
+      await gangFetchOne.fetch({id: user.rpStats.gangID});
     }
   }
   useEffect(() => {
@@ -32,14 +37,27 @@ export function UserProfileContainer({ user }: UserProfileContainerProps) {
   return (
     <UserProfileContainerElement>
       <UserProfileContainerContent>
-        <Avatar look={user.look} direction={2} headDirection={3} gesture="sml" action="wav" size="l" />
+        <Avatar
+          look={user.look}
+          direction={2}
+          headDirection={3}
+          gesture="sml"
+          action="wav"
+          size="l"
+        />
         <InformationContainer>
           <div>
-            <div style={{ display: 'flex', gap: 8 }}>
+            <div style={{display: 'flex', gap: 8}}>
               <Link href={`/ranks/${user.rank.id}`}>
-                <Badge badge={{ code: user.rank.badgeCode }} style={{ height: 45, marginTop: 10 }} />
+                <Badge
+                  badge={{code: user.rank.badgeCode}}
+                  style={{height: 45, marginTop: 10}}
+                />
               </Link>
-              <h2 className="notranslate" style={{ color: user.rank.backgroundColor }}>
+              <h2
+                className="notranslate"
+                style={{color: user.rank.backgroundColor}}
+              >
                 {user.username}
               </h2>
             </div>
@@ -47,27 +65,30 @@ export function UserProfileContainer({ user }: UserProfileContainerProps) {
           <br />
           <UserBadgeContainerGrid user={user as any} />
         </InformationContainer>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{display: 'flex', flexDirection: 'column', gap: 16}}>
           <UserProfileStat>
             <div>Job</div>
-            {user.rpStats.corporationID
-              ? (
-                <Link href={`/corps/${user.rpStats.corporationID}`}>
-                  <b style={{ cursor: 'pointer' }}>{corporationFetchOne.data?.displayName}</b>
-                </Link>
-              )
-              : 'No job'}
-
+            {user.rpStats.corporationID ? (
+              <Link href={`/corps/${user.rpStats.corporationID}`}>
+                <b style={{cursor: 'pointer'}}>
+                  {corporationFetchOne.data?.displayName}
+                </b>
+              </Link>
+            ) : (
+              'No job'
+            )}
           </UserProfileStat>
           <UserProfileStat>
             <div>Gang</div>
-            {user.rpStats.gangID
-              ? (
-                <Link href={`/gangs/${user.rpStats.gangID}`}>
-                  <b style={{ cursor: 'pointer' }}>{gangFetchOne.data?.displayName}</b>
-                </Link>
-              )
-              : 'No gang'}
+            {user.rpStats.gangID ? (
+              <Link href={`/gangs/${user.rpStats.gangID}`}>
+                <b style={{cursor: 'pointer'}}>
+                  {gangFetchOne.data?.displayName}
+                </b>
+              </Link>
+            ) : (
+              'No gang'
+            )}
           </UserProfileStat>
           <UserProfileStat>
             <div>Last Visit</div>
@@ -75,6 +96,6 @@ export function UserProfileContainer({ user }: UserProfileContainerProps) {
           </UserProfileStat>
         </div>
       </UserProfileContainerContent>
-    </UserProfileContainerElement >
-  )
+    </UserProfileContainerElement>
+  );
 }

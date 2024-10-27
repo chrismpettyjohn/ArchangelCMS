@@ -1,10 +1,20 @@
-'use client'
+'use client';
 import React from 'react';
-import { Avatar } from '../avatar/Avatar';
-import { SmallUserProfileContainerAvatarContainer, SmallUserProfileContainerBanner, SmallUserProfileContainerInformationContainer, SmallUserProfileContainerOnlineIndicator, SmallUserProfileContainerUserContainer, SmallUserProfileRankContainer, SmallUserProfileUsernameContainer } from './SmallUserProfileContainer.styled';
-import { SmallUserProfileContainerProps } from './SmallUserProfileContainer.types';
+import {Avatar} from '../avatar/Avatar';
+import {
+  SmallUserProfileContainerAvatarContainer,
+  SmallUserProfileContainerBanner,
+  SmallUserProfileContainerInformationContainer,
+  SmallUserProfileContainerOnlineIndicator,
+  SmallUserProfileContainerUserContainer,
+  SmallUserProfileRankContainer,
+  SmallUserProfileUsernameContainer,
+} from './SmallUserProfileContainer.styled';
+import {SmallUserProfileContainerProps} from './SmallUserProfileContainer.types';
 
-export function SmallUserProfileContainerMock({ showOnlineStatus = true }: Partial<SmallUserProfileContainerProps>) {
+export function SmallUserProfileContainerMock({
+  showOnlineStatus = true,
+}: Partial<SmallUserProfileContainerProps>) {
   return (
     <SmallUserProfileContainerUserContainer>
       <SmallUserProfileContainerBanner>
@@ -15,12 +25,14 @@ export function SmallUserProfileContainerMock({ showOnlineStatus = true }: Parti
       <SmallUserProfileContainerInformationContainer>
         <SmallUserProfileUsernameContainer className="notranslate">
           -
-          {showOnlineStatus && <SmallUserProfileContainerOnlineIndicator $online={false} />}
+          {showOnlineStatus && (
+            <SmallUserProfileContainerOnlineIndicator $online={false} />
+          )}
         </SmallUserProfileUsernameContainer>
         <SmallUserProfileRankContainer className="notranslate">
           -
         </SmallUserProfileRankContainer>
       </SmallUserProfileContainerInformationContainer>
     </SmallUserProfileContainerUserContainer>
-  )
+  );
 }

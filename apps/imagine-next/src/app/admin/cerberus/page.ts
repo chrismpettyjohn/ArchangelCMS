@@ -1,1 +1,1 @@
-export { CerberusScreen as default } from "../../../admin-ui/screens/cerberus-screen/CerberusScreen";
+export {CerberusScreen as default} from '../../../admin-ui/screens/cerberus-screen/CerberusScreen';

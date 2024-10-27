@@ -1,22 +1,22 @@
 'use client';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const StatsContainerElement = styled.div`
-  background: ${({ theme }) => theme.color.s30};
-  border:${({ theme }) => `4px solid ${theme.color.s40}`};
-  border-radius: ${({ theme }) => theme.radius.oneUnit};
-  color: ${({ theme }) => theme.color.s50};
+  background: ${({theme}) => theme.color.s30};
+  border: ${({theme}) => `4px solid ${theme.color.s40}`};
+  border-radius: ${({theme}) => theme.radius.oneUnit};
+  color: ${({theme}) => theme.color.s50};
   cursor: pointer;
   display: flex;
   flex: 1;
   font-weight: 500;
-  font-size:  ${({ theme }) => theme.fontSize.oneUnit};
-  gap: ${({ theme }) => theme.space.oneUnit};
-  padding: ${({ theme }) => theme.space.halfUnit};
+  font-size: ${({theme}) => theme.fontSize.oneUnit};
+  gap: ${({theme}) => theme.space.oneUnit};
+  padding: ${({theme}) => theme.space.halfUnit};
 
   b {
     font-weight: 800;
-    color: ${({ theme }) => theme.color.s60};
+    color: ${({theme}) => theme.color.s60};
   }
 
   img {
@@ -26,25 +26,25 @@ const StatsContainerElement = styled.div`
   }
 
   &:hover {
-    border:${({ theme }) => `2px solid ${theme.color.s30}`};
+    border: ${({theme}) => `2px solid ${theme.color.s30}`};
   }
-`
+`;
 
 export const CreditStatsContainerElement = styled(StatsContainerElement)`
-  background: #E0B246;
-  border-color: #F6C44F;
-`
+  background: #e0b246;
+  border-color: #f6c44f;
+`;
 
 export const PixelStatsContainerElement = styled(StatsContainerElement)`
-  background: #A55CA0;
-  border-color: #BF6DBA;
-`
+  background: #a55ca0;
+  border-color: #bf6dba;
+`;
 
 export const DiamondStatsContainerElement = styled(StatsContainerElement)`
   background: #588e84;
-  border-color: #C7EBE3;
-`
+  border-color: #c7ebe3;
+`;
 
 export const HabboClubStatsContainerElement = styled(StatsContainerElement)`
   background: #4a3b17;
-`
+`;

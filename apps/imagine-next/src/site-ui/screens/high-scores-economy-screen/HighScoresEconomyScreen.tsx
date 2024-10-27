@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import React from 'react';
-import { Accordion } from '../../components/accordion/Accordion';
-import { HighScoresContainer } from '../../components/high-scores-container/HighScoresContainer';
+import {Accordion} from '../../components/accordion/Accordion';
+import {HighScoresContainer} from '../../components/high-scores-container/HighScoresContainer';
 
 export function HighScoresEconomyScreen() {
   return (
@@ -10,9 +10,7 @@ export function HighScoresEconomyScreen() {
         coming soon
       </Accordion>
       <br />
-      <Accordion header="Bank account">
-        coming soon
-      </Accordion>
+      <Accordion header="Bank account">coming soon</Accordion>
     </HighScoresContainer>
-  )
+  );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SITE_NAME } from '@imagine-cms/web';
+import {SITE_NAME} from '@imagine-cms/web';
 import Link from 'next/link';
 
 export function SiteLogo() {
@@ -7,5 +7,5 @@ export function SiteLogo() {
     <Link href="/me">
       <h1>{SITE_NAME}</h1>
     </Link>
-  )
+  );
 }

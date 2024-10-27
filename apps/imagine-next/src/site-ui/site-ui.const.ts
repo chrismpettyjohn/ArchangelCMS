@@ -1,4 +1,4 @@
-import { UserWire, UserGender, UserOnlineStatus } from "@imagine-cms/types";
+import {UserWire, UserGender, UserOnlineStatus} from '@imagine-cms/types';
 
 export const MOCK_USER: UserWire = {
   id: 0,
@@ -14,7 +14,7 @@ export const MOCK_USER: UserWire = {
   gender: UserGender.Male,
   onlineStatus: UserOnlineStatus.Offline,
   homeRoomID: -1,
-}
+};
 
 // @ts-ignore
-export const NITRO_CLIENT_URL = process.env.NEXT_NITRO_CLIENT_URL
+export const NITRO_CLIENT_URL = process.env.NEXT_NITRO_CLIENT_URL;

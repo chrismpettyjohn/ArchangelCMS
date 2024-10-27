@@ -1,25 +1,19 @@
-'use client'
-import React, { useEffect } from 'react';
-import { useRoomFetchOne } from '@imagine-cms/client';
-import { RoomGridContainer } from './RoomGridContainer';
-import { LoadingMessage } from '../loading-message/LoadingMessage';
+'use client';
+import React, {useEffect} from 'react';
+import {useRoomFetchOne} from '@imagine-cms/client';
+import {RoomGridContainer} from './RoomGridContainer';
+import {LoadingMessage} from '../loading-message/LoadingMessage';
 
-export function RoomGridContainerLazy({ roomID }: { roomID: number }) {
+export function RoomGridContainerLazy({roomID}: {roomID: number}) {
   const fetchRoom = useRoomFetchOne();
   const onFetchRoom = async () => {
-    fetchRoom.fetch({ id: roomID });
-  }
+    fetchRoom.fetch({id: roomID});
+  };
   useEffect(() => {
-    onFetchRoom()
+    onFetchRoom();
   }, [roomID]);
   if (!fetchRoom.data) {
-    return (
-      <LoadingMessage>
-        Loading room
-      </LoadingMessage>
-    )
+    return <LoadingMessage>Loading room</LoadingMessage>;
   }
-  return (
-    <RoomGridContainer room={fetchRoom.data} />
-  )
+  return <RoomGridContainer room={fetchRoom.data} />;
 }

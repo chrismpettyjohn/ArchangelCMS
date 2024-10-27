@@ -1,6 +1,10 @@
 import React from 'react';
-import { CorpGridContainerBadge, CorpGridContainerElement, CorpGridContainerInfo } from './CorpGridContainer.styled';
-import { BADGE_EXT, BADGE_URL } from '@imagine-cms/web';
+import {
+  CorpGridContainerBadge,
+  CorpGridContainerElement,
+  CorpGridContainerInfo,
+} from './CorpGridContainer.styled';
+import {BADGE_EXT, BADGE_URL} from '@imagine-cms/web';
 
 export function CorpGridContainerMock() {
   return (

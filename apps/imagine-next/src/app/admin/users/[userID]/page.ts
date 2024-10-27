@@ -1,1 +1,1 @@
-export { UserEditProfileScreen as default } from "../../../../admin-ui/screens/user-edit-profile-screen/UserEditProfileScreen";
+export {UserEditProfileScreen as default} from '../../../../admin-ui/screens/user-edit-profile-screen/UserEditProfileScreen';

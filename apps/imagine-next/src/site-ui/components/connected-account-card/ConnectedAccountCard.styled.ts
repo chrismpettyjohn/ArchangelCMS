@@ -1,11 +1,11 @@
 'use client';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const ConnectedAccountCardContainer = styled.div`
-  background: ${({ theme }) => theme.color.s30};
-  border:${({ theme }) => `2px solid ${theme.color.s40}`};
-  border-radius: ${({ theme }) => theme.radius.oneUnit};
-  color: ${({ theme }) => theme.color.s20};
+  background: ${({theme}) => theme.color.s30};
+  border: ${({theme}) => `2px solid ${theme.color.s40}`};
+  border-radius: ${({theme}) => theme.radius.oneUnit};
+  color: ${({theme}) => theme.color.s20};
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -14,11 +14,13 @@ export const ConnectedAccountCardContainer = styled.div`
   overflow: hidden;
   width: 250px;
   &:hover {
-      border:${({ theme }) => `2px solid ${theme.color.s60}`};
+    border: ${({theme}) => `2px solid ${theme.color.s60}`};
   }
-`
+`;
 
-export const ConnectedAccountCardInformationContainer = styled.div<{ $connected: boolean }>`
+export const ConnectedAccountCardInformationContainer = styled.div<{
+  $connected: boolean;
+}>`
   align-items: center;
   display: flex;
   flex: 1;
@@ -28,17 +30,17 @@ export const ConnectedAccountCardInformationContainer = styled.div<{ $connected:
   height: 100%;
   i {
     font-size: 48px;
-    color: ${({ theme, $connected }) => $connected ? theme.color.s20 : theme.color.s60};
+    color: ${({theme, $connected}) =>
+      $connected ? theme.color.s20 : theme.color.s60};
   }
-`
-
+`;
 
 export const ConnectedAccountCardStatusContainer = styled.div`
   align-items: center;
-  background: ${({ theme }) => theme.color.s30};
+  background: ${({theme}) => theme.color.s30};
   display: flex;
   flex: 1;
   justify-content: center;
   width: 100%;
   height: 100%;
-`
+`;

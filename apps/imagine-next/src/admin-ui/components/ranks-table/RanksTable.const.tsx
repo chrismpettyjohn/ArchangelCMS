@@ -1,17 +1,16 @@
 import React from 'react';
-import { Badge } from '../../blocks/badge/Badge';
-import { RankFragment } from '@imagine-cms/client';
-import { Button } from '../../blocks/button/Button';
-import { TableColumn } from "react-data-table-component";
+import {Badge} from '../../blocks/badge/Badge';
+import {RankFragment} from '@imagine-cms/client';
+import {Button} from '../../blocks/button/Button';
+import {TableColumn} from 'react-data-table-component';
 import Link from 'next/link';
 
 export const RANKS_TABLE_COLUMNS: TableColumn<RankFragment>[] = [
   {
     name: '',
-    cell: ({ id, badgeCode }) => (
+    cell: ({id, badgeCode}) => (
       <Link href={`/permissions/${id}`}>
-        <Badge badge={{ code: badgeCode } as any} height={45} />
-
+        <Badge badge={{code: badgeCode} as any} height={45} />
       </Link>
     ),
   },
@@ -21,14 +20,14 @@ export const RANKS_TABLE_COLUMNS: TableColumn<RankFragment>[] = [
   },
   {
     name: 'Tools',
-    cell: ({ id }) => (
-      <div style={{ display: 'flex', padding: 8 }}>
+    cell: ({id}) => (
+      <div style={{display: 'flex', padding: 8}}>
         <Link href={`/permissions/${id}`}>
           <Button>
             <i className="fa fa-eye" /> View More
           </Button>
         </Link>
       </div>
-    )
+    ),
   },
-]
+];

@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode } from "react";
+import {HTMLProps, ReactNode} from 'react';
 
 export interface ConnectedAccountCardProps extends HTMLProps<HTMLDivElement> {
   icon: ReactNode;

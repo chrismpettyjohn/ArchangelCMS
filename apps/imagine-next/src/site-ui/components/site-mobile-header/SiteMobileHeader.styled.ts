@@ -1,18 +1,17 @@
 'use client';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const SiteMobileHeaderElement = styled.div`
   align-items: center;
-  background: ${({ theme }) => theme.color.s40};
-  border-bottom:${({ theme }) => `2px solid ${theme.color.s30}`};
+  background: ${({theme}) => theme.color.s40};
+  border-bottom: ${({theme}) => `2px solid ${theme.color.s30}`};
   display: flex;
   flex: 1;
-  margin-bottom: ${({ theme }) => theme.space.twoUnits};
+  margin-bottom: ${({theme}) => theme.space.twoUnits};
   overflow: hidden;
-  padding: ${({ theme }) => theme.space.oneUnit};
+  padding: ${({theme}) => theme.space.oneUnit};
 
-
-  ${({ theme }) => `
+  ${({theme}) => `
     @media (min-width: ${theme.breakPoints.tablet}) {
       display: none !important;
     }
@@ -24,19 +23,19 @@ export const SiteMobileHeaderElement = styled.div`
   }
 
   li {
-    background: ${({ theme }) => theme.color.s40};
-    border: ${({ theme }) => `2px solid ${theme.color.s30}`};
+    background: ${({theme}) => theme.color.s40};
+    border: ${({theme}) => `2px solid ${theme.color.s30}`};
     cursor: pointer;
-    padding: ${({ theme }) => theme.space.oneUnit};
+    padding: ${({theme}) => theme.space.oneUnit};
 
     a {
       display: flex;
       flex: 1;
-      color: ${({ theme }) => theme.color.s60};
+      color: ${({theme}) => theme.color.s60};
       text-decoration: none;
       &:hover {
-        background:${({ theme }) => theme.color.brand};
+        background: ${({theme}) => theme.color.brand};
       }
     }
   }
-`
+`;

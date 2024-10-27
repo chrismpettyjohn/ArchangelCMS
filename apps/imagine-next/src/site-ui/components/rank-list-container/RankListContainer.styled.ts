@@ -1,13 +1,13 @@
 'use client';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const RankListContainerElement = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.space.twoUnits};
+  gap: ${({theme}) => theme.space.twoUnits};
   flex-direction: column;
   flex: 1;
   width: 100%;
-`
+`;
 
 export const RankListContainerHeader = styled.div`
   display: flex;
@@ -16,9 +16,9 @@ export const RankListContainerHeader = styled.div`
     width: 75px;
     height: 75px;
   }
-`
+`;
 
-export const RankListContainerMembers = styled.div` 
+export const RankListContainerMembers = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.space.oneUnit};
-`
+  gap: ${({theme}) => theme.space.oneUnit};
+`;

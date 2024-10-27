@@ -1,1 +1,1 @@
-export { PermissionsOverviewScreen as default } from "../../../admin-ui/screens/permissions-overview-screen/PermissionsOverviewScreen";
+export {PermissionsOverviewScreen as default} from '../../../admin-ui/screens/permissions-overview-screen/PermissionsOverviewScreen';

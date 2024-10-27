@@ -1,8 +1,8 @@
 import React from 'react';
-import { ScopeGuard } from '@imagine-cms/web';
-import { SiteSidebarElement } from './SiteSidebar.styled';
-import { ButtonBrand } from '../../../site-ui/components/button/Button.remix';
-import { useRouter } from 'next/navigation';
+import {ScopeGuard} from '@imagine-cms/web';
+import {SiteSidebarElement} from './SiteSidebar.styled';
+import {ButtonBrand} from '../../../site-ui/components/button/Button.remix';
+import {useRouter} from 'next/navigation';
 import Link from 'next/link';
 
 export function SiteSidebar() {
@@ -27,7 +27,6 @@ export function SiteSidebar() {
           </Link>
         </ScopeGuard>
         <ScopeGuard scope="manageRooms" redirect={false}>
-
           <Link href="/admin/rooms">
             <li>
               <i className="fa fa-door-open" />
@@ -59,18 +58,27 @@ export function SiteSidebar() {
       <footer>
         <ul>
           <Link href="/me">
-            <ButtonBrand>
-              Go to site
-            </ButtonBrand>
+            <ButtonBrand>Go to site</ButtonBrand>
           </Link>
         </ul>
         <div className="notranslate">
-          <b style={{ cursor: 'pointer' }} onClick={onViewCerberusAbout}>Cerberus</b>
+          <b style={{cursor: 'pointer'}} onClick={onViewCerberusAbout}>
+            Cerberus
+          </b>
           <div>
-            by&nbsp;<a href="https://github.com/habbo-hotel" target="_blank" style={{ cursor: 'pointer' }} className="lechris" rel="noreferrer"><b>LeChris</b></a>
+            by&nbsp;
+            <a
+              href="https://github.com/habbo-hotel"
+              target="_blank"
+              style={{cursor: 'pointer'}}
+              className="lechris"
+              rel="noreferrer"
+            >
+              <b>LeChris</b>
+            </a>
           </div>
         </div>
       </footer>
     </SiteSidebarElement>
-  )
+  );
 }

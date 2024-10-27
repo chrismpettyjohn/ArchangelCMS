@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 
 export function BadgeListScreen() {
@@ -7,5 +7,5 @@ export function BadgeListScreen() {
       <h1>Badges</h1>
       <p>Coming soon.</p>
     </>
-  )
+  );
 }

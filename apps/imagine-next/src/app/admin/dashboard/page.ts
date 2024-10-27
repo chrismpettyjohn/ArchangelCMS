@@ -1,1 +1,1 @@
-export { DashboardScreen as default } from "../../../admin-ui/screens/dashboard-screen/DashboardScreen";
+export {DashboardScreen as default} from '../../../admin-ui/screens/dashboard-screen/DashboardScreen';

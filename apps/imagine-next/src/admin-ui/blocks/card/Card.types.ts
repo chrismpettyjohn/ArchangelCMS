@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode } from "react";
+import {HTMLProps, ReactNode} from 'react';
 
 export type CardElevation = 1 | 2;
 

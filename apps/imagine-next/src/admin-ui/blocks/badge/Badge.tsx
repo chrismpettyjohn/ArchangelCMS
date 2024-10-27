@@ -1,14 +1,19 @@
-import { BADGE_EXT, BADGE_URL } from '@imagine-cms/web';
-import { BadgeProps } from './Badge.types';
-import React, { useEffect, useMemo, useState } from 'react';
+import {BADGE_EXT, BADGE_URL} from '@imagine-cms/web';
+import {BadgeProps} from './Badge.types';
+import React, {useEffect, useMemo, useState} from 'react';
 
-export function Badge({ badge, overrideBadgeURL, overrideBadgeEXT, ...props }: BadgeProps) {
+export function Badge({
+  badge,
+  overrideBadgeURL,
+  overrideBadgeEXT,
+  ...props
+}: BadgeProps) {
   const [isHidden, setIsHidden] = useState(false);
   const badgeURL = overrideBadgeURL ?? BADGE_URL;
   const badgeEXT = overrideBadgeEXT ?? BADGE_EXT;
 
   const imageSrc = useMemo(() => {
-    return `${badgeURL}/${badge.code}.${badgeEXT}`
+    return `${badgeURL}/${badge.code}.${badgeEXT}`;
   }, [badgeURL, badgeEXT, badge.code]);
 
   useEffect(() => {
@@ -20,6 +25,12 @@ export function Badge({ badge, overrideBadgeURL, overrideBadgeEXT, ...props }: B
   }
 
   return (
-    <img src={imageSrc} {...props} onError={() => setIsHidden(true)} loading="lazy" height={50} />
-  )
+    <img
+      src={imageSrc}
+      {...props}
+      onError={() => setIsHidden(true)}
+      loading="lazy"
+      height={50}
+    />
+  );
 }

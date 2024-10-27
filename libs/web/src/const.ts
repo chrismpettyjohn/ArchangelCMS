@@ -17,13 +17,6 @@ export const BADGE_EXT = process.env.BADGE_EXT;
 assert(process.env.BETA_ENABLED, 'BETA_ENABLED is required');
 export const BETA_ENABLED = process.env.BETA_ENABLED === 'true';
 
-
-assert(process.env.DEFAULT_LANGUAGE, 'DEFAULT_LANGUAGE is required');
-assert(process.env.SUPPORTED_LANGUAGES, 'SUPPORTED_LANGUAGES is required');
-export const DEFAULT_LANGUAGE = process.env.DEFAULT_LANGUAGE
-export const SUPPORTED_LANGUAGES: Array<string> = process.env.SUPPORTED_LANGUAGES.split(',')
-
-
 assert(process.env.DATE_FORMAT, 'DATE_FORMAT is required');
 export const DATE_FORMAT = process.env.DATE_FORMAT
 

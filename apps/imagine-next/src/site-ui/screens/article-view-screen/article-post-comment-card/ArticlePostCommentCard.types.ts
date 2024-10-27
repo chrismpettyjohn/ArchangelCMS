@@ -1,4 +1,4 @@
-import { ArticleCommentFragment } from '@imagine-cms/client';
+import {ArticleCommentFragment} from '@imagine-cms/client';
 
 export interface ArticlePostCommentCardProps {
   articleID: number;

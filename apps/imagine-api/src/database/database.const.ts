@@ -13,7 +13,6 @@ import { ReactionEntity } from './reaction.entity';
 import { UserRepository } from './user.repository';
 import { RankRepository } from './rank.repository';
 import { RoomRepository } from './room.repository';
-import { LanguageEntity } from './language.entity';
 import { PhotoRepository } from './photo.repository';
 import { GroupRepository } from './group.repository';
 import { UserBadgeEntity } from './user-badge.entity';
@@ -24,18 +23,13 @@ import { ArticleRepository } from './article.repository';
 import { ChatlogRepository } from './chatlog.repository';
 import { CommentRepository } from './comment.repository';
 import { ReactionRepository } from './reaction.repository';
-import { LanguageRepository } from './language.repository';
 import { UserBadgeRepository } from './user-badge.repository';
 import { SupportTicketEntity } from './support-ticket.entity';
 import { FriendshipRepository } from './friendship.repository';
-import { LanguagePhraseEntity } from './language-phrase.entity';
 import { WordFilterRepository } from './word-filter.repository';
 import { GroupMembershipEntity } from './group-membership.entity';
 import { SupportTicketRepository } from './support-ticket.repository';
-import { LanguagePhraseRepository } from './language-phrase.repository';
 import { GroupMembershipRepository } from './group-membership.repository';
-import { LanguagePhraseTranslationEntity } from './language-phrase-translation.entity';
-import { LanguagePhraseTranslationRepository } from './language-phrase-translation.repository';
 import { ForgotPasswordRequestEntity } from './forgot-password-request.entity';
 import { ForgotPasswordRequestRepository } from './forgot-password-request.repository';
 import { BetaCodeRepository } from './beta-code.repository';
@@ -90,9 +84,6 @@ export const databaseEntities = [
   RoomEntity,
   GroupEntity,
   PhotoEntity,
-  LanguageEntity,
-  LanguagePhraseEntity,
-  LanguagePhraseTranslationEntity,
   CommentEntity,
   ReactionEntity,
   FriendshipEntity,
@@ -132,9 +123,6 @@ export const databaseRepositories = [
   RoomRepository,
   GroupRepository,
   PhotoRepository,
-  LanguageRepository,
-  LanguagePhraseRepository,
-  LanguagePhraseTranslationRepository,
   CommentRepository,
   ReactionRepository,
   FriendshipRepository,

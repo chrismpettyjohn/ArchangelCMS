@@ -1,7 +1,11 @@
-'use client'
+'use client';
 import React from 'react';
-import { GangGridContainerAvatar, GangGridContainerElement, GangGridContainerInfo } from './GangGridContainer.styled';
-import { Avatar } from '../avatar/Avatar';
+import {
+  GangGridContainerAvatar,
+  GangGridContainerElement,
+  GangGridContainerInfo,
+} from './GangGridContainer.styled';
+import {Avatar} from '../avatar/Avatar';
 
 export function GangGridContainerMock() {
   return (
@@ -11,8 +15,10 @@ export function GangGridContainerMock() {
       </GangGridContainerAvatar>
       <GangGridContainerInfo>
         <h2>-</h2>
-        <p><i className="fa fa-spinner fa-spin" /></p>
+        <p>
+          <i className="fa fa-spinner fa-spin" />
+        </p>
       </GangGridContainerInfo>
     </GangGridContainerElement>
-  )
+  );
 }

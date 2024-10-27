@@ -1,12 +1,12 @@
-import { BadgeListScreen } from "../../site-ui/screens/badge-list-screen/BadgeListScreen";
+import {BadgeListScreen} from '../../site-ui/screens/badge-list-screen/BadgeListScreen';
 
 import React from 'react';
-import { UserGuard } from "@imagine-cms/web";
+import {UserGuard} from '@imagine-cms/web';
 
 export default function Page() {
-    return (
-        <UserGuard redirect>
-            <BadgeListScreen />
-        </UserGuard>
-    )
+  return (
+    <UserGuard redirect>
+      <BadgeListScreen />
+    </UserGuard>
+  );
 }
