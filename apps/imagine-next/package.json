@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5176",
+    "dev": "PORT=$(cat .env | grep PORT | cut -d '=' -f2) next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "PORT=$(cat .env | grep PORT | cut -d '=' -f2) next start",
     "lint": "next lint",
     "lint:fix": "prettier --write . && next lint --fix"
   },
