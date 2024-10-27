@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import Link from 'next/Link';
-import {RoomGridContainerProps} from './RoomGridContainer.types';
-import {RoomGridContainerElement} from './RoomGridContainer.styled';
+import Link from 'next/link';
+import { RoomGridContainerProps } from './RoomGridContainer.types';
+import { RoomGridContainerElement } from './RoomGridContainer.styled';
 
-export function RoomGridContainer({room}: RoomGridContainerProps) {
+export function RoomGridContainer({ room }: RoomGridContainerProps) {
   return (
     <Link href={`/rooms/${room.id}`}>
       <RoomGridContainerElement>

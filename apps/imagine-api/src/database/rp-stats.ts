@@ -14,6 +14,24 @@ export class RPStatsEntity {
   @Column({ name: 'health_max' })
   healthMax!: number;
 
+  @Column({ name: 'energy_now' })
+  energyCurrent!: number;
+
+  @Column({ name: 'energy_max' })
+  energyMax!: number;
+
+  @Column({ name: 'armor_now' })
+  armorCurrent!: number;
+
+  @Column({ name: 'armor_max' })
+  armorMax!: number;
+
+  @Column({ name: 'hunger_now' })
+  hungerCurrent!: number;
+
+  @Column({ name: 'hunger_max' })
+  hungerMax!: number;
+
   @Column({ name: 'corps_id' })
   corpID!: number;
 

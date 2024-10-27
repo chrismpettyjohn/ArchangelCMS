@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
-import Link from 'next/Link';
-import {Badge} from '../badge/Badge';
-import {GridLarge} from '../grid/Grid.remix';
-import {UserStatsGridProps} from './UserStatsGrid.types';
+import Link from 'next/link';
+import { Badge } from '../badge/Badge';
+import { GridLarge } from '../grid/Grid.remix';
+import { UserStatsGridProps } from './UserStatsGrid.types';
 import {
   CreditStatsContainerElement,
   DiamondStatsContainerElement,
@@ -11,7 +11,7 @@ import {
   PixelStatsContainerElement,
 } from './stats-container/StatsContainer.styled';
 
-export function UserStatsGrid({user}: UserStatsGridProps) {
+export function UserStatsGrid({ user }: UserStatsGridProps) {
   return (
     <GridLarge>
       <Link href="/store/currency">
@@ -34,9 +34,9 @@ export function UserStatsGrid({user}: UserStatsGridProps) {
       </Link>
       <Link href={`/ranks/${user?.rank?.id}`}>
         <HabboClubStatsContainerElement
-          style={{background: user?.rank.backgroundColor}}
+          style={{ background: user?.rank.backgroundColor }}
         >
-          <Badge badge={{code: user?.rank?.badgeCode ?? 'FAN'}} />
+          <Badge badge={{ code: user?.rank?.badgeCode ?? 'FAN' }} />
           <b>{user?.rank?.name ?? '-'}</b>
         </HabboClubStatsContainerElement>
       </Link>

@@ -1,14 +1,14 @@
-import Link from 'next/Link';
-import {Card} from '../card/Card';
+import Link from 'next/link';
+import { Card } from '../card/Card';
 ('use client');
-import React, {useEffect} from 'react';
-import {Avatar} from '../avatar/Avatar';
-import {useRunQuery} from '@imagine-cms/web';
-import {UserFragment} from '@imagine-cms/client';
-import {LeaderboardsCardProps} from './LeaderboardsCard.types';
+import React, { useEffect } from 'react';
+import { Avatar } from '../avatar/Avatar';
+import { useRunQuery } from '@imagine-cms/web';
+import { UserFragment } from '@imagine-cms/client';
+import { LeaderboardsCardProps } from './LeaderboardsCard.types';
 
-export function LeaderboardsCard({title, value, query}: LeaderboardsCardProps) {
-  const {runQuery, loading, data} = useRunQuery<{users: UserFragment[]}>(query);
+export function LeaderboardsCard({ title, value, query }: LeaderboardsCardProps) {
+  const { runQuery, loading, data } = useRunQuery<{ users: UserFragment[] }>(query);
 
   useEffect(() => {
     runQuery();
@@ -25,7 +25,7 @@ export function LeaderboardsCard({title, value, query}: LeaderboardsCardProps) {
       <table width="100%">
         <tbody>
           {data?.users?.map((user: UserFragment) => (
-            <tr key={`user_${user.id}`} style={{backgroundColor: 'f8f9fa'}}>
+            <tr key={`user_${user.id}`} style={{ backgroundColor: 'f8f9fa' }}>
               <td width="25%">
                 <Avatar
                   look={user.look}

@@ -1,7 +1,7 @@
 'use client';
-import Link from 'next/Link';
-import {usePhotoFetchMany} from '@imagine-cms/client';
-import React, {useEffect, useMemo, useState} from 'react';
+import Link from 'next/link';
+import { usePhotoFetchMany } from '@imagine-cms/client';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   PhotosGridContainerChild,
   PhotosGridContainerContent,
@@ -13,12 +13,12 @@ const PHOTOS_PER_PAGE = 8;
 
 export function PhotosGridContainer() {
   const [page, setPage] = useState(0);
-  const {data, fetch, loading} = usePhotoFetchMany();
+  const { data, fetch, loading } = usePhotoFetchMany();
 
   const canGoDown = page > 0;
 
   const onFetchPhotos = () => {
-    fetch({skip: page * PHOTOS_PER_PAGE, limit: PHOTOS_PER_PAGE});
+    fetch({ skip: page * PHOTOS_PER_PAGE, limit: PHOTOS_PER_PAGE });
   };
 
   const onGoUpOnePage = () => {
@@ -42,7 +42,7 @@ export function PhotosGridContainer() {
     <PhotosGridContainerElement>
       <PhotosGridContainerPagination
         onClick={onGoDownOnePage}
-        style={{cursor: canGoDown ? 'pointer' : 'not-allowed'}}
+        style={{ cursor: canGoDown ? 'pointer' : 'not-allowed' }}
       >
         {canGoDown && (
           <i

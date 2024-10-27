@@ -1,9 +1,9 @@
 import DayJS from 'dayjs';
-import Link from 'next/Link';
-import {GridLarge} from '../grid/Grid.remix';
+import Link from 'next/link';
+import { GridLarge } from '../grid/Grid.remix';
 ('use client');
-import React, {useEffect, useState} from 'react';
-import {FurnitureIcon} from '../furniture-icon/FurnitureIcon';
+import React, { useEffect, useState } from 'react';
+import { FurnitureIcon } from '../furniture-icon/FurnitureIcon';
 import {
   FurnitureValueGridContainerProps,
   FurnitureValueSales,
@@ -34,7 +34,7 @@ export function FurnitureValueGridContainer({
     usefurniturePurchaseLogsOverviewTotalSellsForTimeRange();
 
   const onFetchFurniValue = async () => {
-    await fetchPurchaseLogOverview.fetch({furnitureID: furniture.id});
+    await fetchPurchaseLogOverview.fetch({ furnitureID: furniture.id });
     const thisWeeksSells = await fetchTotalSells.fetch({
       furnitureID: furniture.id,
       startDate: THIS_WEEKS_START_DATE,
@@ -66,14 +66,14 @@ export function FurnitureValueGridContainer({
       <FurnitureValueGridContainerElement>
         <h2>{furniture.publicName}</h2>
         <br />
-        <div style={{display: 'flex', flex: 1, justifyContent: 'center'}}>
+        <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
           <FurnitureIcon
             furniture={furniture}
-            style={{maxHeight: 75, objectFit: 'contain'}}
+            style={{ maxHeight: 75, objectFit: 'contain' }}
           />
         </div>
         <br />
-        <GridLarge style={{height: 150}}>
+        <GridLarge style={{ height: 150 }}>
           <FurnitureValueGridContainerStatElement>
             <img src="/img/credits.svg" loading="lazy" />
             {Number(
@@ -87,7 +87,7 @@ export function FurnitureValueGridContainer({
             ).toLocaleString()}
           </FurnitureValueGridContainerStatElement>
           <FurnitureValueGridContainerStatElement>
-            <i className="fa fa-shopping-cart" style={{marginRight: 8}} />
+            <i className="fa fa-shopping-cart" style={{ marginRight: 8 }} />
             {Number(
               fetchPurchaseLogOverview.data?.totalSells ?? 0
             ).toLocaleString()}
@@ -101,7 +101,7 @@ export function FurnitureValueGridContainer({
                 : 'initial',
             }}
           >
-            <i className="fa fa-percent" style={{marginRight: 8}} />
+            <i className="fa fa-percent" style={{ marginRight: 8 }} />
             {Number(sellsChange?.difference ?? 0).toLocaleString()}
           </FurnitureValueGridContainerStatElement>
           <div></div>

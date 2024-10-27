@@ -1,14 +1,14 @@
-import Link from 'next/Link';
-import {Card} from '../card/Card';
-import {Form} from '../form/Form';
-import {toast} from 'react-toastify';
-import {Input} from '../input/Input';
-import {GuestGuard, UserGuard} from '@imagine-cms/web';
-import {ButtonBrand} from '../button/Button.remix';
-import {useRadioRequestCreate} from '@imagine-cms/client';
+import Link from 'next/link';
+import { Card } from '../card/Card';
+import { Form } from '../form/Form';
+import { toast } from 'react-toastify';
+import { Input } from '../input/Input';
+import { GuestGuard, UserGuard } from '@imagine-cms/web';
+import { ButtonBrand } from '../button/Button.remix';
+import { useRadioRequestCreate } from '@imagine-cms/client';
 ('use client');
-import React, {ChangeEvent, SyntheticEvent, useState} from 'react';
-import {CreateRadioRequestCardProps} from './CreateRadioRequestCard.types';
+import React, { ChangeEvent, SyntheticEvent, useState } from 'react';
+import { CreateRadioRequestCardProps } from './CreateRadioRequestCard.types';
 
 export function CreateRadioRequestCard({
   onCreation,
@@ -29,7 +29,7 @@ export function CreateRadioRequestCard({
         toast.error('Your request cannot be empty');
         return;
       }
-      const newRadioRequest = await createRadioRequest.execute({content});
+      const newRadioRequest = await createRadioRequest.execute({ content });
       toast.success('Your request was submitted!');
       setContent('');
       onCreation(newRadioRequest);
@@ -49,7 +49,7 @@ export function CreateRadioRequestCard({
         <Form disabled={isDisabled} onSubmit={onCreateRadioRequest}>
           <label>Request</label>
           <Input type="text" value={content} onChange={onChangeContent} />
-          <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
+          <div style={{ display: 'flex', flex: 1, justifyContent: 'flex-end' }}>
             <ButtonBrand disabled={isDisabled} type="submit">
               Save
             </ButtonBrand>

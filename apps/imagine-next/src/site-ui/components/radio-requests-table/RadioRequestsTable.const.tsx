@@ -1,15 +1,15 @@
 import DayJS from 'dayjs';
 ('use client');
 import React from 'react';
-import Link from 'next/Link';
-import {TableColumn} from 'react-data-table-component';
-import {RadioRequestFragment} from '@imagine-cms/client';
+import Link from 'next/link';
+import { TableColumn } from 'react-data-table-component';
+import { RadioRequestFragment } from '@imagine-cms/client';
 
 export const RADIO_REQUEST_TABLE_COLUMNS: TableColumn<RadioRequestFragment>[] =
   [
     {
       name: 'User',
-      cell: ({user}) => (
+      cell: ({ user }) => (
         <Link href={`/profile/${user.username}`}>
           <span className="notranslate">{user.username}</span>
         </Link>
@@ -25,17 +25,17 @@ export const RADIO_REQUEST_TABLE_COLUMNS: TableColumn<RadioRequestFragment>[] =
     },
     {
       name: 'Reviewed By',
-      cell: ({reviewingUserID}) => reviewingUserID ?? 'N/A',
+      cell: ({ reviewingUserID }) => reviewingUserID ?? 'N/A',
     },
     {
       name: 'Reviewed At',
-      cell: ({reviewedAt}) =>
+      cell: ({ reviewedAt }) =>
         reviewedAt
           ? DayJS.unix(reviewedAt).format('MM-DD-YYYY hh-mm-a')
           : 'N/A',
     },
     {
       name: 'Created At',
-      cell: ({createdAt}) => DayJS.unix(createdAt).format('MM-DD-YYYY hh-mm-a'),
+      cell: ({ createdAt }) => DayJS.unix(createdAt).format('MM-DD-YYYY hh-mm-a'),
     },
   ];

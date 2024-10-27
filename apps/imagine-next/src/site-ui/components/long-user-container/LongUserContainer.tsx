@@ -1,15 +1,15 @@
 'use client';
 import React from 'react';
-import Link from 'next/Link';
-import {Badge} from '../badge/Badge';
-import {Avatar} from '../avatar/Avatar';
-import {LongUserContainerProps} from './LongUserContainer.types';
+import Link from 'next/link';
+import { Badge } from '../badge/Badge';
+import { Avatar } from '../avatar/Avatar';
+import { LongUserContainerProps } from './LongUserContainer.types';
 import {
   LongUserContainerElement,
   LongUserContainerInformation,
 } from './LongUserContainer.styled';
 
-export function LongUserContainer({user}: LongUserContainerProps) {
+export function LongUserContainer({ user }: LongUserContainerProps) {
   return (
     <Link href={`/profile/${user.username}`}>
       <LongUserContainerElement>
@@ -22,7 +22,7 @@ export function LongUserContainer({user}: LongUserContainerProps) {
         />
         <LongUserContainerInformation>
           <h3 className="notranslate">{user.username}</h3>
-          <Badge badge={{code: user.rank?.badgeCode}} />
+          <Badge badge={{ code: user.rank?.badgeCode }} />
         </LongUserContainerInformation>
       </LongUserContainerElement>
     </Link>

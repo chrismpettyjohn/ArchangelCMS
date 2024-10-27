@@ -1,17 +1,17 @@
-import Link from 'next/Link';
-import {Card} from '../card/Card';
-import {Form} from '../form/Form';
-import {Input} from '../input/Input';
-import {toast} from 'react-toastify';
-import {GuestGuard, UserGuard} from '@imagine-cms/web';
-import {Textarea} from '../textarea/Textarea';
-import {ButtonBrand} from '../button/Button.remix';
+import Link from 'next/link';
+import { Card } from '../card/Card';
+import { Form } from '../form/Form';
+import { Input } from '../input/Input';
+import { toast } from 'react-toastify';
+import { GuestGuard, UserGuard } from '@imagine-cms/web';
+import { Textarea } from '../textarea/Textarea';
+import { ButtonBrand } from '../button/Button.remix';
 ('use client');
-import React, {SyntheticEvent, useState} from 'react';
-import {useBugReportCreate} from '@imagine-cms/client';
-import {CreateBugReportCardProps} from './CreateBugReportCard.types';
+import React, { SyntheticEvent, useState } from 'react';
+import { useBugReportCreate } from '@imagine-cms/client';
+import { CreateBugReportCardProps } from './CreateBugReportCard.types';
 
-export function CreateBugReportCard({onCreate}: CreateBugReportCardProps) {
+export function CreateBugReportCard({ onCreate }: CreateBugReportCardProps) {
   const [url, setURL] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -25,7 +25,7 @@ export function CreateBugReportCard({onCreate}: CreateBugReportCardProps) {
       if (isDisabled) {
         return;
       }
-      const newBugReport = await createBugReport.execute({content, title, url});
+      const newBugReport = await createBugReport.execute({ content, title, url });
       toast.success(`Successfully created bug report ${newBugReport.id}`);
       setURL('');
       setContent('');
@@ -59,7 +59,7 @@ export function CreateBugReportCard({onCreate}: CreateBugReportCardProps) {
           />
           <label>Describe the issue</label>
           <Textarea rows={10} value={content} onChange={setContent} />
-          <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
+          <div style={{ display: 'flex', flex: 1, justifyContent: 'flex-end' }}>
             <ButtonBrand type="submit" disabled={isDisabled}>
               Save
             </ButtonBrand>

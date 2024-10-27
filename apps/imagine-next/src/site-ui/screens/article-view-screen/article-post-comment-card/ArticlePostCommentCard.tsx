@@ -1,26 +1,26 @@
-import Link from 'next/Link';
-import {toast} from 'react-toastify';
-import {GuestGuard, UserGuard} from '@imagine-cms/web';
-import {Card} from '../../../components/card/Card';
+import Link from 'next/link';
+import { toast } from 'react-toastify';
+import { GuestGuard, UserGuard } from '@imagine-cms/web';
+import { Card } from '../../../components/card/Card';
 ('use client');
-import React, {SyntheticEvent, useState} from 'react';
-import {useArticleCommentCreate} from '@imagine-cms/client';
-import {Textarea} from '../../../components/textarea/Textarea';
-import {ButtonBrand} from '../../../components/button/Button.remix';
-import {ArticlePostCommentCardForm} from './ArticlePostCommentCard.styled';
-import {ArticlePostCommentCardProps} from './ArticlePostCommentCard.types';
+import React, { SyntheticEvent, useState } from 'react';
+import { useArticleCommentCreate } from '@imagine-cms/client';
+import { Textarea } from '../../../components/textarea/Textarea';
+import { ButtonBrand } from '../../../components/button/Button.remix';
+import { ArticlePostCommentCardForm } from './ArticlePostCommentCard.styled';
+import { ArticlePostCommentCardProps } from './ArticlePostCommentCard.types';
 
 export function ArticlePostCommentCard({
   articleID,
   onPost,
 }: ArticlePostCommentCardProps) {
   const [comment, setComment] = useState('');
-  const {data, execute} = useArticleCommentCreate();
+  const { data, execute } = useArticleCommentCreate();
 
   const onSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     try {
-      const response = await execute({articleID, comment});
+      const response = await execute({ articleID, comment });
       toast.success('Your comment was posted successfully');
       onPost(response);
       setComment('');
@@ -49,7 +49,7 @@ export function ArticlePostCommentCard({
               onChange={setComment}
             />
           </div>
-          <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
+          <div style={{ display: 'flex', flex: 1, justifyContent: 'flex-end' }}>
             <ButtonBrand type="submit">Post</ButtonBrand>
           </div>
         </UserGuard>

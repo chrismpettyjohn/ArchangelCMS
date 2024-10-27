@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
-import Link from 'next/Link';
-import {Avatar} from '../avatar/Avatar';
-import {UserOnlineStatus} from '@imagine-cms/types';
-import {SmallUserProfileContainerProps} from './SmallUserProfileContainer.types';
+import Link from 'next/link';
+import { Avatar } from '../avatar/Avatar';
+import { UserOnlineStatus } from '@imagine-cms/types';
+import { SmallUserProfileContainerProps } from './SmallUserProfileContainer.types';
 import {
   SmallUserProfileContainerAvatarContainer,
   SmallUserProfileContainerBanner,
@@ -29,7 +29,7 @@ export function SmallUserProfileContainer({
         <SmallUserProfileContainerUserContainer {...(props as any)}>
           <SmallUserProfileContainerBanner>
             <SmallUserProfileContainerAvatarContainer
-              style={{background: user.rank?.backgroundColor}}
+              style={{ background: user.rank?.backgroundColor }}
             >
               <Avatar look={user.look ?? '-'} headDirection={3} size="l" />
             </SmallUserProfileContainerAvatarContainer>

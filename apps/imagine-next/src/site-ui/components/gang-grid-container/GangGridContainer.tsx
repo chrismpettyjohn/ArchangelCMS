@@ -5,11 +5,11 @@ import {
   GangGridContainerElement,
   GangGridContainerInfo,
 } from './GangGridContainer.styled';
-import {GangGridContainerProps} from './GangGridContainer.types';
-import {Avatar} from '../avatar/Avatar';
-import Link from 'next/Link';
+import { GangGridContainerProps } from './GangGridContainer.types';
+import { Avatar } from '../avatar/Avatar';
+import Link from 'next/link';
 
-export function GangGridContainer({gang}: GangGridContainerProps) {
+export function GangGridContainer({ gang }: GangGridContainerProps) {
   return (
     <Link href={`/gangs/${gang.id}`}>
       <GangGridContainerElement>

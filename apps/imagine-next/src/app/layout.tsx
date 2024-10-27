@@ -1,8 +1,8 @@
 import 'dotenv/config';
 import './fontawesome.css';
 import Head from 'next/head';
-import type {Metadata} from 'next';
-import {SiteBody} from '../site-ui/components/site-body/SiteBody';
+import type { Metadata } from 'next';
+import { SiteBody } from '../site-ui/components/site-body/SiteBody';
 import {
   ImagineContextProviders,
   LoadingScreen,
@@ -12,15 +12,14 @@ import {
   UsersOnlineContextProvider,
   WebsocketContextProvider,
 } from '@imagine-cms/websocket';
-import {SiteContainer} from '../shared/site-container/SiteContainer';
-import {GameClient} from '../site-ui/components/game-client/GameClient';
+import { GameClient } from '../site-ui/components/game-client/GameClient';
 
 export const metadata: Metadata = {
   title: 'Imagine',
   description: 'By LeChris',
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Head>

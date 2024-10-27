@@ -1,17 +1,15 @@
 'use client';
-import {toast} from 'react-toastify';
-import {sessionContext} from '@imagine-cms/web';
-import {Form} from '../../../components/form/Form';
-import {Input} from '../../../components/input/Input';
-import {useSessionUpdateEmail} from '@imagine-cms/client';
-import React, {ChangeEvent, SyntheticEvent, useContext, useState} from 'react';
-import {Accordion} from '../../../components/accordion/Accordion';
-import {ButtonBrand} from '../../../components/button/Button.remix';
+import { toast } from 'react-toastify';
+import { Form } from '../../../components/form/Form';
+import { Input } from '../../../components/input/Input';
+import { useSessionUpdateEmail } from '@imagine-cms/client';
+import React, { ChangeEvent, SyntheticEvent, useState } from 'react';
+import { Accordion } from '../../../components/accordion/Accordion';
+import { ButtonBrand } from '../../../components/button/Button.remix';
 
 export function ChangeEmailAddressForm() {
-  const {session} = useContext(sessionContext);
   const sessionUpdateEmail = useSessionUpdateEmail();
-  const [emailAddress, setEmailAddress] = useState(session?.email ?? '');
+  const [emailAddress, setEmailAddress] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
 
   const isDisabled =
@@ -48,7 +46,7 @@ export function ChangeEmailAddressForm() {
         <Input onChange={onChangeEmail} type="email" />
         <label>Password</label>
         <Input onChange={onChangePassword} type="password" />
-        <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
+        <div style={{ display: 'flex', flex: 1, justifyContent: 'flex-end' }}>
           <ButtonBrand disabled={isDisabled} type="submit">
             Update Email
           </ButtonBrand>

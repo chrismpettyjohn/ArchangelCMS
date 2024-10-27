@@ -1,1 +1,0 @@
-export {PermissionsEditRankScreen as default} from '../../../../admin-ui/screens/permissions-edit-rank-screen/PermissionsEditRankScreen';

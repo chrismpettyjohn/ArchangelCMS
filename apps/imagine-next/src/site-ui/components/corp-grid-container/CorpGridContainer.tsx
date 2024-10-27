@@ -1,14 +1,14 @@
 import React from 'react';
-import {CorpGridContainerProps} from './CorpGridContainer.types';
+import { CorpGridContainerProps } from './CorpGridContainer.types';
 import {
   CorpGridContainerBadge,
   CorpGridContainerElement,
   CorpGridContainerInfo,
 } from './CorpGridContainer.styled';
-import Link from 'next/Link';
-import {BADGE_EXT, BADGE_URL} from '@imagine-cms/web';
+import Link from 'next/link';
+import { BADGE_EXT, BADGE_URL } from '@imagine-cms/web';
 
-export function CorpGridContainer({corporation}: CorpGridContainerProps) {
+export function CorpGridContainer({ corporation }: CorpGridContainerProps) {
   return (
     <Link href={`/corps/${corporation.id}`}>
       <CorpGridContainerElement>

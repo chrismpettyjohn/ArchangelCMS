@@ -1,9 +1,9 @@
 'use client';
-import Link from 'next/Link';
-import {toast} from 'react-toastify';
-import {Form} from '../../components/form/Form';
-import {Input} from '../../components/input/Input';
-import React, {SyntheticEvent, useContext, useState} from 'react';
+import Link from 'next/link';
+import { toast } from 'react-toastify';
+import { Form } from '../../components/form/Form';
+import { Input } from '../../components/input/Input';
+import React, { SyntheticEvent, useContext, useState } from 'react';
 import {
   SESSION_LOCAL_STORAGE_IDX,
   sessionContext,
@@ -19,19 +19,19 @@ import {
   Title,
   UserStatus,
 } from './LoginScreen.styled';
-import {usersOnlineContext} from '@imagine-cms/websocket';
+import { usersOnlineContext } from '@imagine-cms/websocket';
 import {
   useSessionCreateWithCredentials,
   useUserFetchOne,
 } from '@imagine-cms/client';
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export function LoginScreen() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {setSession} = useContext(sessionContext);
-  const {usersOnline} = useContext(usersOnlineContext);
+  const { setSession } = useContext(sessionContext);
+  const { usersOnline } = useContext(usersOnlineContext);
   const sessionCreate = useSessionCreateWithCredentials();
   const userLookup = useUserFetchOne();
 

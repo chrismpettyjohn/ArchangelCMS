@@ -1,16 +1,16 @@
 'use client';
-import Link from 'next/Link';
-import {Grid} from '../grid/Grid';
-import {Card} from '../card/Card';
-import {Badge} from '../badge/Badge';
-import {GridLarge} from '../grid/Grid.remix';
-import React, {useEffect, useState} from 'react';
-import {useUserFetchMany} from '@imagine-cms/client';
-import {ButtonBrand, ButtonClear} from '../button/Button.remix';
-import {RankListContainerProps} from './RankListContainer.types';
-import {RankListContainerHeader} from './RankListContainer.styled';
-import {SmallUserProfileContainer} from '../small-user-profile-container/SmallUserProfileContainer';
-import {SmallUserProfileContainerMock} from '../small-user-profile-container/SmallUserProfileContainerMock';
+import Link from 'next/link';
+import { Grid } from '../grid/Grid';
+import { Card } from '../card/Card';
+import { Badge } from '../badge/Badge';
+import { GridLarge } from '../grid/Grid.remix';
+import React, { useEffect, useState } from 'react';
+import { useUserFetchMany } from '@imagine-cms/client';
+import { ButtonBrand, ButtonClear } from '../button/Button.remix';
+import { RankListContainerProps } from './RankListContainer.types';
+import { RankListContainerHeader } from './RankListContainer.styled';
+import { SmallUserProfileContainer } from '../small-user-profile-container/SmallUserProfileContainer';
+import { SmallUserProfileContainerMock } from '../small-user-profile-container/SmallUserProfileContainerMock';
 
 const USER_LIMIT = 25;
 
@@ -49,10 +49,10 @@ export function RankListContainer({
     <Card>
       <RankListContainerHeader>
         <Link href={`/ranks/${rank.id}`}>
-          <h1 style={{cursor: 'pointer'}}>{rank.name}</h1>
+          <h1 style={{ cursor: 'pointer' }}>{rank.name}</h1>
         </Link>
         <Link href={`/ranks/${rank.id}`}>
-          <Badge badge={{code: rank.badgeCode}} style={{cursor: 'pointer'}} />
+          <Badge badge={{ code: rank.badgeCode }} style={{ cursor: 'pointer' }} />
         </Link>
       </RankListContainerHeader>
       <Grid>
