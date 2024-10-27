@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   ScopeGuard,
   sessionContext,
@@ -13,30 +13,11 @@ export function GameClientActions() {
   const router = useRouter();
   const { session } = useContext(sessionContext);
   const { setTheme } = useContext(themeContext);
-  const [serverTime, setServerTime] = useState('0:00pm');
   const [isExpanded, setExpanded] = useState<boolean>(false);
-
-  async function onServerTimeReceived(serverTime: any) {
-    console.log('GameClientActions onServerTimeReceived: ', serverTime);
-    setServerTime(serverTime.toLowerCase());
-  }
-
-  useEffect(() => {
-    client.registerCallback('server_time', onServerTimeReceived);
-  }, []);
 
   function onViewProfile(): void {
     setTheme({ showClient: false });
     router.push('/me');
-  }
-
-  function onReloadClient(): void {
-    window.location.reload();
-  }
-
-  function onViewCommunity(): void {
-    setTheme({ showClient: false });
-    router.push('/community');
   }
 
   function onViewAdminPanel(): void {
@@ -80,17 +61,6 @@ export function GameClientActions() {
         <button className="action" onClick={onToggleFullScreen}>
           <i className={`fas ${isExpanded ? 'fa-compress' : 'fa-expand'}`} />
         </button>
-        <button className="action" onClick={onReloadClient}>
-          <i className="fas fa-sync" />
-        </button>
-        <button className="action" onClick={onViewCommunity}>
-          <i className="fas fa-users" style={{ marginRight: 4 }} />
-          1
-        </button>
-        <div className="action" style={{ fontWeight: 400 }}>
-          <i className="fas fa-clock" style={{ marginRight: 4 }} />
-          {serverTime}
-        </div>
       </GameClientActionsElement>
     </>
   );

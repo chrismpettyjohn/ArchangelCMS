@@ -7,7 +7,7 @@ export function GuestGuard({ children, redirect = false }: GuestGuardProps) {
   const { session } = useContext(sessionContext);
 
   if (session) {
-    return redirect ? <Redirect to="/login" /> : null;
+    return redirect ? <Redirect to="/me" /> : null;
   }
 
   return <>{children}</>;

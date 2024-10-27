@@ -17,6 +17,7 @@ type SessionModel {
   userID: Float
   createdAt: String
   updatedAt: String
+  user: UserModel!
 }
 
 type SessionCreatedModel {

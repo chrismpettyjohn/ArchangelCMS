@@ -1,60 +1,46 @@
 import { sessionContext } from './SessionContext';
-import React, { useEffect, useState } from 'react';
-import { UserFragment, useUserFetchOne } from '@imagine-cms/client';
+import React, { useCallback, useEffect, useState } from 'react';
+import { SessionByJwtQueryResponse, UserFragment, useSessionByJwt } from '@imagine-cms/client';
 import { SessionContextProviderProps } from './SessionContext.types';
 import { localStorageService } from '../../service/local-storage.service';
-import { useFetchSessionByJwt } from '../../hooks/fetch-session-by-jwt.hook';
 import { SESSION_LOCAL_STORAGE_IDX } from '../../app';
+import { toast } from 'react-toastify';
 
 export function SessionContextProvider({ children, loadingScreen }: SessionContextProviderProps) {
   const existingJwt = localStorageService.get(SESSION_LOCAL_STORAGE_IDX, true);
   const [loading, setIsLoading] = useState(true);
   const [session, _setSessionState] = useState<any>();
-  const fetchSessionByJwt = useFetchSessionByJwt(existingJwt ?? '');
-  const fetchUser = useUserFetchOne();
+  const fetchSession = useSessionByJwt();
 
-  useEffect(() => {
-    const checkForPreviousSession = async () => {
+  async function checkExistingSession() {
+    try {
       if (!existingJwt) {
-        setIsLoading(false);
         return;
       }
+      const response: SessionByJwtQueryResponse = await fetchSession.execute(existingJwt);
+      setSession(response.sessionByJWT.user);
+      setIsLoading(false);
+    } catch (e: any) {
+      toast.error('You have been logged out');
+      setIsLoading(false);
+      throw e;
+    }
+  }
 
-      fetchSessionByJwt.runQuery();
-    };
-
-    checkForPreviousSession();
+  useEffect(() => {
+    checkExistingSession();
   }, []);
 
-  useEffect(() => {
-    if (fetchSessionByJwt.error) {
-      setIsLoading(false);
-      return;
-    }
-
-    if (fetchSessionByJwt.data?.sessionByJWT?.userID) {
-      fetchUser.fetch({ id: fetchSessionByJwt.data.sessionByJWT.userID })
-    }
-
-  }, [fetchSessionByJwt?.data, fetchSessionByJwt?.error]);
-
-  useEffect(() => {
-    if (fetchUser?.data) {
-      _setSession(fetchUser.data);
-      setIsLoading(false);
-    }
-  }, [fetchUser?.data]);
-
-  const _setSession = (newSession?: any) => {
+  const _setSession = useCallback((newSession?: any) => {
     _setSessionState(newSession);
-  };
+  }, [_setSessionState])
 
-  const setSession = (updates: Partial<UserFragment>) => {
+  const setSession = useCallback((updates: Partial<UserFragment>) => {
     _setSessionState((_: any) => ({
       ..._,
       ...updates,
     }))
-  }
+  }, [_setSessionState])
 
   if (loading) {
     return <>{loadingScreen}</>;

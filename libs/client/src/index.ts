@@ -254,6 +254,8 @@ export * from './rp-stats/rp-stats.fragment';
 export * from './rp-stats/rp-stats.input';
 
 // Session
+export * from './session/session-by-jwt.hook';
+export * from './session/session-by-jwt.query';
 export * from './session/session-create-sso.hook';
 export * from './session/session-create-sso.mutation';
 export * from './session/session-create-with-credentials.hook';

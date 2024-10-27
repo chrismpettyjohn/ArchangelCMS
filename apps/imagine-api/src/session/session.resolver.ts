@@ -8,7 +8,7 @@ import { HasSession } from './has-session.decorator';
 import { UserEntity } from '../database/user.entity';
 import { SessionEntity } from '../database/session.entity';
 import { UserRepository } from '../database/user.repository';
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { SessionRepository } from '../database/session.repository';
 import { BadRequestException, UnauthorizedException } from '@nestjs/common';
 import {
@@ -27,6 +27,7 @@ import {
   SessionUpdateLanguageModel,
   SessionUpdatePasswordModel,
 } from './session.model';
+import { UserModel } from '../user/user.model';
 
 @Resolver(() => SessionModel)
 export class SessionResolver {
@@ -37,6 +38,12 @@ export class SessionResolver {
     private readonly sessionRepo: SessionRepository,
     private readonly sessionService: SessionService
   ) { }
+
+  @ResolveField(() => UserModel)
+  async user(@Parent() session: SessionEntity): Promise<UserModel> {
+    const user = await this.userRepo.findOneOrFail({ id: session.userID });
+    return UserModel.fromEntity(user);
+  }
 
   @Mutation(() => SessionSSOModel)
   @HasSession()
