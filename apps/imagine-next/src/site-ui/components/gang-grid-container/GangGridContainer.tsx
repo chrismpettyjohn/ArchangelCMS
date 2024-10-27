@@ -19,7 +19,7 @@ export function GangGridContainer({gang}: GangGridContainerProps) {
           </GangGridContainerAvatar>
         </Link>
         <GangGridContainerInfo>
-          <h2>{gang.name}</h2>
+          <h2>{gang.displayName}</h2>
           <p>{gang.description}</p>
         </GangGridContainerInfo>
       </GangGridContainerElement>
