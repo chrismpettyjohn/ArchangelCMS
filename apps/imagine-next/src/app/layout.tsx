@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import '../../public/css/bootstrap.min.css';
 import '../../public/css/styles.min.css';
+import '../../public/css/fontawesome.css';
 import type { Metadata } from 'next';
 import {
   ImagineContextProviders,

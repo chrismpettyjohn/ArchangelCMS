@@ -1,22 +1,18 @@
 import React from 'react';
-import { SiteFooterElement } from './SiteFooter.styled';
 import Link from 'next/link';
+import { SITE_NAME } from '@imagine-cms/web';
 
 export function SiteFooter() {
   return (
-    <SiteFooterElement className="notranslate">
-      <Link href="/imagine">
-        <h2 style={{ letterSpacing: 1.6, margin: 0 }}>imagine</h2>
-      </Link>
-      <a
-        href="https://github.com/habbo-hotel"
-        target="_blank"
-        style={{ cursor: 'pointer' }}
-        className="lechris"
-        rel="noreferrer"
-      >
-        <h4 style={{ margin: 0 }}>LeChris</h4>
-      </a>
-    </SiteFooterElement>
+    <div className="footer-basic">
+      <footer>
+        <ul className="list-inline">
+          <li className="list-inline-item">
+            <Link href="/about">Archangel 2</Link>
+          </li>
+        </ul>
+        <p className="copyright">&copy; {SITE_NAME}</p>
+      </footer>
+    </div>
   );
 }
