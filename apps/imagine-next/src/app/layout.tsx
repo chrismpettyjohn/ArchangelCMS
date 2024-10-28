@@ -1,8 +1,7 @@
 import 'dotenv/config';
-import './fontawesome.css';
-import Head from 'next/head';
+import '../../public/css/bootstrap.min.css';
+import '../../public/css/styles.min.css';
 import type { Metadata } from 'next';
-import { SiteBody } from '../site-ui/components/site-body/SiteBody';
 import {
   ImagineContextProviders,
   LoadingScreen,
@@ -18,22 +17,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="/css/fontawesome.css" type="text/css" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
       <html lang="en">
+        <head>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+        </head>
         <body>
           <ThemeProvider>
             <ImagineContextProviders loadingScreen={<LoadingScreen />}>
-              <SiteBody />
               <GameClient />
               {children}
             </ImagineContextProviders>
           </ThemeProvider>
+          <script src="/js/jquery.min.js"></script>
+          <script src="js/bootstrap.bundle.min.js"></script>
+          <script src="/js/script.min.js"></script>
         </body>
       </html>
     </>
