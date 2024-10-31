@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import {
   ScopeGuard,
   sessionContext,
-  SITE_NAME,
+  HOTEL_NAME,
 } from '@imagine-cms/web';
 import { useRouter } from 'next/navigation';
 import { GameClientActionsElement } from './GameClientActions.styled';
@@ -43,7 +43,7 @@ export function GameClientActions() {
             headOnly={true}
             style={{ height: 35 }}
           />
-          {session?.username ?? SITE_NAME}
+          {session?.username ?? HOTEL_NAME}
         </button>
         <ScopeGuard redirect={false} scope="accessAdminPanel">
           <button

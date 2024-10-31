@@ -50,4 +50,4 @@ export const EMAILS_INTERNAL_EMAIL_ADDRESS = getEnvOrFail(
 
 export const IMAGINE_BETA_ENABLED = getEnvOrFail('BETA_ENABLED') === 'true';
 
-export const IMAGINE_SITE_NAME = getEnvOrFail('SITE_NAME');
+export const IMAGINE_HOTEL_NAME = getEnvOrFail('HOTEL_NAME');

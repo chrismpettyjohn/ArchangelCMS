@@ -5,7 +5,7 @@ const nextConfig = {
   },
   env: {
     WEBSOCKET_HOST: process.env.WEBSOCKET_HOST,
-    SITE_NAME: process.env.SITE_NAME,
+    HOTEL_NAME: process.env.HOTEL_NAME,
     NITRO_URL: process.env.NITRO_URL,
     FIGURE_URL: process.env.FIGURE_URL,
     BADGE_URL: process.env.BADGE_URL,

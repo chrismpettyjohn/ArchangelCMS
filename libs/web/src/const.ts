@@ -3,12 +3,12 @@ import assert from 'assert';
 assert(process.env.WEBSOCKET_HOST, 'WEBSOCKET_HOST is required');
 export const WEBSOCKET_HOST = process.env.WEBSOCKET_HOST;
 
-assert(process.env.SITE_NAME, 'SITE_NAME is required');
+assert(process.env.HOTEL_NAME, 'HOTEL_NAME is required');
 assert(process.env.NITRO_URL, 'NITRO_URL is required');
 assert(process.env.FIGURE_URL, 'FIGURE_URL is required');
 assert(process.env.BADGE_URL, 'BADGE_URL is required');
 assert(process.env.BADGE_EXT, 'BADGE_EXT is required');
-export const SITE_NAME = process.env.SITE_NAME;
+export const HOTEL_NAME = process.env.HOTEL_NAME;
 export const NITRO_URL = process.env.NITRO_URL;
 export const FIGURE_URL = process.env.FIGURE_URL;
 export const BADGE_URL = process.env.BADGE_URL;
