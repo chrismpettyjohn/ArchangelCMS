@@ -1,13 +1,12 @@
 'use client';
-import {toast} from 'react-toastify';
-import {Form} from '../../components/form/Form';
-import {Input} from '../../components/input/Input';
-import React, {SyntheticEvent, useState} from 'react';
-import {ButtonBrand} from '../../components/button/Button.remix';
-import {useForgotPasswordRequestCreate} from '@imagine-cms/client';
-import {GuestContainer} from '../../components/guest-container/GuestContainer';
+import { toast } from 'react-toastify';
+import { Form } from '../../components/form/Form';
+import { Input } from '../../components/input/Input';
+import React, { SyntheticEvent, useState } from 'react';
+import { ButtonBrand } from '../../components/button/Button.remix';
+import { useForgotPasswordRequestCreate } from '@imagine-cms/client';
 import Link from 'next/link';
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export function ForgotPasswordScreen() {
   const router = useRouter();
@@ -19,7 +18,7 @@ export function ForgotPasswordScreen() {
   const onSubmitPasswordReset = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
-      await forgotPasswordRequestCreate.execute({username});
+      await forgotPasswordRequestCreate.execute({ username });
       toast.success(
         'Check your email for instructions on how to reset your password!'
       );
@@ -30,7 +29,7 @@ export function ForgotPasswordScreen() {
   };
 
   return (
-    <GuestContainer>
+    <>
       <Link href="/login">
         <i className="fa fa-caret-left fa-3x" />
       </Link>
@@ -42,12 +41,12 @@ export function ForgotPasswordScreen() {
           value={username}
           onChange={e => setUsername(e.currentTarget.value ?? '')}
         />
-        <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
+        <div style={{ display: 'flex', flex: 1, justifyContent: 'flex-end' }}>
           <ButtonBrand disabled={isDisabled} type="submit">
             Send Code
           </ButtonBrand>
         </div>
       </Form>
-    </GuestContainer>
+    </>
   );
 }

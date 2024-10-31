@@ -17,7 +17,7 @@ export function MeScreen() {
                 <h4><i className="far fa-id-card"></i>&nbsp;Identification Card</h4>
               </div>
               <div className="card-body text-center">
-                <h5>Lvl. 1 - bop</h5>
+                <h5>Lvl. 1 - {session!.username}</h5>
                 <Avatar look={session?.look ?? '-'} />
                 <p><i className="fas fa-coins" />: {session?.credits?.toLocaleString()}<br /></p>
                 <hr />
