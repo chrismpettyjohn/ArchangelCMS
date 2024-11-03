@@ -56,7 +56,7 @@ export function MeScreen() {
               }}
             />
             <div style={{ display: 'flex', position: 'relative', zIndex: 2, padding: 20 }}>
-              <div className="profile-image" style={{ backgroundImage: `url(https://imager.habfrost.com/?figure=${session.figure}&size=m&direction=2&head_direction=3&dance=3&img_format=gif)` }} />
+              <div className="profile-image" style={{ backgroundImage: `url(https://imager.habfrost.com/?figure=${session.look}&size=m&direction=2&head_direction=3&dance=3&img_format=gif)` }} />
               <div className="profile-info">
                 <h2>{session.username}</h2>
                 <p>{session.motto}</p>
