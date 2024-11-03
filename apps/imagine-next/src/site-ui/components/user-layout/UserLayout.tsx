@@ -4,12 +4,10 @@ import { SiteFooter } from "../site-footer/SiteFooter";
 
 export function UserLayout({ children }: { children: ReactNode }) {
     return (
-        <>
+        <div className="page-container">
             <SiteHeader />
-            <section className="features-section" style={{ height: 'calc(100% - 190px)' }}>
-                {children}
-            </section>
+            {children}
             <SiteFooter />
-        </>
+        </div>
     )
 }

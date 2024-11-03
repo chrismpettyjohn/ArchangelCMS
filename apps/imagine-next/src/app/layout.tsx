@@ -1,7 +1,5 @@
 import 'dotenv/config';
-import '../../public/css/bootstrap.min.css';
-import '../../public/css/styles.min.css';
-import '../../public/css/fontawesome.css';
+import '../../public/css/styles.css';
 import type { Metadata } from 'next';
 import {
   ImagineContextProviders,
@@ -20,7 +18,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <>
       <html lang="en">
         <head>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         </head>
         <body>
           <ThemeProvider>
@@ -29,9 +28,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children}
             </ImagineContextProviders>
           </ThemeProvider>
-          <script src="/js/jquery.min.js"></script>
-          <script src="js/bootstrap.bundle.min.js"></script>
-          <script src="/js/script.min.js"></script>
         </body>
       </html>
     </>
