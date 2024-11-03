@@ -26,8 +26,8 @@ export interface RPStatsFragment {
   armorMax: number;
   hungerCurrent: number;
   hungerMax: number;
-  corporationID?: number;
-  corporationPositionID?: number;
+  corporationID: number;
+  corporationPositionID: number;
   gangID?: number;
   gangPositionID?: number;
 }

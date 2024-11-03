@@ -24,11 +24,10 @@ export function MeScreen() {
     }
 
     corp.fetch({ id: rpStats.data.corporationID })
-  }, [rpStats]);
+  }, [rpStats.data]);
 
   const healthPercentage = useMemo(() => Math.round((rpStats.data?.healthCurrent ?? 0) / (rpStats.data?.healthMax ?? 0) * 100), [rpStats.data])
   const energyPercentage = useMemo(() => Math.round((rpStats.data?.energyCurrent ?? 0) / (rpStats.data?.energyMax ?? 0) * 100), [rpStats.data])
-
 
   return (
     <UserLayout>
@@ -57,7 +56,7 @@ export function MeScreen() {
               }}
             />
             <div style={{ display: 'flex', position: 'relative', zIndex: 2, padding: 20 }}>
-              <div className="profile-image"></div>
+              <div className="profile-image" style={{ backgroundImage: `url(https://imager.habfrost.com/?figure=${session.figure}&size=m&direction=2&head_direction=3&dance=3&img_format=gif)` }} />
               <div className="profile-info">
                 <h2>{session.username}</h2>
                 <p>{session.motto}</p>
@@ -102,23 +101,42 @@ export function MeScreen() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 10, height: 'fit-content', marginBottom: 50 }}>
             <div className="friend-holder">
               <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
-              <h6>Bob</h6>
+              <h6>-</h6>
             </div>
             <div className="friend-holder">
               <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
-              <h6>Bob</h6>
+              <h6>-</h6>
             </div>
             <div className="friend-holder">
               <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
-              <h6>Bob</h6>
+              <h6>-</h6>
             </div>
             <div className="friend-holder">
               <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
-              <h6>Bob</h6>
+              <h6>-</h6>
             </div>
           </div>
+          <br /><br />
+          <button
+            className="play-button"
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              padding: 20,
+              backgroundColor: '#FFCA1F',
+              color: 'black',
+              fontSize: 28,
+              border: 'none',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              boxShadow: '4px 4px 0 #FF6301, 8px 8px 0 #D17D00',
+            }}
+          >
+            Play {HOTEL_NAME}
+          </button>
 
-          <button className="play-button" style={{ position: 'absolute', bottom: 0, left: 0 }}>Play {HOTEL_NAME}</button>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%' }}>
@@ -126,8 +144,12 @@ export function MeScreen() {
             <div className="exp-header">
               <i className="fas fa-star" /> EXPERIENCE
             </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <b>Level 4</b>
+              <p>4,000xp to go</p>
+            </div>
             <div className="progress-bar exp-bar">
-              <div className="progress-fill"></div>
+              <div className="progress-fill" />
             </div>
           </div>
 
@@ -151,58 +173,56 @@ export function MeScreen() {
             <div className="item-image gang-image" style={{ backgroundImage: 'url(https://images.habbo.com/c_images/album1584/PV017.png)' }} />
             <div className="item-info">
               <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                <div>HabRPG Police</div>
+                <div>{corp.data?.displayName}</div>
                 <div className="badge">HIRING</div>
               </div>
             </div>
           </div>
           <div className="gang-info-item">
-            <span>Name</span>
-            <span>Shadow Warriors</span>
-          </div>
-          <div className="gang-info-item">
             <span>Headquarters</span>
-            <span>42</span>
+            <span>{corp.data && `#${corp.data?.room?.id}`} {corp.data?.room?.name ?? '-'}</span>
           </div>
           <div className="gang-info-item">
             <span>Employees</span>
-            <span>1,337</span>
+            <span>{corp.data?.userCount ?? '-'}</span>
           </div>
           <div className="gang-info-item">
             <span>Revenue</span>
-            <span>100,000</span>
+            <span>-</span>
           </div>
         </div>
         <div className="gang-card" style={{ width: '100%' }}>
           <div className="gang-header"><i className="fas fa-user-shield" /> GANG INFORMATION</div>
-          <div className="list-item">
-            <div className="item-image gang-image" style={{ backgroundImage: 'url(https://images.habbo.com/c_images/album1584/HSH03.png)' }} />
-            <div className="item-info">
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                <div>Crips</div>
-                <div className="badge">Level 4</div>
-              </div>
-            </div>
-          </div>
-          <div className="gang-info-item">
-            <span>Name</span>
-            <span>Shadow Warriors</span>
-          </div>
-          <div className="gang-info-item">
-            <span>Headquarters</span>
-            <span>100,000</span>
-          </div>
-          <div className="gang-info-item">
-            <span>Kills</span>
-            <span>1,337</span>
-          </div>
-          <div className="gang-info-item">
-            <span>Members</span>
-            <span>42</span>
-          </div>
+          {
+            gang.data ? (
+              <>
+                <div className="list-item">
+                  <div className="item-image gang-image" style={{ backgroundImage: 'url(https://images.habbo.com/c_images/album1584/HSH03.png)' }} />
+                  <div className="item-info">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                      <div>{gang.data?.displayName ?? '-'}</div>
+                      <div className="badge">Level 4</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="gang-info-item">
+                  <span>Headquarters</span>
+                  <span>{gang.data?.room?.name ?? '-'}</span>
+                </div>
+                <div className="gang-info-item">
+                  <span>Kills</span>
+                  <span>{gang.data?.userCount ?? '-'}</span>
+                </div>
+                <div className="gang-info-item">
+                  <span>Members</span>
+                  <span>-</span>
+                </div>
+              </>
+            )
+              : <p style={{ textAlign: 'left' }}>You don't belong to a gang</p>
+          }
         </div>
       </div>
-
 
 
       <div className="separator"></div>
@@ -221,18 +241,6 @@ export function MeScreen() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <div className="profile-circle" style={{ backgroundImage: 'https://imager.habfrost.com/?figure=hd-190-2.lg-280-63.hr-831-61.ch-93483434-66-62.sh-990000056-92.ca-1000001082-63-63.ea-1000000373-62.he-990000005-92&size=m&direction=2&head_direction=3&dance=3&img_format=gif' }} />
-            </td>
-            <td>REACT</td>
-            <td>150</td>
-            <td>30</td>
-            <td>300</td>
-            <td>200</td>
-            <td>50</td>
-            <td>80</td>
-          </tr>
           <tr>
             <div className="profile-circle" style={{ backgroundImage: 'https://imager.habfrost.com/?figure=hd-190-2.lg-280-63.hr-831-61.ch-93483434-66-62.sh-990000056-92.ca-1000001082-63-63.ea-1000000373-62.he-990000005-92&size=m&direction=2&head_direction=3&dance=3&img_format=gif' }} />
             <td>LeChris</td>

@@ -4,7 +4,7 @@ import { SiteFooter } from "../site-footer/SiteFooter";
 
 export function UserLayout({ children }: { children: ReactNode }) {
     return (
-        <div className="page-container">
+        <div className="page-container" style={{ position: 'relative' }}>
             <SiteHeader />
             {children}
             <SiteFooter />

@@ -20,46 +20,54 @@ import { UnauthorizedException } from '@nestjs/common';
 import { ILike, In } from 'typeorm';
 import { CorpEntity } from '../database/corp.entity';
 import { UserModel } from '../user/user.model';
-import { GroupModel } from '../group/group.model';
-import { GroupRepository } from '../database/group.repository';
-import { GroupEntity } from '../database/group.entity';
 import { RoomRepository } from '../database/room.repository';
+import { UserRepository } from '../database/user.repository';
+import { RoomModel } from '../room/room.model';
+import { RPStatsRepository } from '../database/rp-stats.repository';
 
 @Resolver(() => CorporationModel)
 export class CorporationResolver {
   constructor(
     private readonly roomRepo: RoomRepository,
-    private readonly groupRepo: GroupRepository,
+    private readonly userRepo: UserRepository,
     private readonly corporationRepo: CorpRepository,
+    private readonly rpStatsRepo: RPStatsRepository,
   ) { }
 
+  @ResolveField(() => Number, { nullable: true })
+  async userCount(@Parent() parent: CorporationModel): Promise<number> {
+    return this.rpStatsRepo.getInstance().count({
+      where: {
+        corpID: parent.id!,
+      }
+    })
+  }
+
   @ResolveField(() => UserModel, { nullable: true })
-  async group(@Parent() parent: CorporationModel): Promise<GroupModel> {
-    const matchingGroup = await this.groupRepo.findOneOrFail({ id: parent.id! });
-    return GroupModel.fromEntity(matchingGroup);
+  async user(@Parent() parent: CorporationModel): Promise<UserModel> {
+    const user = await this.userRepo.findOneOrFail({ id: parent.id! });
+    return UserModel.fromEntity(user);
+  }
+
+  @ResolveField(() => RoomModel, { nullable: true })
+  async room(@Parent() parent: CorporationModel): Promise<RoomModel> {
+    const room = await this.roomRepo.findOneOrFail({ id: parent.id! });
+    return RoomModel.fromEntity(room);
   }
 
   @Query(() => [CorporationModel])
   async corporations(
     @Args('filter') filter: CorporationFilterManyInput
   ): Promise<CorporationModel[]> {
-    const matchingGroups: GroupEntity[] =
-      await this.groupRepo.find({
+    const matchingCorps: CorpEntity[] =
+      await this.corporationRepo.find({
         where: {
           id: filter.ids && In(filter.ids),
-          name: filter.nameContains && ILike(`%${filter.nameContains}%`),
+          displayName: filter.nameContains && ILike(`%${filter.nameContains}%`),
         },
         skip: filter.skip,
         take: filter.limit,
       });
-    if (!matchingGroups) {
-      return [];
-    }
-    const matchingCorps: CorpEntity[] = await this.corporationRepo.find({
-      where: {
-        id: In(matchingGroups.map(_ => _.id))
-      }
-    })
     return matchingCorps.map(CorporationModel.fromEntity);
   }
 
@@ -102,12 +110,12 @@ export class CorporationResolver {
     }
     const matchingCorporation: CorporationModel =
       await this.corporation(filter);
-    const matchingGroup = await this.groupRepo.findOneOrFail({ id: matchingCorporation.id! });
+    const matchingGroup = await this.corporationRepo.findOneOrFail({ id: matchingCorporation.id! });
     const doesUserOwnCorp: boolean = matchingGroup.userID === session.id;
     if (!doesUserOwnCorp) {
       throw new UnauthorizedException();
     }
-    await this.groupRepo.update({ id: matchingCorporation.id! }, input);
+    await this.corporationRepo.update({ id: matchingCorporation.id! }, input);
     return true;
   }
 

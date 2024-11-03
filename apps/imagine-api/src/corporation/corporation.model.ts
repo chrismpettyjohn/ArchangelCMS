@@ -21,6 +21,12 @@ export class CorporationModel {
   @Field(() => CorpSector, { nullable: true })
   sector!: CorpSector;
 
+  @Field(() => Number, { nullable: true })
+  userID!: number;
+
+  @Field(() => Number, { nullable: true })
+  roomID!: number;
+
   static fromEntity(entity: CorpEntity): CorporationModel {
     return {
       id: entity.id!,
@@ -29,6 +35,8 @@ export class CorporationModel {
       badge: entity.badge,
       industry: entity.industry,
       sector: entity.sector,
+      userID: entity.userID,
+      roomID: entity.roomID,
     };
   }
 }

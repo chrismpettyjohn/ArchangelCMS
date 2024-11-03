@@ -1,10 +1,10 @@
 import gql from "graphql-tag";
-import { GROUP_FRAGMENT } from "../group/group.fragment";
 import { USER_FRAGMENT, UserFragment } from "../user/user.fragment";
+import { ROOM_FRAGMENT, RoomFragment } from "../room/room.fragment";
 
 export const GANG_FRAGMENT: any = gql`
-  ${GROUP_FRAGMENT}
   ${USER_FRAGMENT}
+  ${ROOM_FRAGMENT}
   fragment GangFragment on GangModel {
     id
     displayName
@@ -12,8 +12,12 @@ export const GANG_FRAGMENT: any = gql`
     badge
     userID
     roomID
+    userCount
     user {
       ...UserFragment
+    }
+    room {
+      ...RoomFragment
     }
   }
 `
@@ -25,5 +29,7 @@ export interface GangFragment {
   badge: string;
   userID: number;
   roomID: number;
+  userCount: number;
   user: UserFragment;
+  room: RoomFragment;
 }

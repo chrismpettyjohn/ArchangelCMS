@@ -437,7 +437,9 @@ type GangModel {
   badgeCode: String
   roomID: Float
   userID: Float
+  userCount: Float
   user: UserModel
+  room: RoomModel
 }
 
 type CorporationModel {
@@ -447,7 +449,11 @@ type CorporationModel {
   badge: String
   industry: CorpIndustry
   sector: CorpSector
-  group: UserModel
+  userID: Float
+  roomID: Float
+  userCount: Float
+  user: UserModel
+  room: RoomModel
 }
 
 enum CorpIndustry {

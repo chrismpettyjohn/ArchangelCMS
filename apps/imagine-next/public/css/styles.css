@@ -94,7 +94,6 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-image: url('https://imager.habfrost.com/?figure=hd-190-2.lg-280-63.hr-831-61.ch-93483434-66-62.sh-990000056-92.ca-1000001082-63-63.ea-1000000373-62.he-990000005-92&size=m&direction=2&head_direction=3&dance=3&img_format=gif');
     background-size: cover;
     background-position: center;
 }
@@ -172,7 +171,7 @@ body {
 .progress-fill {
     height: 100%;
     width: 50%;
-    background-color: var(--accent-blue);
+    background-color: #52847C;
 }
 
 .gang-card {
@@ -275,6 +274,7 @@ body {
     align-items: center;
     border-radius: 8px;
     border: 1px solid gray;
+    cursor: pointer;
 }
 
 .badge-holder  img {
@@ -297,6 +297,7 @@ body {
     align-items: center;
     border-radius: 8px;
     border: 1px solid gray;
+    cursor: pointer;
 }
 
 .friend-holder  img {
