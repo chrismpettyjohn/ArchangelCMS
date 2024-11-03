@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { UserLayout } from '../../components/user-layout/UserLayout';
 import { HOTEL_NAME, useSession } from '@imagine-cms/web';
 import Link from 'next/link';
@@ -25,6 +25,10 @@ export function MeScreen() {
 
     corp.fetch({ id: rpStats.data.corporationID })
   }, [rpStats]);
+
+  const healthPercentage = useMemo(() => Math.round((rpStats.data?.healthCurrent ?? 0) / (rpStats.data?.healthMax ?? 0) * 100), [rpStats.data])
+  const energyPercentage = useMemo(() => Math.round((rpStats.data?.energyCurrent ?? 0) / (rpStats.data?.energyMax ?? 0) * 100), [rpStats.data])
+
 
   return (
     <UserLayout>
@@ -62,9 +66,58 @@ export function MeScreen() {
           </div>
 
           <div className="gang-info-item">
-            <span><i className="fas fa-coins" /> Currency</span>
+            <span><i className="fas fa-coins" /> Cash</span>
             <span>{session.credits}</span>
           </div>
+
+          <div className="gang-info-item">
+            <span><i className="fas fa-heart" /> Health</span>
+            <span>{healthPercentage}%</span>
+          </div>
+
+          <div className="gang-info-item">
+            <span><i className="fas fa-bolt" /> Energy</span>
+            <span>{energyPercentage}%</span>
+          </div>
+
+
+          <h4 style={{ textAlign: 'left', marginBottom: 4 }}>My badges</h4>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 10 }}>
+            <div className="badge-holder">
+              <img src="https://www.habborator.org/badges/badges/ADM.gif" />
+            </div>
+            <div className="badge-holder">
+              <img src="https://www.habborator.org/badges/badges/VIP.gif" />
+            </div>
+            <div className="badge-holder">
+              <img src="https://www.habborator.org/badges/badges/FAN.gif" />
+            </div>
+            <div className="badge-holder">
+              <img src="https://www.habborator.org/badges/badges/MRG00.gif" />
+            </div>
+          </div>
+          <br />
+
+          <h4 style={{ textAlign: 'left', marginBottom: 4 }}>Friends online now</h4>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 10, height: 'fit-content', marginBottom: 50 }}>
+            <div className="friend-holder">
+              <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
+              <h6>Bob</h6>
+            </div>
+            <div className="friend-holder">
+              <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
+              <h6>Bob</h6>
+            </div>
+            <div className="friend-holder">
+              <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
+              <h6>Bob</h6>
+            </div>
+            <div className="friend-holder">
+              <img src="https://imager.habboon.pw/?figure=sh-290-92.ch-804-109.hd-205-3.lg-280-89.hr-170-1403.ha-1013-109.fa-3276-91.wa-244229-92.&size=m&direction=3&head_direction=3&gesture=sml&headonly=1" />
+              <h6>Bob</h6>
+            </div>
+          </div>
+
           <button className="play-button" style={{ position: 'absolute', bottom: 0, left: 0 }}>Play {HOTEL_NAME}</button>
         </div>
 
@@ -78,9 +131,9 @@ export function MeScreen() {
             </div>
           </div>
 
-          <h4 style={{ textAlign: 'left' }}>Top 5 skills</h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <div className="list-card" style={{ width: '100%' }}>
+          <h4 style={{ textAlign: 'left', marginBottom: -8 }}>Top 5 skills</h4>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, height: '100%' }}>
+            <div className="list-card" style={{ width: '100%', height: '100%' }}>
               <div className="list-header"><i className="fas fa-hand-back-fist" /> Boxing</div>
               <div className="list-header"><i className="fas fa-trowel" /> Sharpshooter</div>
               <div className="list-header"><i className="fas fa-crosshairs" /> Mining</div>

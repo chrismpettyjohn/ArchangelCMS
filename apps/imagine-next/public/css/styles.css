@@ -267,6 +267,48 @@ body {
     padding: 20px;
 }
 
+.badge-holder {
+    background: var(--blue-card);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+.badge-holder  img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+}
+
+.badge-holder:hover {
+    background: var(--hover-color);
+    border-color: white;
+}
+
+.friend-holder {
+    background: var(--blue-card);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+.friend-holder  img {
+        height: 65px;
+        object-fit: cover;
+}
+
+.friend-holder:hover {
+    background: var(--hover-color);
+    border-color: white;
+}
+
 .list-item {
     display: flex;
     align-items: center;
