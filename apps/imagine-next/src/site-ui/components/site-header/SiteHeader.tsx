@@ -4,7 +4,7 @@ import React from 'react';
 export function SiteHeader() {
   return (
     <>
-      <img src="https://habbofont.net/font/habbo_new_big/habrpg.gif" alt="HabRPG Logo" className="logo" />
+      <img src="/img/logo.gif" alt="HabRPG Logo" className="logo" />
       <div className="online-status">300 players online</div>
       <nav className="nav-menu">
         <Link href="/me"><i className="fas fa-home"></i>Home</Link>
