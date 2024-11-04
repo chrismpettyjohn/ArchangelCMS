@@ -119,21 +119,23 @@ body {
 }
 
 .play-button {
-    background-color: #357a38;
-    color: var(--text-color);
-    padding: 10px 15px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 14px;
+    background-color: #FFCA1F;
+    color: black;
+    font-size: 28px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 4px;
     font-weight: bold;
-    text-align: center;
-    margin-top: 10 px; /* Space above the button */
-    display: block; /* Ensures it takes up full width */
-    width: 100%; /* Full width */
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #FF6301, 4px 4px 0 #D17D00;
+    width: 100%;
 }
 
 .play-button:hover {
-    background-color: #4caf50;
+    background-color: #ff881f !important;
 }
 
 .stats-card {

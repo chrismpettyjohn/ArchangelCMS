@@ -7,12 +7,15 @@ export function SiteHeader() {
       <img src="/img/logo.gif" alt="HabRPG Logo" className="logo" />
       <div className="online-status">300 players online</div>
       <nav className="nav-menu">
-        <Link href="/me"><i className="fas fa-home"></i>Home</Link>
-        <Link href="/corps"><i className="fas fa-building"></i>Corporations</Link>
-        <Link href="/leaderboards"><i className="fas fa-trophy"></i>Leaderboards</Link>
-        <Link href="/gangs"><i className="fas fa-users"></i>Gangs</Link>
-        <Link href="/logout"><i className="fas fa-right-from-bracket"></i>Logout</Link>
-      </nav>
+        <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', alignItems: 'center', maxWidth: 1230 }}>
+          <div style={{ display: 'flex', flex: 1, gap: 10 }}>
+            <Link href="/me"><i className="fas fa-home"></i>Home</Link>
+          </div>
+          <div style={{ display: 'flex', gap: 10 }}>
+            <Link href="/logout"><i className="fas fa-right-from-bracket"></i>Logout</Link>
+          </div>
+        </div>
+      </nav >
     </>
   );
 }

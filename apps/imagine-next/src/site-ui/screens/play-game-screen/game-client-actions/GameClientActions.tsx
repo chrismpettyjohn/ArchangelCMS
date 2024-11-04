@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import {
-  ScopeGuard,
   sessionContext,
   HOTEL_NAME,
 } from '@imagine-cms/web';
@@ -15,10 +14,6 @@ export function GameClientActions() {
 
   function onViewProfile(): void {
     router.push('/me');
-  }
-
-  function onViewAdminPanel(): void {
-    router.push('/admin/dashboard');
   }
 
   async function onToggleFullScreen(): Promise<void> {
@@ -38,22 +33,9 @@ export function GameClientActions() {
           onClick={onViewProfile}
           style={{ maxWidth: 200, overflow: 'hidden' }}
         >
-          <Avatar
-            look={session?.look ?? '-'}
-            headOnly={true}
-            style={{ height: 35 }}
-          />
-          {session?.username ?? HOTEL_NAME}
+          <i className="fas fa-arrow-left" style={{ marginRight: 8 }} />
+          Web
         </button>
-        <ScopeGuard redirect={false} scope="accessAdminPanel">
-          <button
-            className="action"
-            style={{ marginRight: 4 }}
-            onClick={onViewAdminPanel}
-          >
-            <i className="fa fa-shield" /> Admin
-          </button>
-        </ScopeGuard>
         <button className="action" onClick={onToggleFullScreen}>
           <i className={`fas ${isExpanded ? 'fa-compress' : 'fa-expand'}`} />
         </button>

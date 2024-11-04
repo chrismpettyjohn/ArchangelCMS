@@ -117,26 +117,9 @@ export function MeScreen() {
             </div>
           </div>
           <br /><br />
-          <button
-            className="play-button"
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              padding: 20,
-              backgroundColor: '#FFCA1F',
-              color: 'black',
-              fontSize: 28,
-              border: 'none',
-              borderRadius: '8px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              boxShadow: '4px 4px 0 #FF6301, 8px 8px 0 #D17D00',
-            }}
-          >
-            Play {HOTEL_NAME}
-          </button>
-
+          <Link href="/play">
+            <button className="play-button">Play {HOTEL_NAME}</button>
+          </Link>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%' }}>
