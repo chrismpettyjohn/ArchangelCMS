@@ -2,6 +2,7 @@
 import React, { SyntheticEvent, useContext, useState } from 'react';
 import {
   BETA_ENABLED,
+  graphQLContext,
   localStorageService,
   SESSION_LOCAL_STORAGE_IDX,
   sessionContext,
@@ -22,6 +23,7 @@ export function RegisterScreen() {
   const createUser = useUserCreate();
   const fetchUser = useUserFetchOne();
   const { setSession } = useContext(sessionContext);
+  const { refreshClient } = useContext(graphQLContext);
   const [userCreateInput, setUserCreateInput] = useState<UserCreateInput>({
     username: '',
     email: '',
@@ -66,6 +68,7 @@ export function RegisterScreen() {
       const matchingUser = await fetchUser.fetch({ id: newSession.userID });
       setSession(matchingUser as any);
       toast.success(`Welcome back, ${matchingUser.username}`);
+      refreshClient();
       router.push('/me');
     } catch (e: any) {
       toast.error('Failed to create user');
