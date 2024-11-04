@@ -139,7 +139,7 @@ export function RegisterScreen() {
               placeholder="Confirm your password"
               autoComplete="new-password"
               required
-              value={userCreateInput.username}
+              value={passwordAgain}
               onChange={e => setPasswordAgain(e.currentTarget.value ?? '')}
             />
             <div className="error-message">Passwords must match</div>
