@@ -1,14 +1,14 @@
-import {In} from 'typeorm';
-import {v4 as uuidv4} from 'uuid';
-import {UserModel} from '../user/user.model';
-import {BetaCodeModel} from './beta-code.model';
-import {UserEntity} from '../database/user.entity';
-import {GetUser} from '../session/get-user.decorator';
-import {HasScope} from '../session/has-scope.decorator';
-import {UserRepository} from '../database/user.repository';
-import {BetaCodeEntity} from '../database/beta-code.entity';
-import {HasSession} from '../session/has-session.decorator';
-import {BetaCodeRepository} from '../database/beta-code.repository';
+import { In } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
+import { UserModel } from '../user/user.model';
+import { BetaCodeModel } from './beta-code.model';
+import { UserEntity } from '../database/user.entity';
+import { GetUser } from '../session/get-user.decorator';
+import { HasScope } from '../session/has-scope.decorator';
+import { UserRepository } from '../database/user.repository';
+import { BetaCodeEntity } from '../database/beta-code.entity';
+import { HasSession } from '../session/has-session.decorator';
+import { BetaCodeRepository } from '../database/beta-code.repository';
 import {
   BetaCodeFilterManyInput,
   BetaCodeFilterOneInput,
@@ -29,14 +29,14 @@ export class BetaCodeResolver {
   constructor(
     private readonly betaCodeRepo: BetaCodeRepository,
     private readonly userRepo: UserRepository
-  ) {}
+  ) { }
 
-  @ResolveField(() => UserModel, {nullable: true})
+  @ResolveField(() => UserModel, { nullable: true })
   @HasScope('manageBetaCodes')
   async user(@Parent() betaCode: BetaCodeEntity): Promise<UserModel | null> {
     return this.userRepo.findOne({
       where: {
-        id: betaCode.userID ?? -1,
+        id: betaCode.claimedByUserId ?? -1,
       },
     });
   }
@@ -44,14 +44,14 @@ export class BetaCodeResolver {
   @Query(() => [BetaCodeModel])
   @HasScope('manageBetaCodes')
   async betaCodes(
-    @Args('filter', {nullable: true, type: () => BetaCodeFilterManyInput})
+    @Args('filter', { nullable: true, type: () => BetaCodeFilterManyInput })
     filter: BetaCodeFilterManyInput
   ): Promise<BetaCodeModel[]> {
     const matchingBetaCodes = await this.betaCodeRepo.find({
       where: {
         id: filter.ids && In(filter.ids),
         betaCode: filter.betaCodes && In(filter.betaCodes),
-        userID: filter.userIDs && In(filter.userIDs),
+        claimedByUserId: filter.userIDs && In(filter.userIDs),
       },
       take: filter?.limit ?? 25,
     });
@@ -61,7 +61,7 @@ export class BetaCodeResolver {
   @Query(() => BetaCodeModel)
   @HasScope('manageBetaCodes')
   async betaCode(
-    @Args('filter', {nullable: true, type: () => BetaCodeFilterOneInput})
+    @Args('filter', { nullable: true, type: () => BetaCodeFilterOneInput })
     filter: BetaCodeFilterOneInput
   ): Promise<BetaCodeModel> {
     const matchingBetaCode = await this.betaCodeRepo.findOneOrFail({
@@ -76,6 +76,7 @@ export class BetaCodeResolver {
     const betaCode = uuidv4();
     const newBetaCode = await this.betaCodeRepo.create({
       betaCode,
+      createdAt: Math.round(+new Date() / 1000),
     });
     return BetaCodeModel.fromEntity(newBetaCode);
   }
@@ -83,7 +84,7 @@ export class BetaCodeResolver {
   @Mutation(() => Boolean)
   @HasScope('manageBetaCodes')
   async betaCodeDelete(
-    @Args('filter', {nullable: true, type: () => BetaCodeFilterOneInput})
+    @Args('filter', { nullable: true, type: () => BetaCodeFilterOneInput })
     filter: BetaCodeFilterOneInput
   ): Promise<boolean> {
     await this.betaCodeRepo.delete({
@@ -92,7 +93,7 @@ export class BetaCodeResolver {
     return true;
   }
   async betaCodeRedeem(
-    @Args('input', {type: () => BetaCodeRedeemInput})
+    @Args('input', { type: () => BetaCodeRedeemInput })
     input: BetaCodeRedeemInput,
     @GetUser() session: UserEntity
   ): Promise<boolean> {
@@ -100,8 +101,8 @@ export class BetaCodeResolver {
       betaCode: input.betaCode,
     });
     await this.betaCodeRepo.update(
-      {id: matchingBetaCode.id!},
-      {userID: session.id!}
+      { id: matchingBetaCode.id! },
+      { claimedByUserId: session.id! }
     );
     return true;
   }

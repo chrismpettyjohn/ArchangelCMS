@@ -1,13 +1,19 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('imagine_beta_codes')
+@Entity('nova_beta_codes')
 export class BetaCodeEntity {
   @PrimaryGeneratedColumn()
   id?: number;
 
-  @Column({name: 'beta_code', type: 'varchar'})
+  @Column({ name: 'code', type: 'varchar' })
   betaCode!: string;
 
-  @Column({name: 'user_id'})
-  userID?: number;
+  @Column({ name: 'users_id' })
+  claimedByUserId?: number;
+
+  @Column({ name: 'claimed_at' })
+  claimedAt?: number;
+
+  @Column({ name: 'created_at' })
+  createdAt!: number;
 }

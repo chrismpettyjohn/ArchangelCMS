@@ -59,7 +59,7 @@ export class UserResolver {
   async hasBetaCode(@Parent() { id }: UserEntity): Promise<boolean> {
     const matchingBetaCode = await this.betaCodeRepo.findOne({
       where: {
-        userID: id,
+        claimedByUserId: id,
       },
     });
     return !!matchingBetaCode;
@@ -217,7 +217,7 @@ export class UserResolver {
     const matchingBetaCode = IMAGINE_BETA_ENABLED ? await this.betaCodeRepo.findOne({
       where: {
         betaCode: input.betaCode,
-        userID: IsNull(),
+        claimedByUserId: IsNull(),
       },
     }) : undefined;
 
@@ -240,7 +240,7 @@ export class UserResolver {
     if (IMAGINE_BETA_ENABLED) {
       await this.betaCodeRepo.update(
         { id: matchingBetaCode!.id! },
-        { userID: newUser.id! }
+        { claimedByUserId: newUser.id!, claimedAt: Math.round(+new Date() / 1000) }
       );
     }
 
