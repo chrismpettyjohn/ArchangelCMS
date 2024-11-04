@@ -2,7 +2,7 @@
 import React, { SyntheticEvent, useContext, useState } from 'react';;
 import { GuestContainer } from '../../components/guest-container/GuestContainer';
 import Link from 'next/link';
-import { SESSION_LOCAL_STORAGE_IDX, sessionContext } from '@imagine-cms/web';
+import { graphQLContext, SESSION_LOCAL_STORAGE_IDX, sessionContext } from '@imagine-cms/web';
 import { useSessionCreateWithCredentials, useUserFetchOne } from '@imagine-cms/client';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
@@ -14,6 +14,7 @@ export function LoginScreen() {
   const { setSession } = useContext(sessionContext);
   const sessionCreate = useSessionCreateWithCredentials();
   const userLookup = useUserFetchOne();
+  const { refreshClient } = useContext(graphQLContext);
 
   const isDisabled = !email || !password;
 
@@ -39,6 +40,8 @@ export function LoginScreen() {
       setSession(matchingUser);
 
       toast.success(`Welcome back, ${matchingUser.username}`);
+
+      refreshClient();
       router.push('/me');
     } catch (e: any) {
       toast.error('Check your credentials and try again');
