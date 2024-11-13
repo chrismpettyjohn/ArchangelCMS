@@ -1,6 +1,6 @@
 import { sessionContext } from './SessionContext';
 import React, { useCallback, useEffect, useState } from 'react';
-import { SessionByJwtQueryResponse, UserFragment, useSessionByJwt } from '@imagine-cms/client';
+import { SessionByJwtQueryResponse, useSessionByJwt } from '@imagine-cms/client';
 import { SessionContextProviderProps } from './SessionContext.types';
 import { localStorageService } from '../../service/local-storage.service';
 import { SESSION_LOCAL_STORAGE_IDX } from '../../app';
@@ -36,7 +36,7 @@ export function SessionContextProvider({ children, loadingScreen }: SessionConte
     _setSessionState(newSession);
   }, [_setSessionState])
 
-  const setSession = useCallback((updates: Partial<UserFragment>) => {
+  const setSession = useCallback((updates: Partial<any>) => {
     _setSessionState((_: any) => ({
       ..._,
       ...updates,

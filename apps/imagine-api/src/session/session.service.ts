@@ -1,10 +1,8 @@
 import { JwtService } from '@nestjs/jwt';
 import { SessionContents } from './session.types';
 import { HashService } from '../common/hash.service';
-import { SessionCreatedModel } from './session.model';
-import { SessionEntity } from '../database/session.entity';
+import { SessionCreatedModel, SessionModel } from './session.model';
 import { UserRepository } from '../database/user.repository';
-import { SessionRepository } from '../database/session.repository';
 import {
   forwardRef,
   Inject,
@@ -19,7 +17,6 @@ export class SessionService {
     @Inject(forwardRef(() => UserRepository))
     private readonly userRepo: UserRepository,
     private readonly hashService: HashService,
-    private readonly sessionRepo: SessionRepository
   ) { }
 
   async loginWithEmailAndPassword(
@@ -38,33 +35,27 @@ export class SessionService {
       throw new UnauthorizedException();
     }
 
-    const newSession = await this.sessionRepo.create({
-      userID: user.id!,
-    });
-
     const accessToken = this.signToken({
       userID: user.id!,
-      sessionID: newSession.id!,
     });
 
     return {
       accessToken,
-      id: newSession.id!,
-      userID: newSession.userID,
+      userID: user.id!,
     };
   }
 
   async generateSession(
     userID: number
-  ): Promise<{ accessToken: string; session: SessionEntity }> {
-    const session = await this.sessionRepo.create({ userID });
-    const accessToken = this.signToken({
-      userID,
-      sessionID: session.id!,
-    });
+  ): Promise<{ accessToken: string; session: SessionModel }> {
+    const accessToken = this.signToken({ userID });
     return {
       accessToken,
-      session,
+      session: {
+        userID,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }
     };
   }
 

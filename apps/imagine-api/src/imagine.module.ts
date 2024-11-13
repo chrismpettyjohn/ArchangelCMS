@@ -4,7 +4,6 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { CommonModule } from './common/common.module';
-import { GraphQLJSONObject } from 'graphql-type-json';
 import { SessionModule } from './session/session.module';
 import { DatabaseModule } from './database/database.module';
 import { databaseEntities } from './database/database.const';
@@ -38,7 +37,6 @@ import {
       autoSchemaFile: resolve(__dirname, './schema.gql'),
       fieldResolverEnhancers: ['guards', 'interceptors'],
       installSubscriptionHandlers: true,
-      resolvers: { JSONObject: GraphQLJSONObject },
       subscriptions: {
         'subscriptions-transport-ws': {
           path: '/graphql',
