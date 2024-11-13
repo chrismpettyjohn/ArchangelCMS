@@ -12,3 +12,4 @@ export * from './session/session.fragment';
 export * from './user/user-create.hook';
 export * from './user/user-create.mutation';
 export * from './user/user-fetch-one.hook';
+export * from './user/user.input';

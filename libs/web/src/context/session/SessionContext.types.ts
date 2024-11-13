@@ -1,16 +1,15 @@
-import { UserFragment } from '@imagine-cms/client';
 import { ReactNode } from 'react';
 
 export interface SessionContext {
-  session?: UserFragment;
-  _setSession(newSession?: UserFragment): void;
-  setSession(changes: Partial<UserFragment>): void;
+  session?: any;
+  _setSession(newSession?: any): void;
+  setSession(changes: Partial<any>): void;
 }
 
 export const defaultSessionContext: SessionContext = {
   session: undefined,
-  _setSession(newSession?: UserFragment) { },
-  setSession(changes: Partial<UserFragment>) { },
+  _setSession(newSession?: any) { },
+  setSession(changes: Partial<any>) { },
 };
 
 export interface SessionContextProviderProps {

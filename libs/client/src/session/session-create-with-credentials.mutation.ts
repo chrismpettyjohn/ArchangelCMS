@@ -11,12 +11,12 @@ export const SESSION_CREATE_WITH_CREDENTIAL_MUTATION: any = gql`
 `
 
 export interface SessionCreateWithCredentialsResponse {
-  sessionCreateWithCredentials: {
-    accessToken: string;
-    userID: number;
-  }
+    sessionCreateWithCredentials: {
+        accessToken: string;
+        userID: number;
+    }
 }
 
 export interface SessionCreateWithCredentialsVariables {
-  input: SessionCreateWithCredentialsInput;
+    input: SessionCreateWithCredentialsInput;
 }

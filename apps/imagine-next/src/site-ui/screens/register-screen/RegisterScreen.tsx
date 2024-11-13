@@ -9,7 +9,6 @@ import {
 } from '@imagine-cms/web';
 import {
   UserCreateInput,
-  UserGender,
   useUserCreate,
   useUserFetchOne,
 } from '@imagine-cms/client';
@@ -28,7 +27,6 @@ export function RegisterScreen() {
     username: '',
     email: '',
     password: '',
-    gender: UserGender.Male,
     betaCode: '',
   });
   const [passwordAgain, setPasswordAgain] = useState('');
