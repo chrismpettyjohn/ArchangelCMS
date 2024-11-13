@@ -1,11 +1,8 @@
 'use client';
 import styled from '@emotion/styled';
 
-const PREVIEW_OFFSET = '25px';
-
 export const GameClientElement = styled.div<{
   $visible: boolean;
-  $preview: boolean;
 }>`
   background: black;
   position: fixed;
