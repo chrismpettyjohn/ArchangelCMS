@@ -2,7 +2,6 @@ import { UserModel } from './user.model';
 import { IsNull } from 'typeorm';
 import { BadRequestException } from '@nestjs/common';
 import { UserEntity } from '../database/user.entity';
-import { DEFAULT_USER_VALUES } from './user.constant';
 import { UserRepository } from '../database/user.repository';
 import DayJS from 'dayjs';
 import { BetaCodeRepository } from '../database/beta-code.repository';
@@ -62,13 +61,8 @@ export class UserResolver {
     }
 
     const newUser = await this.userRepo.create({
-      ...DEFAULT_USER_VALUES,
       ...input,
       gameSSO: '',
-      accountCreatedAt: DayJS().unix(),
-      ipLast: '', // TODO: Add support for IPs,
-      ipRegistered: '', // TODO: Add support for IPs
-      machineAddress: '', // TODO: Add support for machine addresses
     });
 
     if (IMAGINE_BETA_ENABLED) {
