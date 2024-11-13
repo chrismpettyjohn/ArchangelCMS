@@ -1,6 +1,5 @@
 'use client';
-import Link from 'next/link';
-import { GameClientElement } from './GameClient.styled';
+import './GameClient.scss';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { NITRO_URL, sessionContext } from '@imagine-cms/web';
 import { NITRO_CLIENT_URL } from '../../site-ui.const';
@@ -42,14 +41,12 @@ export function GameClient() {
   }
 
   return (
-    <>
-      <GameClientElement $visible={showClient}>
-        {showClient && <GameClientActions />}
-        <iframe
-          src={`${NITRO_CLIENT_URL ?? NITRO_URL}?sso=${ssoToken}`}
-          style={{ height: '100%', width: '100%' }}
-        />
-      </GameClientElement >
-    </>
+    <div className="game-client" style={{ visibility: showClient ? 'visible' : 'hidden' }}>
+      {showClient && <GameClientActions />}
+      <iframe
+        src={`${NITRO_CLIENT_URL ?? NITRO_URL}?sso=${ssoToken}`}
+        style={{ height: '100%', width: '100%' }}
+      />
+    </div >
   );
 }

@@ -10,10 +10,11 @@ export function MeScreen() {
   return (
     <GuestContainer>
       <div className="register-container">
-        <h1>{session?.username}</h1>
-        <p>0 citizens exploring</p>
+        <div className="form-header">
+          <h1>{session?.username}</h1>
+          <p>0 citizens exploring</p>
+        </div>
       </div>
-      <br />
       <Link href="/play">
         <button className="register-button" style={{ background: 'green' }} type="button">Enter Game</button>
       </Link>

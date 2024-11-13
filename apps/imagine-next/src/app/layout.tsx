@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import {
   ImagineContextProviders,
   LoadingScreen,
-  ThemeProvider,
 } from '@imagine-cms/web';
 import { GameClient } from '../site-ui/components/game-client/GameClient';
 
@@ -22,12 +21,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         </head>
         <body>
-          <ThemeProvider>
-            <ImagineContextProviders loadingScreen={<LoadingScreen />}>
-              <GameClient />
-              {children}
-            </ImagineContextProviders>
-          </ThemeProvider>
+          <ImagineContextProviders loadingScreen={<LoadingScreen />}>
+            <GameClient />
+            {children}
+          </ImagineContextProviders>
         </body>
       </html>
     </>
